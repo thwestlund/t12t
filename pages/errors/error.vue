@@ -5,7 +5,9 @@ const props = defineProps({
 
 // SEO for error page
 useSeoMeta({
-  title: 'Sidan hittades inte - T12T',
+  title: () => props.error?.statusCode === 404
+    ? 'Sidan hittades inte - T12T'
+    : 'Ett fel har inträffat - T12T',
   robots: 'noindex, nofollow',
 })
 
@@ -15,122 +17,72 @@ const handleError = () => {
 </script>
 
 <template>
-  <div class="error-container">
-    <div class="error-content">
-      <h1 v-if="error?.statusCode === 404">
-        Sidan hittades inte
-      </h1>
-      <h1 v-else>
-        Ett fel har inträffat
-      </h1>
+  <NuxtLayout>
+    <div
+      class="min-h-[70vh] flex items-center justify-center px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+      <div class="max-w-max mx-auto">
+        <main class="sm:flex">
+          <p class="text-4xl font-extrabold text-primary sm:text-5xl">
+            {{ error?.statusCode || 'Fel' }}
+          </p>
+          <div class="sm:ml-6">
+            <div class="sm:border-l sm:border-neutral-200 sm:pl-6">
+              <h1 class="text-4xl font-extrabold text-secondary tracking-tight sm:text-5xl">
+                <template v-if="error?.statusCode === 404">
+                  Sidan hittades inte
+                </template>
+                <template v-else>
+                  Ett fel har inträffat
+                </template>
+              </h1>
+              <p class="mt-4 text-base text-neutral-600">
+                <template v-if="error?.statusCode === 404">
+                  Vi kunde tyvärr inte hitta den sida du letar efter. Den kan ha flyttats, tagits bort
+                  eller så är adressen felstavad.
+                </template>
+                <template v-else>
+                  Det uppstod ett oväntat fel. Vi ber om ursäkt för besväret och arbetar på att åtgärda problemet.
+                </template>
+              </p>
+            </div>
+            <div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
+              <button @click="handleError"
+                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                Gå till startsidan
+              </button>
+              <NuxtLink to="/kontakt"
+                class="inline-flex items-center px-4 py-2 border border-neutral-300 text-sm font-medium rounded-md bg-white text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                Kontakta oss
+              </NuxtLink>
+            </div>
+          </div>
+        </main>
 
-      <div class="error-message">
-        <p v-if="error?.statusCode === 404">
-          Vi kunde tyvärr inte hitta den sida du letar efter. Den kan ha flyttats, tagits bort
-          eller så är adressen felstavad.
-        </p>
-        <p v-else>
-          Det uppstod ett oväntat fel. Vi ber om ursäkt för besväret.
-        </p>
-      </div>
-
-      <div class="error-options">
-        <button @click="handleError" class="primary-button">
-          Gå till startsidan
-        </button>
-
-        <div class="additional-options">
-          <p>Du kan också prova att:</p>
-          <ul>
-            <li>Använda sökfunktionen för att hitta information</li>
-            <li>Gå till <NuxtLink to="/kunskapsbank">kunskapsbanken</NuxtLink>
-            </li>
-            <li>Besöka <NuxtLink to="/blogg">bloggen</NuxtLink> för aktuella artiklar</li>
-          </ul>
+        <div class="mt-12">
+          <h2 class="text-lg font-medium text-secondary mb-4">Du kan också prova:</h2>
+          <div class="mt-4 bg-white shadow rounded-lg overflow-hidden">
+            <div class="border-b border-neutral-200">
+              <NuxtLink to="/kunskapsbank" class="block hover:bg-neutral-50 p-4">
+                <h3 class="text-base font-medium text-secondary">Kunskapsbank</h3>
+                <p class="mt-1 text-sm text-neutral-600">Utforska vår omfattande kunskapsbas om digital tillgänglighet
+                </p>
+              </NuxtLink>
+            </div>
+            <div class="border-b border-neutral-200">
+              <NuxtLink to="/skärmläsare" class="block hover:bg-neutral-50 p-4">
+                <h3 class="text-base font-medium text-secondary">Skärmläsarguider</h3>
+                <p class="mt-1 text-sm text-neutral-600">Lär dig hur du testar med olika skärmläsare</p>
+              </NuxtLink>
+            </div>
+            <div>
+              <NuxtLink to="/blog" class="block hover:bg-neutral-50 p-4">
+                <h3 class="text-base font-medium text-secondary">Blogg</h3>
+                <p class="mt-1 text-sm text-neutral-600">Läs våra senaste artiklar om digital tillgänglighet</p>
+              </NuxtLink>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </NuxtLayout>
 </template>
-
-<style scoped>
-.error-container {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.error-content {
-  max-width: 600px;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color: #333;
-}
-
-.error-message {
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #555;
-}
-
-.error-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.primary-button {
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.primary-button:hover {
-  background-color: #0055aa;
-}
-
-.primary-button:focus {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-}
-
-.additional-options {
-  margin-top: 2rem;
-  text-align: left;
-}
-
-.additional-options p {
-  margin-bottom: 0.5rem;
-}
-
-.additional-options ul {
-  padding-left: 1.5rem;
-  list-style-type: disc;
-}
-
-.additional-options li {
-  margin-bottom: 0.5rem;
-}
-
-.additional-options a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.additional-options a:hover {
-  text-decoration: underline;
-}
-</style>

@@ -3,10 +3,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // Enable Nuxt Content module
-  modules: ["@nuxt/content"],
-  // CSS global styles
+  modules: ["@nuxtjs/sitemap", "@nuxt/content"],
   css: ["~/assets/css/main.css"],
-
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   // Generate global types
   typescript: {
     strict: true,

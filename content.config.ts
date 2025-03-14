@@ -15,6 +15,7 @@ export default defineContentConfig({
         tags: z.array(z.string()),
         image: z.string(),
         date: z.date(),
+        author: z.string(),
       }),
     }),
   },

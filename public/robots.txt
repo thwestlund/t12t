@@ -1,1 +1,5 @@
+User-agent: *
+Allow: /
 
+# Sitemap
+Sitemap: https://t12t.se/sitemap.xml
