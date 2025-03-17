@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <div class="bg-primary-light rounded-lg p-8 mb-12">
+    <!--div class="bg-primary-light rounded-lg p-8 mb-12">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:flex-1 mb-6 md:mb-0 md:mr-8">
           <h2 class="text-2xl font-bold text-secondary mb-4">Testa själv med skärmläsare</h2>
@@ -74,7 +74,7 @@
             class="w-full max-w-md mx-auto" />
         </div>
       </div>
-    </div>
+    </div-->
   </div>
 </template>
 
