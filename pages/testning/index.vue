@@ -109,7 +109,7 @@
             </div>
             <h3 class="text-lg font-semibold mb-2">Nå en bredare målgrupp</h3>
             <p class="text-neutral-600">
-              Cirka 15% av världens befolkning har någon form av funktionsnedsättning. Tillgängliga
+              Cirka 20% av världens befolkning har någon form av funktionsnedsättning. Tillgängliga
               lösningar gör att du kan nå och inkludera fler användare.
             </p>
           </div>
@@ -516,40 +516,6 @@
       </div>
     </div>
 
-    <!-- Resources section -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">Verktyg och resurser</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <DownloadResource title="Komplett tillgänglighetschecklista"
-          description="En omfattande checklista som täcker alla aspekter av tillgänglighetstestning, inklusive automatisk, manuell och användartestning."
-          type="pdf" fileSize="2.3 MB" downloadUrl="/resurser/komplett-tillganglighetschecklista.pdf" date="2025-03-01"
-          :tags="['Checklista', 'WCAG 2.2', 'Testning']" wcagReference="1.1.1, 1.3.1, 2.4.3, 4.1.2" author="T12T-teamet"
-          color="primary" />
-
-        <DownloadResource title="Guide för skärmläsartestning"
-          description="En praktisk guide för att testa webbplatser med skärmläsare, inklusive steg-för-steg-instruktioner och exempel."
-          type="pdf" fileSize="1.8 MB" downloadUrl="/resurser/guide-skarmlasar-testning.pdf" date="2025-02-15"
-          :tags="['Skärmläsare', 'NVDA', 'VoiceOver']" wcagReference="1.3.1, 2.1.1, 2.4.7, 4.1.2" author="T12T-teamet"
-          color="blue" />
-
-        <DownloadResource title="Testprotokoll för tillgänglighet"
-          description="En mall för att dokumentera och rapportera tillgänglighetstester, användbar för både utvecklingsteam och kvalitetssäkrare."
-          type="template" fileSize="450 KB" downloadUrl="/resurser/testprotokoll-tillganglighet.xlsx" date="2025-02-28"
-          :tags="['Mall', 'Testrapport', 'Excel']" wcagReference="WCAG 2.2" author="T12T-teamet" color="green" />
-      </div>
-
-      <div class="mt-6">
-        <NuxtLink to="/testning/verktyg" class="inline-flex items-center text-primary hover:underline">
-          <span>Se alla verktyg och resurser</span>
-          <svg class="ml-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </NuxtLink>
-      </div>
-    </div>
-
     <!-- Testing process -->
     <div class="mb-12">
       <h2 class="text-2xl font-bold mb-6">Att sätta upp en teststrategi</h2>
@@ -649,7 +615,7 @@
       </div>
     </div>
 
-    <div class="bg-primary-light rounded-lg p-8">
+    <!--div class="bg-primary-light rounded-lg p-8">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:flex-1 mb-6 md:mb-0 md:mr-8">
           <h2 class="text-2xl font-bold text-secondary mb-4">Kom igång med testning</h2>
@@ -666,7 +632,7 @@
           <img src="" alt="Illustration av tillgänglighetstestning" class="max-w-md mx-auto" />
         </div>
       </div>
-    </div>
+    </div-->
   </div>
 </template>
 

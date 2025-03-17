@@ -84,9 +84,7 @@ import ComparisonTable from '~/components/ComparisonTable.vue'
 import Faq from '~/components/Faq.vue'
 import AccessibilityTimeline from '~/components/AccessibilityTimeline.vue'
 import DownloadResource from '~/components/DownloadResource.vue'
-import RelatedContent from '~/components/RelatedContent.vue'
 
-// Get current route for related content
 const route = useRoute()
 
 // SEO metadata

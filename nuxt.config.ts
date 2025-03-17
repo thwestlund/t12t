@@ -1,9 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
-  // Enable Nuxt Content module
-  modules: ["@nuxtjs/sitemap", "@nuxt/content"],
+  modules: [
+    "@nuxtjs/sitemap",
+    "@nuxt/content",
+    "@nuxt/icon",
+    "nuxt-time",
+    "dayjs-nuxt",
+  ],
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
@@ -16,7 +20,6 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
-
   app: {
     head: {
       htmlAttrs: {

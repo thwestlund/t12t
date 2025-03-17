@@ -251,9 +251,7 @@ import AccessibilityCodeExample from '~/components/AccessibilityCodeExample.vue'
 import WcagExplorer from '~/components/WcagExplorer.vue'
 import DownloadResource from '~/components/DownloadResource.vue'
 import Faq from '~/components/Faq.vue'
-import RelatedContent from '~/components/RelatedContent.vue'
 
-// Get current route for related content
 const route = useRoute()
 
 // SEO metadata

@@ -9,13 +9,13 @@ export default defineContentConfig({
 
     blog: defineCollection({
       type: "page",
-      source: "blog/**/**/*.md",
+      source: { include: "blog/**/**/*.md", exclude: ["blog/index.md"] },
       // Define custom schema for docs collection
       schema: z.object({
-        tags: z.array(z.string()),
-        image: z.string(),
-        date: z.date(),
-        author: z.string(),
+        tags: z.array(z.string()).optional(),
+        image: z.string().optional(),
+        date: z.date().optional(),
+        author: z.string().optional(),
       }),
     }),
   },

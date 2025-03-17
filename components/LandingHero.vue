@@ -55,10 +55,7 @@
       <div v-if="features && features.length" class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div v-for="(feature, index) in features" :key="index"
           class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6">
-          <div v-if="feature.icon" class="text-primary mb-4">
-            <component :is="feature.icon" class="h-8 w-8" />
-          </div>
-
+          <Icon v-if="feature.icon" :name="feature.icon" class="h-8 w-8 text-primary" />
           <h3 class="text-xl font-semibold mb-3">{{ feature.title }}</h3>
           <p class="text-neutral-600">{{ feature.description }}</p>
         </div>

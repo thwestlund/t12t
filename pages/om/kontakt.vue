@@ -9,7 +9,7 @@
       </p>
     </div>
 
-    <div class="bg-white shadow-sm rounded-lg overflow-hidden mb-10">
+    <!--div class="bg-white shadow-sm rounded-lg overflow-hidden mb-10">
       <div class="px-6 py-5 border-b border-neutral-200">
         <h2 class="text-lg font-semibold">Kontaktformulär</h2>
         <p class="mt-1 text-sm text-neutral-600">Fyll i formuläret nedan så återkommer vi så snart som möjligt.</p>
@@ -76,8 +76,6 @@
                 errors.privacyConsent }}</p>
             </div>
           </div>
-
-          <!-- Form submission status -->
           <div v-if="formStatus"
             :class="[formStatus.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800', 'p-4 rounded-md']">
             <div class="flex">
@@ -116,13 +114,13 @@
             </button>
           </div>
         </form>
-      </div>
-    </div>
+  </div>
+  </div-->
 
     <!-- Alternative contact methods -->
     <div class="bg-white shadow-sm rounded-lg overflow-hidden mb-10">
       <div class="px-6 py-5 border-b border-neutral-200">
-        <h2 class="text-lg font-semibold">Andra kontaktvägar</h2>
+        <h2 class="text-lg font-semibold">Kontaktinformation</h2>
       </div>
 
       <div class="px-6 py-6">

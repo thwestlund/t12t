@@ -5,27 +5,7 @@
       <p class="text-lg text-neutral-600">Senaste nyheter, guider och insikter om digital tillgänglighet.</p>
     </div>
 
-    <!-- Featured post (if available) -->
-    <div v-if="featuredPost" class="mb-12 bg-neutral-50 rounded-xl overflow-hidden shadow-md">
-      <div class="p-6 md:p-8">
-        <div class="mb-2 text-sm font-medium text-primary">Utvalt inlägg</div>
-        <h2 class="text-2xl font-bold mb-3">
-          <NuxtLink :to="featuredPost.path" class="hover:text-primary hover:no-underline">
-            {{ featuredPost.title }}
-          </NuxtLink>
-        </h2>
-        <p class="text-neutral-600 mb-4">{{ featuredPost.description }}</p>
-        <div class="flex items-center">
-          <span class="text-sm text-neutral-500">
-            {{ featuredPost.date }}
-          </span>
-          <span class="mx-2 text-neutral-300">•</span>
-          <span v-if="featuredPost.author" class="text-sm text-neutral-500">
-            {{ featuredPost.author }}
-          </span>
-        </div>
-      </div>
-    </div>
+    <FeaturedPost v-if="posts" :posts="posts" />
 
     <!-- All blog posts -->
     <div>
@@ -41,7 +21,7 @@
                 {{ post.description }}
               </p>
               <div class="flex items-center mt-auto text-sm text-neutral-500">
-                <span v-if="post.date">{{ post.date }}</span>
+                <NuxtTime v-if="post.date" :datetime="post.date" time-zone="Europe/Stockholm" format="YYYY-MM-DD" />
                 <span v-if="post.author" class="ml-2">
                   <span class="mx-1">•</span>
                   {{ post.author }}
@@ -62,6 +42,8 @@
 </template>
 
 <script setup lang="ts">
+import FeaturedPost from '~/components/blog/FeaturedPost.vue'
+
 definePageMeta({
   layout: 'default'
 })
@@ -71,18 +53,10 @@ useSeoMeta({
   description: 'Senaste nyheter, artiklar och insikter om digital tillgänglighet, WCAG-standarder och tillgänglig webbutveckling.'
 })
 
-// Get all blog posts ordered by date (newest first)
 const { data: posts } = await useAsyncData('blog-posts', () =>
   queryCollection('blog').order('date', 'DESC').all()
 )
-
-// Get the featured (latest) post
-const featuredPost = computed(() => {
-  if (posts.value && posts.value.length > 0) {
-    return posts.value[0];
-  }
-  return null;
-})
+console.log(posts.value)
 
 // Format date to Swedish locale
 const formatDate = (date: string) => {

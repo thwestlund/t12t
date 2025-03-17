@@ -19,12 +19,12 @@
               <li>
                 <NuxtLink to="/kunskapsbank" class="text-secondary hover:text-primary py-2">Kunskapsbank</NuxtLink>
               </li>
-              <li>
+              <!--li>
                 <NuxtLink to="/skärmläsare" class="text-secondary hover:text-primary py-2">Skärmläsare</NuxtLink>
-              </li>
-              <li>
+              </li-->
+              <!--li>
                 <NuxtLink to="/testning" class="text-secondary hover:text-primary py-2">Testning</NuxtLink>
-              </li>
+              </li-->
               <li>
                 <NuxtLink to="/blog" class="text-secondary hover:text-primary py-2">Blogg</NuxtLink>
               </li>
@@ -95,12 +95,12 @@
               <li>
                 <NuxtLink to="/kunskapsbank" class="text-neutral-600 hover:text-primary">Kunskapsbank</NuxtLink>
               </li>
-              <li>
+              <!--li>
                 <NuxtLink to="/skärmläsare" class="text-neutral-600 hover:text-primary">Skärmläsare</NuxtLink>
-              </li>
-              <li>
+              </li-->
+              <!--li>
                 <NuxtLink to="/testning" class="text-neutral-600 hover:text-primary">Testning</NuxtLink>
-              </li>
+              </li-->
               <li>
                 <NuxtLink to="/blog" class="text-neutral-600 hover:text-primary">Blogg</NuxtLink>
               </li>

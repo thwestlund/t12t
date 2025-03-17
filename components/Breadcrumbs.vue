@@ -49,7 +49,7 @@ const breadcrumbs = computed(() => {
     // Special cases for common paths
     const nameMap = {
       'blog': 'Blogg',
-      'skarmlasare': 'Skärmläsare',
+      //'skarmlasare': 'Skärmläsare',
       'testning': 'Testning',
       'sok': 'Sök',
       'kunskapsbank': 'Kunskapsbank',

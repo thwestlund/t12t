@@ -1,6 +1,6 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div v-for="post in latestPosts" :key="post.path"
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" v-if="posts">
+    <div v-for="post in posts" :key="post.path"
       class="bg-white rounded-lg shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow">
       <NuxtLink :to="post.path" class="block hover:no-underline">
         <div class="p-6">
@@ -9,7 +9,7 @@
           </h3>
 
           <div class="flex items-center text-sm text-neutral-500 mb-3">
-            <span v-if="post.date">{{ post.date }}</span>
+            <NuxtTime v-if="post.date" :datetime="post.date" time-zone="Europe/Stockholm" format="YYYY-MM-DD" />
             <span v-if="post.author" class="ml-2">
               <span class="mx-1">•</span>
               {{ post.author }}
@@ -28,12 +28,8 @@
 </template>
 
 <script setup lang="ts">
+const { data: posts } = await useAsyncData('blog-posts', () =>
+  queryCollection('blog').order('date', 'DESC').order('date', 'ASC').limit(3).all()
+)
 
-// Fetch latest blog posts
-const { data: latestPosts } = await useAsyncData('home-latest-posts', () =>
-  queryCollection('blog')
-    .path('/blog/**/*.md')
-    .order('date', 'DESC')
-    .limit(3)
-    .all())
 </script>

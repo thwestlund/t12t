@@ -5,7 +5,7 @@
       <h1 class="text-3xl md:text-4xl font-bold mb-4">{{ post.title }}</h1>
       <div class="flex items-center text-neutral-600">
         <span v-if="post.date" class="mr-4">
-          {{ post.date }}
+          <NuxtTime :datetime="post.date" time-zone="Europe/Stockholm" format="YYYY-MM-DD" />
         </span>
         <span v-if="post.author" class="mr-4">
           <span class="mr-1">Av:</span>
@@ -48,7 +48,6 @@ definePageMeta({
 const route = useRoute()
 const slugArray = Array.isArray(route.params.slug) ? route.params.slug : [route.params.slug]
 const slugPath = slugArray.join('/')
-console.log(route.params.slug)
 // Fetch the blog post
 const { data: post } = await useAsyncData(`blog-${slugPath}`, () => {
   return queryCollection('blog').path(`/blog/${slugPath}`).first()

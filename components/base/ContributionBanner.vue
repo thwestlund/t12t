@@ -13,7 +13,8 @@
         </NuxtLink>
       </div>
       <div class="md:flex-1">
-        <img src="" alt="Illustration av personer som samarbetar" class="max-w-md mx-auto" />
+        <img src="assets/img/undraw_collab_h1mq.svg" alt="Illustration av personer som samarbetar"
+          class="max-w-md mx-auto" />
       </div>
     </div>
   </div>

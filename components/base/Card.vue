@@ -3,7 +3,7 @@
     class="bg-white rounded-lg shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow">
     <div class="p-6">
       <div class="text-primary mb-4">
-        <slot name="icon"></slot>
+        <Icon :name="icon" class="h-8 w-8" />
       </div>
 
       <h3 class="text-xl font-semibold mb-3">{{ title }}</h3>
@@ -37,6 +37,10 @@ defineProps({
     required: true
   },
   linkText: {
+    type: String,
+    required: true
+  },
+  icon: {
     type: String,
     required: true
   }
