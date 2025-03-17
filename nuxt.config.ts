@@ -1,18 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
-  // Enable Nuxt Content module
-  modules: ["@nuxt/content"],
-  // CSS global styles
+  modules: [
+    "@nuxtjs/sitemap",
+    "@nuxt/content",
+    "@nuxt/icon",
+    "nuxt-time",
+    "dayjs-nuxt",
+  ],
   css: ["~/assets/css/main.css"],
-
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   // Generate global types
   typescript: {
     strict: true,
     typeCheck: true,
   },
-
   app: {
     head: {
       htmlAttrs: {
