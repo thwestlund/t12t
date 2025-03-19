@@ -7,6 +7,11 @@ principleName: Begriplig
 guidelineNumber: 2
 guidelineName: Förutsägbar
 criterionNumber: 5
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 3.2.5 Ändringar på begäran

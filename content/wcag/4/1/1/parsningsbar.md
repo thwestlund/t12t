@@ -7,6 +7,11 @@ principleName: Robust
 guidelineNumber: 1
 guidelineName: Kompatibel
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 4.1.1 Parsningsbar

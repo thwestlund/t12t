@@ -7,6 +7,11 @@ principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 1.2.1 Audio och video (inspelade)

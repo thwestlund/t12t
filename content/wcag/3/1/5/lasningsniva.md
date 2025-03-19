@@ -7,6 +7,11 @@ principleName: Begriplig
 guidelineNumber: 1
 guidelineName: Läsbart
 criterionNumber: 5
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 3.1.5 Läsningsnivå

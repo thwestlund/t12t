@@ -8,6 +8,11 @@ principleName: Begriplig
 guidelineNumber: 1
 guidelineName: Läsbart
 criterionNumber: 4
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 3.1.4 Förkortningar

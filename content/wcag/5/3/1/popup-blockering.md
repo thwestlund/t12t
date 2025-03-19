@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.3.1 - Popup-blockering
 description: Nya fönster, popup-fönster eller andra elementerbjuder specifika stängningsfunktioner såvida inte att stänga den typen av element skulle betyda att syftet med innehållet går förlorat.
-riktlinjeNumber: 5.3.1
-riktlinjeName: Popup-blockering
 level: A
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 3
 guidelineName: Åtgärder
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.3.1 Popup-blockering

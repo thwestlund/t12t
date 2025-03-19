@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.7 - Drag-and-drop-information
 description: För dra och släpp-operationer tillhandahålls information om vad som kan dras, från var till var och resultatet av åtgärden.
-riktlinjeNumber: 5.7
-riktlinjeName: Drag-and-drop-information
 level: A
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 7
 guidelineName: Drag-and-drop-information
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.7 Drag-and-drop-information

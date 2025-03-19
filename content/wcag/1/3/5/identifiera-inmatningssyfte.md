@@ -7,6 +7,11 @@ principleName: Möjlig att uppfatta
 guidelineNumber: 3
 guidelineName: Anpassningsbart
 criterionNumber: 5
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 1.3.5 Identifiera inmatningssyfte

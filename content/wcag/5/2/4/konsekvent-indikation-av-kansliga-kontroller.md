@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.2.4 - Konsekvent indikation av känsliga kontroller
 description: Gränssnittskomponenter vars aktivering kan resultera i betydande förändringar för användaren eller dataförlust, indikeras på ett konsekvent sätt inom produkten.
-riktlinjeNumber: 5.2.4
-riktlinjeName: Konsekvent indikation av känsliga kontroller
 level: AA
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 2
 guidelineName: Ytterligare gester
 criterionNumber: 4
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.2.4 Konsekvent indikation av känsliga kontroller

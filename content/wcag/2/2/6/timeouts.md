@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 2
 guidelineName: Tillräckligt med tid
 criterionNumber: 6
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 2.2.6 Timeouts

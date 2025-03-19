@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.6 - Grafisk anpassning
 description: Grafiska användargränssnitt kan anpassas och anpassningen är beständig.
-riktlinjeNumber: 5.6
-riktlinjeName: Grafisk anpassning
 level: AAA
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 6
 guidelineName: Grafisk anpassning
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.6 Grafisk anpassning

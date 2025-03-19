@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 3
 guidelineName: Anfallsframkallande
 criterionNumber: 3
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 2.3.3 Animation från interaktioner

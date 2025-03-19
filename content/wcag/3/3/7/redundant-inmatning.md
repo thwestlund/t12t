@@ -7,6 +7,11 @@ principleName: Begriplig
 guidelineNumber: 3
 guidelineName: Inmatningsstöd
 criterionNumber: 7
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 3.3.7 Redundant inmatning

@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.2.2 - Gränssnittsriktning
 description: Om ett användargränssnitt erbjuder en riktningsbegränsad vy, är det väsentliga innehållet och funktionaliteten i denna vy också tillgängligt i en icke-riktningsbegränsad vy, såvida inte den riktningsbegränsade presentationen är nödvändig.
-riktlinjeNumber: 5.2.2
-riktlinjeName: Gränssnittsriktning
 level: AA
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 2
 guidelineName: Ytterligare gester
 criterionNumber: 2
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.2.2 Gränssnittsriktning

@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 5
 guidelineName: Inmatningsmetoder
 criterionNumber: 7
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 2.5.7 Drag and Drop

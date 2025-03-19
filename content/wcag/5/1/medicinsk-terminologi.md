@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.1 - Medicinsk terminologi
 description: Sidor som inkluderar innehåll riktat till både vårdpersonal och patienter ska identifiera medicinska termer och jargong, och tillhandahålla en definition av dessa termer.
-riktlinjeNumber: 5.1
-riktlinjeName: Vårdjargong
 level: AA
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 1
 guidelineName: Medicinsk terminologi
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.1 Medicinsk terminologi

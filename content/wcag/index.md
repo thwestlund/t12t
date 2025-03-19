@@ -1,6 +1,11 @@
 ---
 title: WCAG - Web Content Accessibility Guidelines
 description: Komplett guide till WCAG 2.2-riktlinjerna på svenska med kodexempel, testmetoder och praktiska tips för implementering.
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # WCAG - Riktlinjer för tillgänglig webb

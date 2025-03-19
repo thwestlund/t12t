@@ -1,6 +1,11 @@
 ---
 title: T12T - Digital Tillgänglighet i Sverige
 description: Sveriges främsta resurs för information om digital tillgänglighet, webbtillgänglighet och universell design för webbutvecklare, designers, och innehållskapare.
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # T12T - Digital Tillgänglighet

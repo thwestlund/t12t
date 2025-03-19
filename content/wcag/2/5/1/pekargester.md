@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 5
 guidelineName: Inmatningsmetoder
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 2.5.1 Pekargester

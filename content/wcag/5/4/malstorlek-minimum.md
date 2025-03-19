@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.4 - Målstorlek minst 24 CSS-pixlar
 description: Storleken på målet för pekarinmatning är minst 24 CSS-pixlar längs två dimensioner utom när målstorleken bestäms av användaren, målet finns i ett textblock, eller den ursprungliga storleken på målet är bevarad.
-riktlinjeNumber: 5.4
-riktlinjeName: Målstorlek minst 24 CSS-pixlar
 level: AA
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 4
 guidelineName: Målstorlek
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.4 Målstorlek minst 24 CSS-pixlar

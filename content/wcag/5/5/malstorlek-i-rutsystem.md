@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.5 - Målstorlek i rutsystem
 description: För användargränssnitt med rutor i rutsystem är klickbara rutor minst 24 CSS-pixlar längs två dimensioner.
-riktlinjeNumber: 5.5
-riktlinjeName: Målstorlek i rutsystem
 level: AA
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 5
 guidelineName: Målstorlek i rutsystem
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.5 Målstorlek i rutsystem

@@ -3,6 +3,11 @@ title: Princip 1 - Möjlig att uppfatta
 description: Information och komponenter i användargränssnittet måste presenteras för användare på sätt som de kan uppfatta.
 principleNumber: 1
 principleName: Möjlig att uppfatta
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Princip 1: Möjlig att uppfatta

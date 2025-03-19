@@ -8,6 +8,11 @@ tags:
   - T12T
   - A11Y
   - Webbutveckling
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Välkommen till T12T - Sveriges kunskapsplattform för digital tillgänglighet

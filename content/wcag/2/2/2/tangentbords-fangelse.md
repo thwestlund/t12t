@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 1
 guidelineName: Tillgängligt via tangentbord
 criterionNumber: 2
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 2.1.2 Tangentbordsfängelse

@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.3.2 - Svarstid
 description: När en tidsinteraktion startas av en produkts gränssnitt, kan användaren förlänga tidsgränsen med minst 10 gånger den ursprungliga tidsgränsen.
-riktlinjeNumber: 5.3.2
-riktlinjeName: Svarstid
 level: A
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 3
 guidelineName: Åtgärder
 criterionNumber: 2
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.3.2 Svarstid

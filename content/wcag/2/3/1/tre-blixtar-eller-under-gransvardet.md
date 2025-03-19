@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 3
 guidelineName: Anfallsframkallande
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 2.3.1 Tre blixtar eller under gränsvärdet

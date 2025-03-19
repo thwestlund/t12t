@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.2.3 - Knappar som ser ut som knappar
 description: Gränssnittskomponenter med en roll som knappar har ett utseende som visar att de kan aktiveras.
-riktlinjeNumber: 5.2.3
-riktlinjeName: Knappar som ser ut som knappar
 level: A
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 2
 guidelineName: Ytterligare gester
 criterionNumber: 3
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.2.3 Knappar som ser ut som knappar

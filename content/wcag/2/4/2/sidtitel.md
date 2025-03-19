@@ -7,6 +7,11 @@ principleName: Hanterbar
 guidelineNumber: 4
 guidelineName: Navigerbart
 criterionNumber: 2
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 2.4.2 Sidtitel

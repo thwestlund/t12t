@@ -7,6 +7,11 @@ principleName: Begriplig
 guidelineNumber: 3
 guidelineName: Inmatningsstöd
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 3.3.1 Identifiering av fel

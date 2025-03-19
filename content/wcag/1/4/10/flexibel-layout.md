@@ -7,6 +7,11 @@ principleName: Möjlig att uppfatta
 guidelineNumber: 4
 guidelineName: Urskiljbart
 criterionNumber: 10
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 1.4.10 Flexibel layout

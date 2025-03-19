@@ -7,6 +7,11 @@ principleName: Möjlig att uppfatta
 guidelineNumber: 4
 guidelineName: Urskiljbart
 criterionNumber: 12
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 1.4.12 Textavstånd

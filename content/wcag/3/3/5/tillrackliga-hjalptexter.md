@@ -7,6 +7,11 @@ principleName: Begriplig
 guidelineNumber: 3
 guidelineName: Inmatningsstöd
 criterionNumber: 5
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 3.3.5 Tillräckliga hjälptexter

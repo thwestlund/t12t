@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.2.5 - Information om tillgänglighetsfunktioner
 description: Om produkten har dokumentation tillhandahåller dokumentationen information om produktens tillgänglighetsfunktioner.
-riktlinjeNumber: 5.2.5
-riktlinjeName: Information om tillgänglighetsfunktioner
 level: A
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 2
 guidelineName: Ytterligare gester
 criterionNumber: 5
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.2.5 Information om tillgänglighetsfunktioner

@@ -7,6 +7,11 @@ principleName: Begriplig
 guidelineNumber: 2
 guidelineName: Förutsägbar
 criterionNumber: 4
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # Framgångskriterium 3.2.4 Konsekventa identifieringar

@@ -1,14 +1,17 @@
 ---
 title: Riktlinje 5.2.1 - Dragbara gränssnittskomponenter
 description: Om ett användargränssnitt innehåller gränssnittskomponenter som kan dras, kan dessa komponenter flyttas genom andra metoder, om inte dragning är nödvändig för funktionen.
-riktlinjeNumber: 5.2.1
-riktlinjeName: Dragbara gränssnittskomponenter
 level: A
 principleNumber: 5
 principleName: Tillgängligt
 guidelineNumber: 2
 guidelineName: Ytterligare gester
 criterionNumber: 1
+
+sitemap:
+  lastmod: 2025-03-19
+  changefreq: monthly
+  priority: 0.8
 ---
 
 # 5.2.1 Dragbara gränssnittskomponenter
