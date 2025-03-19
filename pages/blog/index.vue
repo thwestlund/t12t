@@ -56,7 +56,6 @@ useSeoMeta({
 const { data: posts } = await useAsyncData('blog-posts', () =>
   queryCollection('blog').order('date', 'DESC').all()
 )
-console.log(posts.value)
 
 // Format date to Swedish locale
 const formatDate = (date: string) => {

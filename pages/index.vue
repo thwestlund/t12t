@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main id="main-content">
     <LandingHero title="T12T - Digital Tillgänglighet"
       description="Sveriges kunskapsplattform för att bygga tillgängliga digitala tjänster och webbplatser för alla användare."
       primaryButtonText="Utforska kunskapsbanken" primaryButtonUrl="/kunskapsbank" secondaryButtonText="Om T12T"
@@ -37,7 +37,7 @@
       <i-mdi:menu-book-outline />
       <BaseCtaBannerVue />
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
