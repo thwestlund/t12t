@@ -18,5 +18,21 @@ export default defineContentConfig({
         author: z.string().optional(),
       }),
     }),
+
+    wcag: defineCollection({
+      type: "page",
+      source: { include: "wcag/**/*.md", exclude: ["wcag/**/**/index.md"] },
+      // Schema for WCAG criteria
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        level: z.enum(["A", "AA", "AAA"]),
+        principleNumber: z.string().or(z.number()),
+        principleName: z.string(),
+        guidelineNumber: z.string().or(z.number()),
+        guidelineName: z.string(),
+        criterionNumber: z.string().or(z.number()),
+      }),
+    }),
   },
 });
