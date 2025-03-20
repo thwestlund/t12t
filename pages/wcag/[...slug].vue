@@ -2,7 +2,7 @@
   <main class="max-w-container" aria-label="Kriterium">
     <div class=" bg-white rounded-lg shadow-sm border border-neutral-200 p-6 mb-8">
       <div class="flex flex-wrap items-center justify-between mb-6">
-        <span class="">
+        <span class="text-sm">
           {{ data?.title || 'Framgångskriterium' }}
         </span>
 
@@ -19,7 +19,6 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import WcagSidebarDynamic from '~/components/WcagSidebarDynamic.vue';
 import WcagLevelBadge from '~/components/WcagLevelBadge.vue';
 
 definePageMeta({

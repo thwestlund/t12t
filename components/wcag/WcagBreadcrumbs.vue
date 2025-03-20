@@ -1,6 +1,6 @@
 <template>
-  <nav aria-label="Breadcrumbs" class="mb-6">
-    <ol class="flex flex-wrap flex-row text-sm">
+  <nav aria-label="Breadcrumbs" class="mb-4 lg:mb-6">
+    <ol class="flex flex-wrap flex-row text-sm gap-1">
       <li class="flex items-center">
         <NuxtLink to="/" class="text-neutral-600 hover:text-primary">
           Hem
@@ -49,87 +49,61 @@ const isWcagPath = computed(() => {
 const generateBreadcrumbs = async () => {
   const newBreadcrumbs = [];
 
-  if (isWcagPath.value) {
-    // Extract route parts for WCAG path
-    const pathParts = route.path.split('/').filter(part => part);
+  // Extract route parts for WCAG path
+  const pathParts = route.path.split('/').filter(part => part);
 
-    // Skip "wcag" (already in the static breadcrumb)
-    const relevantParts = pathParts.slice(1);
-    let currentPath = 'wcag';
+  // Skip "wcag" (already in the static breadcrumb)
+  const relevantParts = isWcagPath.value ? pathParts.slice(1) : pathParts;
 
-    // For WCAG paths, handle special structure (principle/guideline/criterion)
-    if (relevantParts.length > 0) {
-      try {
-        // For each path segment, build breadcrumb
-        for (let i = 0; i < relevantParts.length; i++) {
-          currentPath += `/${relevantParts[i]}`;
+  // For WCAG paths, handle special structure (principle/guideline/criterion)
+  if (relevantParts.length > 0 && isWcagPath.value) {
+    try {
+      // For each path segment, build breadcrumb
+      for (let i = 0; i < relevantParts.length - 1; i++) {
+        // Build the correct path with proper prefix
+        const currentPath = `/wcag/${relevantParts.slice(0, i + 1).join('/')}`;
 
-          // Determine what type of item this is
-          let title;
+        // Determine what type of item this is
+        let title;
 
-          if (i === 0) {
-            // This is a principle (1, 2, 3, 4)
-            const principleTitles = {
-              '1': 'Möjlig att uppfatta',
-              '2': 'Hanterbar',
-              '3': 'Begriplig',
-              '4': 'Robust',
-              '5': 'Likhet'
-            };
-            title = `${relevantParts[i]}. ${principleTitles[relevantParts[i]] || 'Princip'}`;
-          }
-          else if (i === 1) {
-            // This is a guideline
-            title = `${relevantParts[i - 1]}.${relevantParts[i]} Riktlinje`;
-          }
-          else if (i === 2) {
-            // This is a criterion
-
-            const content = await queryCollection('wcag').where('id', 'LIKE', '%' + currentPath + '%').first();
-
-            if (content) {
-              title = `${relevantParts[i - 2]}.${relevantParts[i - 1]}.${relevantParts[i]} ${content.title}`;
-            } else {
-              title = `${relevantParts[i - 2]}.${relevantParts[i - 1]}.${relevantParts[i]} Kriterium`;
-            }
-          }
-          else {
-            // This is a subpage or additional content
-            const content = await queryCollection('wcag').where('id', 'LIKE', '%' + currentPath + '%').first();
-            title = content?.title || relevantParts[i];
-          }
-
-          newBreadcrumbs.push({
-            title,
-            path: currentPath
-          });
+        if (i === 0) {
+          // This is a principle (1, 2, 3, 4)
+          const principleTitles = {
+            '1': 'Möjlig att uppfatta',
+            '2': 'Hanterbar',
+            '3': 'Begriplig',
+            '4': 'Robust',
+            '5': 'Likhet'
+          };
+          title = `${relevantParts[i]}. ${principleTitles[relevantParts[i]] || 'Princip'}`;
         }
-      } catch (error) {
-        console.error('Error generating breadcrumbs:', error);
-      }
-    }
-  } else {
-    // For non-WCAG paths, use simple logic
-    const pathSegments = route.path.split('/').filter(segment => segment);
-    let currentPath = '';
+        else if (i === 1) {
+          // This is a guideline
+          title = `${relevantParts[i - 1]}.${relevantParts[i]} Riktlinje`;
+        }
+        else if (i === 2) {
+          // This is a criterion
+          const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
 
-    for (const segment of pathSegments) {
-      currentPath += `/${segment}`;
-
-      try {
-        const content = await queryContent(currentPath).findOne();
-        const title = content?.title || segment.charAt(0).toUpperCase() + segment.slice(1);
+          if (content) {
+            title = `${relevantParts[i - 2]}.${relevantParts[i - 1]}.${relevantParts[i]} ${content.title}`;
+          } else {
+            title = `${relevantParts[i - 2]}.${relevantParts[i - 1]}.${relevantParts[i]} Kriterium`;
+          }
+        }
+        else {
+          // This is a subpage or additional content
+          const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
+          title = content?.title || relevantParts[i];
+        }
 
         newBreadcrumbs.push({
           title,
           path: currentPath
         });
-      } catch (error) {
-        newBreadcrumbs.push({
-          title: segment.charAt(0).toUpperCase() + segment.slice(1),
-          path: currentPath
-        });
       }
+    } catch (error) {
+      console.error('Error generating breadcrumbs:', error);
     }
   }
 

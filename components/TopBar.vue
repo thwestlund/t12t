@@ -1,6 +1,6 @@
 <template>
   <header class="bg-white shadow-sm">
-    <div class="px-8 py-4">
+    <div class="py-4 px-4 lg:px-8 lg:py-4">
       <div class="flex items-center justify-between">
         <NuxtLink to="/" class="text-2xl font-heading font-bold text-primary hover:no-underline flex items-center">
           <span class="sr-only">T12T - Digital Tillgänglighet</span>
@@ -41,12 +41,12 @@
           class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-secondary"
           :aria-expanded="isMenuOpen" aria-controls="mobile-menu" aria-label="Öppna huvudmeny">
           <span class="sr-only">{{ isMenuOpen ? 'Stäng meny' : 'Öppna meny' }}</span>
-          <svg class="h-6 w-6" :class="{ 'hidden': isMenuOpen, 'block': !isMenuOpen }" stroke="currentColor"
-            fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="h-6 w-6" :class="{ 'hidden': isMenuOpen, 'block': !isMenuOpen }" stroke="currentColor" fill="none"
+            viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg class="h-6 w-6" :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" stroke="currentColor"
-            fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="h-6 w-6" :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" stroke="currentColor" fill="none"
+            viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -57,7 +57,10 @@
     <div id="mobile-menu" class="md:hidden" :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }"
       aria-label="Mobilmeny">
       <div class="pt-2 pb-4 space-y-1">
-        <NuxtLink to="/kunskapsbank"
+        <NuxtLink to="/wcag" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">WCAG
+        </NuxtLink>
+
+        <!--NuxtLink to="/kunskapsbank"
           class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">
           Kunskapsbank
         </NuxtLink>
@@ -66,7 +69,7 @@
         </NuxtLink>
         <NuxtLink to="/testning" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">
           Testning
-        </NuxtLink>
+        </NuxtLin-->
         <NuxtLink to="/blog" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">
           Blogg
         </NuxtLink>

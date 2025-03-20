@@ -9,9 +9,9 @@
       </p>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <NuxtLink to="/kunskapsbank"
+        <NuxtLink to="/wcag"
           class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-          Utforska kunskapsbanken
+          Utforska WCAG
         </NuxtLink>
 
         <NuxtLink to="/om/kontakt"

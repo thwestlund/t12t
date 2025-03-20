@@ -13,31 +13,31 @@
   }
   
   h1 {
-    @apply text-3xl md:text-4xl mb-6;
+    @apply lg:text-3xl text-2xl md:text-4xl mb-2 lg:mb-6;
   }
   
   h2 {
-    @apply text-2xl md:text-3xl mb-4 mt-8;
+    @apply lg:text-2xl text-xl md:text-3xl mb-2 mt-4 lg:mb-4 lg:mt-8;
   }
   
   h3 {
-    @apply text-xl md:text-2xl mb-3 mt-6;
+    @apply lg:text-xl text-lg md:text-2xl mb-1 mt-3 lg:mb-3 lg:mt-6;
   }
 
   h4 {
-    @apply text-lg md:text-2xl mb-3 mt-6;
+    @apply lg:text-lg md:text-2xl mb-1 mt-3 lg:mb-3 lg:mt-6;
   }
 
   h5 {
-    @apply md:text-2xl mb-3 mt-6;
+    @apply lg:text-2xl mb-1 mt-3 lg:mb-3 lg:mt-6;
   }
 
   h6 {
-    @apply md:text-2xl mb-3 mt-6;
+    @apply lg:text-2xl mb-1 mt-3 lg:mb-3 lg:mt-6;
   }
   
   p {
-    @apply mb-4;
+    @apply mb-2 lg:mb-4;
   }
   
   a {

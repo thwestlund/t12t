@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-lg shadow-sm border border-neutral-200 overflow-auto max-h-svh min-w-96 flex-1 top-8">
+  <div class="bg-white rounded-lg shadow-sm border border-neutral-200 overflow-auto max-h-svh lg:min-w-96 flex-1 top-8">
     <div class="bg-primary-light px-4 py-1 border-b border-neutral-200">
       <h2 class="text-lg font-semibold text-primary">WCAG 2.2</h2>
     </div>
@@ -44,7 +44,7 @@
               <ul class="space-y-1 border-l border-neutral-200">
                 <li v-for="criterion in guideline.criteria" :key="criterion.path">
                   <NuxtLink :to="criterion.path"
-                    class="flex items-center pl-4 py-2 text-sm border-l-2 hover:bg-neutral-50"
+                    class="flex items-center pl-2 py-1 lg:pl-4 lg:py-2 text-sm border-l-2 hover:bg-neutral-50"
                     :class="isActivePath(criterion.path) ? 'border-primary text-primary font-medium' : 'border-transparent text-neutral-600 hover:text-primary hover:border-neutral-300'">
                     <div class="flex items-center flex-1">
                       <span>{{ principle.number }}.{{ guideline.number }}.{{ criterion.number }} {{
@@ -261,6 +261,7 @@ const openAllGuidelines = () => {
 // Fetch data on mount
 onMounted(async () => {
   await fetchWcagStructure();
+  //autoOpenGuideline();
   //openAllGuidelines();
   // Nu när data är laddad, öppna alla riktlinjer om vi är på WCAG-översiktssidan
   /*if (route.path === '/wcag' || route.path === '/wcag/') {

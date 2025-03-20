@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-4xl mx-auto py-4 px-4 lg:py-8 lg:px-8">
     <div class="mb-8">
       <h1 class="text-3xl md:text-4xl font-bold mb-4">Blogg</h1>
       <p class="text-lg text-neutral-600">Senaste nyheter, guider och insikter om digital tillgänglighet.</p>

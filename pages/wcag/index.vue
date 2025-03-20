@@ -141,7 +141,7 @@
     </div>
 
     <!-- Feature cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <!--div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow">
         <h2 class="text-xl font-bold mb-3">Tillgänglighetstestning</h2>
         <p class="text-neutral-600 mb-4">
@@ -158,7 +158,7 @@
         </NuxtLink>
       </div>
 
-      <div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow">
+      <!--div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow">
         <h2 class="text-xl font-bold mb-3">Skärmläsarguider</h2>
         <p class="text-neutral-600 mb-4">
           Förstå hur du kan testa din webbplats med skärmläsare, ett viktigt steg för att säkerställa
@@ -173,7 +173,7 @@
           </svg>
         </NuxtLink>
       </div>
-    </div>
+    </div-->
   </main>
 </template>
 
