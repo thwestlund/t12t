@@ -46,7 +46,7 @@
   
   /* Making sure focus styles are visible */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
+    @apply outline-none ring-2 ring-primary ring-offset-2 rounded-sm;
   }
   
   body {
