@@ -41,6 +41,8 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 
 #### Informativ bild med alt-text
 
+::code-group{:labels='["index.html"]'}
+
 ```html
 <img
   src="diagram-energiforbrukning.png"
@@ -50,13 +52,21 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 />
 ```
 
+::
+
 #### Dekorativ bild
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <img src="dekorativ-linje.png" alt="" role="presentation" />
 ```
 
+::
+
 #### Bildlänk
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <a href="kontakt.html">
@@ -64,7 +74,11 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 </a>
 ```
 
+::
+
 #### Logotyp med länk till startsida
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <a href="/" aria-label="Företagsnamn - Till startsidan">
@@ -72,7 +86,11 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 </a>
 ```
 
+::
+
 #### Komplex bild med långt textalternativ
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <figure>
@@ -90,27 +108,43 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 </figure>
 ```
 
+::
+
 ### Exempel på bristande implementering
 
 #### Bild utan alt-text
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <img src="diagram.png" />
 ```
 
+::
+
 #### Ickebeskrivande alt-text
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <img src="graf-2023.png" alt="Bild" />
 ```
 
+::
+
 #### Filnamn som alt-text
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <img src="IMG_20230824.jpg" alt="IMG_20230824.jpg" />
 ```
 
+::
+
 #### Överflödig alt-text
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <img
@@ -118,6 +152,8 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
   alt="Bild på en person med brunt hår och blå tröja som står framför en byggnad och ler mot kameran en solig dag i augusti när löven börjat falla från träden"
 />
 ```
+
+::
 
 ## Länk till mer information
 

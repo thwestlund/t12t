@@ -19,25 +19,21 @@ Digital tillgänglighet handlar om att designa och utveckla digitala produkter s
 
 ## Huvudområden
 
-### [WCAG-standarder](/kunskapsbank/wcag)
-Web Content Accessibility Guidelines (WCAG) är den internationella standarden för webbtillgänglighet. Lär dig om principer, riktlinjer och hur du implementerar dem i dina projekt.
-
 ### [Lagstiftning](/kunskapsbank/lagstiftning)
-Få information om aktuella lagar och regler som påverkar digital tillgänglighet i Sverige och EU, inklusive DOS-lagen och European Accessibility Act (EAA).
 
-### [Utveckling](/kunskapsbank/utveckling)
-Praktiska guider för tillgänglig webbutveckling inom HTML, CSS, JavaScript och andra tekniker. 
+Få information om aktuella lagar och regler som påverkar digital tillgänglighet i Sverige och EU, inklusive DOS-lagen och European Accessibility Act (EAA).
 
 ## Kodexempel
 
 Här är ett enkelt exempel på en tillgänglig knapp med både visuell och textuell återkoppling:
 
 ```html
-<button 
-  type="button" 
+<button
+  type="button"
   aria-pressed="false"
   class="toggle-button"
-  id="notification-toggle">
+  id="notification-toggle"
+>
   Aktivera notifikationer
 </button>
 ```
@@ -51,7 +47,7 @@ Här är ett enkelt exempel på en tillgänglig knapp med både visuell och text
 }
 
 .toggle-button[aria-pressed="true"] {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -62,22 +58,24 @@ Här är ett enkelt exempel på en tillgänglig knapp med både visuell och text
 ```
 
 ```javascript
-document.getElementById('notification-toggle').addEventListener('click', function(e) {
-  const button = e.currentTarget;
-  const isPressed = button.getAttribute('aria-pressed') === 'true';
-  
-  button.setAttribute('aria-pressed', !isPressed);
-  
-  // Uppdatera texten för skärmläsare
-  if (!isPressed) {
-    // Använd aria-live för att meddela skärmläsare om statusförändringen
-    const liveRegion = document.getElementById('status-message');
-    liveRegion.textContent = 'Notifikationer aktiverade';
-  } else {
-    const liveRegion = document.getElementById('status-message');
-    liveRegion.textContent = 'Notifikationer inaktiverade';
-  }
-});
+document
+  .getElementById("notification-toggle")
+  .addEventListener("click", function (e) {
+    const button = e.currentTarget;
+    const isPressed = button.getAttribute("aria-pressed") === "true";
+
+    button.setAttribute("aria-pressed", !isPressed);
+
+    // Uppdatera texten för skärmläsare
+    if (!isPressed) {
+      // Använd aria-live för att meddela skärmläsare om statusförändringen
+      const liveRegion = document.getElementById("status-message");
+      liveRegion.textContent = "Notifikationer aktiverade";
+    } else {
+      const liveRegion = document.getElementById("status-message");
+      liveRegion.textContent = "Notifikationer inaktiverade";
+    }
+  });
 ```
 
 ## Resurser och verktyg
