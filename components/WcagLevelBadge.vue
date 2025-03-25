@@ -1,12 +1,6 @@
 <template>
-  <span 
-    class="items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-    :class="levelClass"
-    :aria-label="levelTitle"
-    :title="levelTitle"
-    role="text"
-  >
-  {{ level }}
+  <span class="items-center px-2.5 py-0.5 rounded-full text-xs font-medium" :class="levelClass" :title="levelTitle">
+    {{ level }}
   </span>
 </template>
 
@@ -25,7 +19,7 @@ const levelClass = computed(() => {
     'AA': 'bg-amber-100 text-amber-800',
     'AAA': 'bg-green-100 text-green-800'
   }
-  
+
   return classes[props.level] || 'bg-neutral-100 text-neutral-800'
 })
 
@@ -35,7 +29,7 @@ const levelTitle = computed(() => {
     'AA': 'Nivå AA - Standard för de flesta webbplatser, inklusive offentliga organisationer',
     'AAA': 'Nivå AAA - Högsta nivån av tillgänglighet'
   }
-  
+
   return titles[props.level] || ''
 })
 </script>

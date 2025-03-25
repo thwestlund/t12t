@@ -41,12 +41,12 @@
   }
   
   a {
-    @apply text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    @apply text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 py-2.5;
   }
   
   /* Making sure focus styles are visible */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
+    @apply outline-none ring-2 ring-primary ring-offset-2 rounded-sm;
   }
   
   body {
@@ -80,7 +80,7 @@
   }
   
   .prose code {
-    @apply bg-neutral-100 px-1.5 py-0.5 rounded text-sm;
+    @apply bg-neutral-100;
   }
   
   .prose table {

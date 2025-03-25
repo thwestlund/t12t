@@ -34,6 +34,8 @@ Genom att säkerställa att färg inte är det enda sättet att förmedla inform
 
 #### Felmeddelande med både färg och ikon/text
 
+::code-group{:labels='["index.html", "styles.css"]'}
+
 ```html
 <div class="error" role="alert">
   <span class="error-icon">❌</span>
@@ -50,25 +52,33 @@ Genom att säkerställa att färg inte är det enda sättet att förmedla inform
 }
 ```
 
+::
+
 #### Länk som markeras med både färg och understrykning
 
-```html
-<style>
-  a {
-    color: #0066cc;
-    text-decoration: underline;
-  }
-  a:hover,
-  a:focus {
-    color: #004080;
-    text-decoration: underline;
-  }
-</style>
+::code-group{:labels='["index.html", "styles.css"]'}
 
+```html
 <p>Besök vår <a href="/kontakt">kontaktsida</a> för mer information.</p>
 ```
 
+```css
+a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+a:hover,
+a:focus {
+  color: #004080;
+  text-decoration: underline;
+}
+```
+
+::
+
 #### Diagram med både färg och mönster
+
+::code-group{:labels='["index.html"]'}
 
 ```html
 <figure>
@@ -83,17 +93,15 @@ Genom att säkerställa att färg inte är det enda sättet att förmedla inform
 </figure>
 ```
 
+::
+
 ### Exempel på bristande implementering
 
 #### Obligatoriska fält markerade endast med färg
 
-```html
-<style>
-  .required {
-    color: red;
-  }
-</style>
+::code-group{:labels='["index.html", "styles.css"]'}
 
+```html
 <form>
   <div>
     <label class="required">Namn</label>
@@ -107,18 +115,19 @@ Genom att säkerställa att färg inte är det enda sättet att förmedla inform
 </form>
 ```
 
+```css
+.required {
+  color: red;
+}
+```
+
+::
+
 #### Tillstånd indikeras endast med färg
 
-```html
-<style>
-  .available {
-    color: green;
-  }
-  .unavailable {
-    color: red;
-  }
-</style>
+::code-group{:labels='["index.html", "styles.css"]'}
 
+```html
 <p>Produktstatus:</p>
 <ul>
   <li class="available">Produkt A</li>
@@ -128,19 +137,32 @@ Genom att säkerställa att färg inte är det enda sättet att förmedla inform
 </ul>
 ```
 
+```css
+.available {
+  color: green;
+}
+.unavailable {
+  color: red;
+}
+```
+
 #### Länkar som skiljer sig från omgivande text endast genom färg
 
-```html
-<style>
-  a {
-    color: #0066cc;
-    text-decoration: none; /* Ingen understrykning */
-  }
-</style>
+::code-group{:labels='["index.html", "styles.css"]'}
 
+```html
 <p>Läs mer om våra tjänster på vår serviceavdelning.</p>
 <!-- "serviceavdelning" är en länk, men det framgår endast av färgen -->
 ```
+
+```css
+a {
+  color: #0066cc;
+  text-decoration: none; /* Ingen understrykning */
+}
+```
+
+::
 
 ## Länk till mer information
 

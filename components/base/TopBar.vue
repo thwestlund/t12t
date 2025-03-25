@@ -1,10 +1,10 @@
 <template>
   <header class="bg-white shadow-sm">
-    <div class="py-4 px-4 lg:px-8 lg:py-4">
+    <div class="py-3 px-4 lg:px-6 lg:py-3">
       <div class="flex items-center justify-between">
         <NuxtLink to="/" class="text-2xl font-heading font-bold text-primary hover:no-underline flex items-center">
           <span class="sr-only">T12T - Digital Tillgänglighet</span>
-          <span aria-hidden="true">T12T</span>
+          <span aria-hidden="true" class="p-2">T12T</span>
         </NuxtLink>
 
         <!-- Skip to main content link -->
@@ -14,9 +14,9 @@
         </a>
 
         <nav class="hidden md:block" aria-label="Huvudmeny">
-          <ul class="flex space-x-8">
+          <ul class="flex">
             <li>
-              <NuxtLink to="/wcag" class="text-secondary hover:text-primary">WCAG</NuxtLink>
+              <NuxtLink to="/wcag" class="text-secondary hover:text-primary p-4">WCAG</NuxtLink>
             </li>
             <!--li>
               <NuxtLink to="/kunskapsbank" class="text-secondary hover:text-primary py-2">Kunskapsbank</NuxtLink>
@@ -28,10 +28,10 @@
               <NuxtLink to="/testning" class="text-secondary hover:text-primary py-2">Testning</NuxtLink>
             </li-->
             <li>
-              <NuxtLink to="/blog" class="text-secondary hover:text-primary py-2">Blogg</NuxtLink>
+              <NuxtLink to="/blog" class="text-secondary hover:text-primary p-4">Blogg</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/om" class="text-secondary hover:text-primary py-2">Om T12T</NuxtLink>
+              <NuxtLink to="/om" class="text-secondary hover:text-primary p-4">Om T12T</NuxtLink>
             </li>
           </ul>
         </nav>
@@ -41,11 +41,11 @@
           class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-secondary"
           :aria-expanded="isMenuOpen" aria-controls="mobile-menu" aria-label="Öppna huvudmeny">
           <span class="sr-only">{{ isMenuOpen ? 'Stäng meny' : 'Öppna meny' }}</span>
-          <svg class="h-6 w-6" :class="{ 'hidden': isMenuOpen, 'block': !isMenuOpen }" stroke="currentColor" fill="none"
+          <svg class="h-7 w-7" :class="{ 'hidden': isMenuOpen, 'block': !isMenuOpen }" stroke="currentColor" fill="none"
             viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg class="h-6 w-6" :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" stroke="currentColor" fill="none"
+          <svg class="h-7 w-7" :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }" stroke="currentColor" fill="none"
             viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -57,7 +57,7 @@
     <div id="mobile-menu" class="md:hidden" :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }"
       aria-label="Mobilmeny">
       <div class="pt-2 pb-4 space-y-1">
-        <NuxtLink to="/wcag" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">WCAG
+        <NuxtLink to="/wcag" class="block px-4 py-2.5 text-base font-medium text-secondary hover:bg-neutral-100">WCAG
         </NuxtLink>
 
         <!--NuxtLink to="/kunskapsbank"
@@ -70,10 +70,10 @@
         <NuxtLink to="/testning" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">
           Testning
         </NuxtLin-->
-        <NuxtLink to="/blog" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">
+        <NuxtLink to="/blog" class="block px-4 py-2.5 text-base font-medium text-secondary hover:bg-neutral-100">
           Blogg
         </NuxtLink>
-        <NuxtLink to="/om" class="block px-4 py-2 text-base font-medium text-secondary hover:bg-neutral-100">
+        <NuxtLink to="/om" class="block px-4 py-2.5 text-base font-medium text-secondary hover:bg-neutral-100">
           Om T12T
         </NuxtLink>
       </div>

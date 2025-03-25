@@ -45,7 +45,7 @@
           Du kan rapportera problem genom att:
         </p>
         <ul>
-          <li>Skicka e-post till <a href="mailto:tillganglighet@t12t.se">tillganglighet@t12t.se</a></li>
+          <li>Skicka e-post till <a href="mailto:thommy@forge-it.se">thommy@forge-it.se</a></li>
           <li>Använda <NuxtLink to="/om/kontakt">kontaktformuläret</NuxtLink> på vår webbplats</li>
           <li>Skapa ett ärende i vårt <a href="https://github.com/t12t/website/issues">GitHub-repo</a></li>
         </ul>

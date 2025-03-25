@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-container" aria-label="Huvudinnehåll">
+  <main class="max-w-container" aria-label="Huvudinnehåll" id="main-content">
     <div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 mb-8">
       <h1 class="text-3xl font-bold mb-6">WCAG 2.2 - Riktlinjer för tillgängligt webbinnehåll</h1>
 

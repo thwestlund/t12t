@@ -2,8 +2,8 @@
   <main id="main-content">
     <LandingHero title="T12T - Digital Tillgänglighet"
       description="Sveriges kunskapsplattform för att bygga tillgängliga digitala tjänster och webbplatser för alla användare."
-      primaryButtonText="Utforska kunskapsbanken" primaryButtonUrl="/kunskapsbank" secondaryButtonText="Om T12T"
-      secondaryButtonUrl="/om" :features="features" />
+      primaryButtonText="Utforska WCAG" primaryButtonUrl="/wcag" secondaryButtonText="Om T12T" secondaryButtonUrl="/om"
+      :features="features" />
 
     <div class="container-main py-16">
       <!-- Main sections -->
@@ -24,7 +24,7 @@
       <!--Card title="Testning"
           description="Metoder och verktyg för att testa och utvärdera tillgängligheten på dina webbplatser och applikationer, både automatiskt och manuellt."
           linkTo="/testning" linkText="Utforska testmetoder" icon="material-symbols:code" />
-      </div>
+      </div--->
 
       <!-- Latest blog posts -->
       <div class="mb-16">

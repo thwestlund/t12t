@@ -25,7 +25,7 @@
           <div v-for="(guideline, guidelineIndex) in principle.guidelines" :key="`${principleIndex}-${guidelineIndex}`">
             <!-- Guideline header -->
             <button
-              class="w-full text-left px-4 py-2 flex items-center justify-between text-sm font-medium hover:bg-neutral-50"
+              class="w-full text-left px-4 py-3 flex items-center justify-between text-sm font-medium hover:bg-neutral-50"
               :class="isGuidelineOpen(principle.number, guideline.number) ? 'text-primary' : 'text-secondary'"
               @click="toggleGuideline(principle.number, guideline.number)"
               :aria-expanded="isGuidelineOpen(principle.number, guideline.number)"
@@ -44,7 +44,7 @@
               <ul class="space-y-1 border-l border-neutral-200">
                 <li v-for="criterion in guideline.criteria" :key="criterion.path">
                   <NuxtLink :to="criterion.path"
-                    class="flex items-center pl-2 py-1 lg:pl-4 lg:py-2 text-sm border-l-2 hover:bg-neutral-50"
+                    class="flex items-center pl-2 py-2 lg:pl-4 lg:py-3 text-sm border-l-2 hover:bg-neutral-50"
                     :class="isActivePath(criterion.path) ? 'border-primary text-primary font-medium' : 'border-transparent text-neutral-600 hover:text-primary hover:border-neutral-300'">
                     <div class="flex items-center flex-1">
                       <span>{{ principle.number }}.{{ guideline.number }}.{{ criterion.number }} {{

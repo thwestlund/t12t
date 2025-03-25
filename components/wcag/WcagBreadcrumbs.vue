@@ -2,7 +2,7 @@
   <nav aria-label="Breadcrumbs" class="mb-4 lg:mb-6">
     <ol class="flex flex-wrap flex-row text-sm gap-1">
       <li class="flex items-center">
-        <NuxtLink to="/" class="text-neutral-600 hover:text-primary">
+        <NuxtLink to="/" class="text-neutral-600 hover:text-primary px-2 py-3">
           Hem
         </NuxtLink>
         <svg class="h-4 w-4 text-neutral-400 mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -10,7 +10,7 @@
         </svg>
       </li>
       <li v-if="isWcagPath" class="flex items-center">
-        <NuxtLink to="/wcag" class="text-neutral-600 hover:text-primary">
+        <NuxtLink to="/wcag" class="text-neutral-600 hover:text-primary px-2 py-3">
           WCAG
         </NuxtLink>
         <svg v-if="breadcrumbs.length > 0" class="h-4 w-4 text-neutral-400 mx-2" fill="none" viewBox="0 0 24 24"
@@ -20,7 +20,8 @@
       </li>
       <template v-for="(crumb, index) in breadcrumbs" :key="index">
         <li class="flex items-center">
-          <NuxtLink v-if="index < breadcrumbs.length - 1" :to="crumb.path" class="text-neutral-600 hover:text-primary">
+          <NuxtLink v-if="index < breadcrumbs.length - 1" :to="crumb.path"
+            class="text-neutral-600 hover:text-primary px-2 py-3">
             {{ crumb.title }}
           </NuxtLink>
           <span v-else class="text-primary font-medium">{{ crumb.title }}</span>

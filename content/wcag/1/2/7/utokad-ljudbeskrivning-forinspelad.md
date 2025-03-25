@@ -34,6 +34,8 @@ Detta går längre än standardljudbeskrivningar (1.2.5) genom att faktiskt modi
 
 #### Video med utökad ljudbeskrivning via separat version
 
+:: code-group labels=[html]
+
 ```html
 <video controls>
   <source src="standard-video.mp4" type="video/mp4" />
@@ -48,6 +50,8 @@ Detta går längre än standardljudbeskrivningar (1.2.5) genom att faktiskt modi
   </p>
 </div>
 ```
+
+::
 
 #### Interaktiv video med kontroller för utökad ljudbeskrivning
 

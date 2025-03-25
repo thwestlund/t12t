@@ -11,7 +11,7 @@
         {{ description }}
       </p>
 
-      <NuxtLink if="linkTo" :to="linkTo" class="inline-flex items-center text-primary hover:underline">
+      <NuxtLink v-if="linkTo" :to="linkTo" class="inline-flex items-center text-primary hover:underline">
         <span>{{ linkText }}</span>
         <svg class="ml-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">
@@ -34,11 +34,11 @@ defineProps({
   },
   linkTo: {
     type: String,
-    required: true
+    required: false
   },
   linkText: {
     type: String,
-    required: true
+    required: false
   },
   icon: {
     type: String,
