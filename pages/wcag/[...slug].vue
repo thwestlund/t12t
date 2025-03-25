@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-container" aria-label="Kriterium">
+  <main class="max-w-container" aria-label="Kriterium" id="main-content">
     <div class=" bg-white rounded-lg shadow-sm border border-neutral-200 p-6 mb-8">
       <div class="flex flex-wrap items-center justify-between mb-6">
         <span class="text-sm">
@@ -10,7 +10,6 @@
           <WcagLevelBadge :level="data?.level || 'A'" class="text-sm" />
         </div>
       </div>
-
       <ContentRenderer v-if="data" :value="data" class="prose" />
       <p v-else class="text-neutral-500">Laddar innehåll...</p>
     </div>
