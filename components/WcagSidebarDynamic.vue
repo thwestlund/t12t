@@ -188,8 +188,7 @@ const getPrincipleName = (principleNum) => {
     '1': 'Möjlig att uppfatta',
     '2': 'Hanterbar',
     '3': 'Begriplig',
-    '4': 'Robust',
-    '5': 'Enhällighet'
+    '4': 'Robust'
   };
 
   return principleNames[principleNum] || `Principle ${principleNum}`;
