@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <TopBar />
+    <BaseTopBar />
 
     <div class="bg-primary-light">
       <div class="container-main py-3 lg:py-6">
