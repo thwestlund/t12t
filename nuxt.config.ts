@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -36,6 +35,7 @@ export default defineNuxtConfig({
           content: "tillgänglighet, webbillgänglighet, a11y, t12t, skärmläsare",
         },
       ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
 
@@ -49,17 +49,31 @@ export default defineNuxtConfig({
   content: {
     build: {
       markdown: {
-        // Object syntax can be used to override default options
-        remarkPlugins: {
-          // Override remark-emoji options
-          "remark-emoji": {
-            options: {
-              emoticon: true,
-            },
+        highlight: {
+          theme: {
+            default: "github-light-high-contrast",
           },
-          // Disable remark-gfm
-          "remark-gfm": false,
+          langs: [
+            "javascript",
+            "typescript",
+            "css",
+            "json",
+            "bash",
+            "html",
+            "vue",
+          ],
         },
+        remarkPlugins: {
+          "remark-gfm": {},
+          "remark-rehype": {},
+        },
+        rehypePlugins: {},
+      },
+    },
+    renderer: {
+      alias: {
+        p: "CustomParagraph",
+        pre: "ProsePre",
       },
     },
   },
