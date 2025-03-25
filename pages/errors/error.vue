@@ -21,7 +21,7 @@ const handleError = () => {
     <div
       class="min-h-[70vh] flex items-center justify-center px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
       <div class="max-w-max mx-auto">
-        <main class="sm:flex">
+        <main class="sm:flex" id="main-content">
           <p class="text-4xl font-extrabold text-primary sm:text-5xl">
             {{ error?.statusCode || 'Fel' }}
           </p>
