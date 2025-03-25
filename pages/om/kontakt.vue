@@ -1,125 +1,16 @@
 <template>
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl sm:text-4xl font-bold mb-6">Kontakta oss</h1>
+  <div class="max-w-3xl mx-auto py-4">
+    <h1 class="text-3xl sm:text-4xl font-bold">Kontakta oss</h1>
 
-    <div class="prose max-w-none mb-8">
+    <div class="max-w-none">
       <p>
         Vi på T12T välkomnar frågor, feedback och förslag om vår plattform
-        och innehåll. Du kan nå oss på flera olika sätt.
+        och innehåll. Du kan nå oss på nedastående sätt.
       </p>
     </div>
-
-    <!--div class="bg-white shadow-sm rounded-lg overflow-hidden mb-10">
-      <div class="px-6 py-5 border-b border-neutral-200">
-        <h2 class="text-lg font-semibold">Kontaktformulär</h2>
-        <p class="mt-1 text-sm text-neutral-600">Fyll i formuläret nedan så återkommer vi så snart som möjligt.</p>
-      </div>
-
-      <div class="px-6 py-6">
-        <form @submit.prevent="submitForm" class="space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-neutral-700">Namn <span
-                  class="text-red-500">*</span></label>
-              <input id="name" v-model="formData.name" type="text" required
-                class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary focus:ring-primary"
-                :aria-invalid="errors.name ? 'true' : 'false'"
-                :aria-describedby="errors.name ? 'name-error' : undefined" />
-              <p v-if="errors.name" id="name-error" class="mt-1 text-sm text-red-600">{{ errors.name }}</p>
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-medium text-neutral-700">E-post <span
-                  class="text-red-500">*</span></label>
-              <input id="email" v-model="formData.email" type="email" required
-                class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary focus:ring-primary"
-                :aria-invalid="errors.email ? 'true' : 'false'"
-                :aria-describedby="errors.email ? 'email-error' : undefined" />
-              <p v-if="errors.email" id="email-error" class="mt-1 text-sm text-red-600">{{ errors.email }}</p>
-            </div>
-          </div>
-
-          <div>
-            <label for="subject" class="block text-sm font-medium text-neutral-700">Ämne <span
-                class="text-red-500">*</span></label>
-            <input id="subject" v-model="formData.subject" type="text" required
-              class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary focus:ring-primary"
-              :aria-invalid="errors.subject ? 'true' : 'false'"
-              :aria-describedby="errors.subject ? 'subject-error' : undefined" />
-            <p v-if="errors.subject" id="subject-error" class="mt-1 text-sm text-red-600">{{ errors.subject }}</p>
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-neutral-700">Meddelande <span
-                class="text-red-500">*</span></label>
-            <textarea id="message" v-model="formData.message" rows="5" required
-              class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary focus:ring-primary"
-              :aria-invalid="errors.message ? 'true' : 'false'"
-              :aria-describedby="errors.message ? 'message-error' : undefined"></textarea>
-            <p v-if="errors.message" id="message-error" class="mt-1 text-sm text-red-600">{{ errors.message }}</p>
-          </div>
-
-          <div class="flex items-start">
-            <div class="flex items-center h-5">
-              <input id="privacy" v-model="formData.privacyConsent" name="privacy" type="checkbox" required
-                class="h-4 w-4 text-primary focus:ring-primary border-neutral-300 rounded"
-                :aria-invalid="errors.privacyConsent ? 'true' : 'false'"
-                :aria-describedby="errors.privacyConsent ? 'privacy-error' : undefined" />
-            </div>
-            <div class="ml-3 text-sm">
-              <label for="privacy" class="font-medium text-neutral-700">Jag godkänner att T12T lagrar mina
-                personuppgifter <span class="text-red-500">*</span></label>
-              <p class="text-neutral-500">Vi använder dina uppgifter endast för att besvara din förfrågan. Läs vår
-                <NuxtLink to="/om/integritetspolicy" class="text-primary hover:underline">integritetspolicy</NuxtLink>.
-              </p>
-              <p v-if="errors.privacyConsent" id="privacy-error" class="mt-1 text-sm text-red-600">{{
-                errors.privacyConsent }}</p>
-            </div>
-          </div>
-          <div v-if="formStatus"
-            :class="[formStatus.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800', 'p-4 rounded-md']">
-            <div class="flex">
-              <div class="flex-shrink-0">
-                <svg v-if="formStatus.type === 'success'" class="h-5 w-5 text-green-400"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd" />
-                </svg>
-                <svg v-else class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                  fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="ml-3">
-                <h3 class="text-sm font-medium">{{ formStatus.message }}</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex justify-end">
-            <button type="submit"
-              class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-              :disabled="isSubmitting">
-              <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                </path>
-              </svg>
-              {{ isSubmitting ? 'Skickar...' : 'Skicka meddelande' }}
-            </button>
-          </div>
-        </form>
-  </div>
-  </div-->
-
     <!-- Alternative contact methods -->
-    <div class="bg-white shadow-sm rounded-lg overflow-hidden mb-10">
-      <div class="px-6 py-5 border-b border-neutral-200">
+    <div class="flex flex-col gap-4">
+      <div class="py-5 border-b">
         <h2 class="text-lg font-semibold">Kontaktinformation</h2>
       </div>
 
@@ -152,7 +43,7 @@
     </div>
 
     <!-- FAQ -->
-    <div class="bg-white shadow-sm rounded-lg overflow-hidden">
+    <div>
       <div class="px-6 py-5 border-b border-neutral-200">
         <h2 class="text-lg font-semibold">Vanliga frågor</h2>
       </div>
