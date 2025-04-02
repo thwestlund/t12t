@@ -99,4 +99,72 @@
   .prose ul, ol {
     @apply flex gap-4 flex-col
   }
+
+  .prose ul {
+    @apply list-disc pl-6;
+  }
+  
+  .prose code {
+    display: flex;
+    flex-direction: column;
+    text-wrap: auto;
+  }
+
+  .prose h1 a,
+  .prose h2 a,
+  .prose h3 a,
+  .prose h4 a,
+  .prose h5 a,
+  .prose h6 a {
+    @apply text-secondary 
+  }
+
+  .prose h1 a::after,
+  .prose h2 a::after,
+  .prose h3 a::after,
+  .prose h4 a::after,
+  .prose h5 a::after,
+  .prose h6 a::after {
+      content: "🔗"; /* Link icon */
+      font-size: 0.8em;
+      transition: opacity 0.1s ease-in-out;
+      /*position: absolute;*/
+      right: -1.5em; /* Adjust spacing */
+      @apply inline-block opacity-0 ml-1 cursor-pointer;
+  }
+
+  .prose h1:hover a::after,
+  .prose h2:hover a::after,
+  .prose h3:hover a::after,
+  .prose h4:hover a::after,
+  .prose h5:hover a::after,
+  .prose h6:hover a::after {
+      opacity: 1;
+      @apply no-underline
+  }
+
+  .prose code > span::before {
+    content: attr(line);
+    @apply text-neutral-400 text-sm font-mono pr-4 pl-2;
+  }
+
+  .prose.code-line.inserted {
+    @apply text-green-500
+  }
+  
+  .code-line.deleted {
+    @apply text-red-500
+  }
+  
+  .highlight {
+    @apply bg-yellow-50 leading-tight !important
+  }
+
+  .prose .inline-code {
+    @apply bg-neutral-100 text-neutral-800 rounded-md px-1 py-0.5;
+  }
+
+  .prose hr {
+    @apply py-4
+  }
 }
