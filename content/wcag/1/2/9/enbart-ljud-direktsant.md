@@ -2,11 +2,32 @@
 title: Enbart ljud (direktsänt)
 description: Ett alternativ för tidsbaserade media som presenterar likvärdig information för direktsänt innehåll med enbart ljud tillhandahålls.
 level: AAA
+slug: enbart-ljud-direktsant
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "enbart ljud",
+    "direktsänt",
+    "audio-only",
+    "live",
+    "tidsbaserade media",
+    "realtidstranskribering",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 9
+
+og:
+  title: Enbart ljud (direktsänt) - WCAG
+  description: Ett alternativ för tidsbaserade media som presenterar likvärdig information för direktsänt innehåll med enbart ljud tillhandahålls.
+  url: https://t12t.dev/wcag/enbart-ljud-direktsant
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +35,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.9 Enbart ljud (direktsänt)
+# Enbart ljud (direktsänt)
 
 ## Beskrivning
 

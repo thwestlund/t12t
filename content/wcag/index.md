@@ -1,11 +1,29 @@
 ---
 title: WCAG - Web Content Accessibility Guidelines
 description: Komplett guide till WCAG 2.2-riktlinjerna på svenska med kodexempel, testmetoder och praktiska tips för implementering.
+slug: index
+keywords: ["WCAG", "tillgänglighet", "webbtillgänglighet"]
+level: A
+principleNumber: 0
+principleName: Introduktion
+guidelineNumber: 0
+guidelineName: Introduktion
+criterionNumber: 0
 
 sitemap:
   lastmod: 2025-03-19
   changefreq: monthly
   priority: 0.8
+
+og:
+  title: WCAG - Web Content Accessibility Guidelines
+  description: Komplett guide till WCAG 2.2-riktlinjerna på svenska med kodexempel, testmetoder och praktiska tips för implementering.
+  url: https://t12t.dev/wcag
+  type: article
+
+canonical: https://t12t.dev/wcag
+datePublished: 2024-03-27
+dateModified: 2025-03-19
 ---
 
 # WCAG - Riktlinjer för tillgänglig webb

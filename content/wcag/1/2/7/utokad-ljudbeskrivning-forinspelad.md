@@ -2,11 +2,33 @@
 title: Utökad ljudbeskrivning (förinspelad)
 description: Utökad ljudbeskrivning tillhandahålls för allt förinspelat videoinnehåll i synkroniserade media.
 level: AAA
+slug: utokad-ljudbeskrivning-forinspelad
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "utökad ljudbeskrivning",
+    "förinspelad",
+    "extended audio description",
+    "tidsbaserade media",
+    "video",
+    "synskadade",
+    "synnedsättning",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 7
+
+og:
+  title: Utökad ljudbeskrivning (förinspelad) - WCAG
+  description: Utökad ljudbeskrivning tillhandahålls för allt förinspelat videoinnehåll i synkroniserade media.
+  url: https://t12t.dev/wcag/utokad-ljudbeskrivning-forinspelad
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +36,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.7 Utökad ljudbeskrivning (förinspelad)
+# Utökad ljudbeskrivning (förinspelad)
 
 ## Beskrivning
 

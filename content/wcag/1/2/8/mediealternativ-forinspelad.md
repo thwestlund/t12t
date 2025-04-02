@@ -1,12 +1,33 @@
 ---
 title: Mediealternativ (förinspelad)
-description: Ett alternativ för tidsbaserade media tillhandahålls för alla förinspelad synkroniserade media och för alla förinspelad enbart vidoemedia.
+description: Ett alternativ för tidsbaserade media tillhandahålls för alla förinspelad synkroniserade media och för all förinspelad enbart vidoemedia.
 level: AAA
+slug: mediealternativ-forinspelad
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "mediealternativ",
+    "förinspelad",
+    "media alternative",
+    "tidsbaserade media",
+    "video",
+    "textbeskrivning",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 8
+
+og:
+  title: Mediealternativ (förinspelad) - WCAG
+  description: Ett alternativ för tidsbaserade media tillhandahålls för alla förinspelad synkroniserade media och för all förinspelad enbart vidoemedia.
+  url: https://t12t.dev/wcag/mediealternativ-forinspelad
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +35,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.8 Mediealternativ (förinspelad)
+# Mediealternativ (förinspelad)
 
 ## Beskrivning
 

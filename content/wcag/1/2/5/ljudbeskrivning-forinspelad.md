@@ -2,11 +2,33 @@
 title: Ljudbeskrivning (förinspelad)
 description: Ljudbeskrivning tillhandahålls för allt förinspelat videoinnehåll i synkroniserade media.
 level: AA
+slug: ljudbeskrivning-forinspelad
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "ljudbeskrivning",
+    "förinspelad",
+    "audio description",
+    "tidsbaserade media",
+    "video",
+    "synskadade",
+    "synnedsättning",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 5
+
+og:
+  title: Ljudbeskrivning (förinspelad) - WCAG
+  description: Ljudbeskrivning tillhandahålls för allt förinspelat videoinnehåll i synkroniserade media.
+  url: https://t12t.dev/wcag/ljudbeskrivning-forinspelad
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +36,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.5 Ljudbeskrivning (förinspelad)
+# Ljudbeskrivning (förinspelad)
 
 ## Beskrivning
 

@@ -2,11 +2,31 @@
 title: Textning (direktsänd)
 description: Textning tillhandahålls för allt direktsänt ljudinnehåll i synkroniserade media.
 level: AA
+slug: textning-direktsand
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "textning",
+    "direktsändning",
+    "captions",
+    "live",
+    "tidsbaserade media",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 4
+
+og:
+  title: Textning (direktsänd) - WCAG
+  description: Textning tillhandahålls för allt direktsänt ljudinnehåll i synkroniserade media.
+  url: https://t12t.dev/wcag/textning-direktsand
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +34,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.4 Textning (direktsänd)
+# Textning (direktsänd)
 
 ## Beskrivning
 

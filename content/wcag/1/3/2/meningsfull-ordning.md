@@ -2,11 +2,30 @@
 title: Meningsfull ordning
 description: När den ordning som innehåll presenteras i påverkar dess betydelse, kan en korrekt läsordning programmatiskt bestämmas.
 level: A
+slug: meningsfull-ordning
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "meningsfull ordning",
+    "läsordning",
+    "hjälpmedel",
+    "semantisk HTML",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 3
 guidelineName: Anpassningsbart
 criterionNumber: 2
+
+og:
+  title: Meningsfull ordning - WCAG
+  description: När den ordning som innehåll presenteras i påverkar dess betydelse, kan en korrekt läsordning programmatiskt bestämmas.
+  url: https://t12t.dev/wcag/meningsfull-ordning
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +33,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.3.2 Meningsfull ordning
+# Meningsfull ordning
 
 ## Beskrivning
 

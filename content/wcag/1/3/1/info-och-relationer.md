@@ -2,11 +2,31 @@
 title: Info och relationer
 description: Information, struktur och relationer som förmedlas genom presentation kan göras programmatiskt bestämbara eller är tillgängliga i text.
 level: A
+slug: info-och-relationer
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "information",
+    "struktur",
+    "relationer",
+    "programmatiskt bestämbara",
+    "text",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 3
 guidelineName: Anpassningsbart
 criterionNumber: 1
+
+og:
+  title: Info och relationer - WCAG
+  description: Information, struktur och relationer som förmedlas genom presentation kan göras programmatiskt bestämbara eller är tillgängliga i text.
+  url: https://t12t.dev/wcag/info-och-relationer
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +34,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.3.1 Info och relationer
+# Info och relationer
 
 ## Beskrivning
 

@@ -12,9 +12,18 @@ sitemap:
   lastmod: 2025-03-19
   changefreq: monthly
   priority: 0.8
+
+og:
+  title: Identifiera syfte - WCAG
+  description: Syftet med varje region i innehållet kan bestämmas programmatiskt.
+  url: https://t12t.dev/wcag/identifiera-syfte
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 ---
 
-# Framgångskriterium 1.3.6 Identifiera syfte
+# Identifiera syfte
 
 ## Beskrivning
 

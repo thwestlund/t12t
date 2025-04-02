@@ -2,11 +2,32 @@
 title: Sensoriska kännetecken
 description: Instruktioner som tillhandahålls för att förstå och hantera innehåll är inte enbart beroende av sensoriska kännetecken.
 level: A
+slug: sensoriska-kannetecken
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "sensoriska kännetecken",
+    "form",
+    "storlek",
+    "visuell placering",
+    "orientering",
+    "ljud",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 3
 guidelineName: Anpassningsbart
 criterionNumber: 3
+
+og:
+  title: Sensoriska kännetecken - WCAG
+  description: Instruktioner som tillhandahålls för att förstå och hantera innehåll är inte enbart beroende av sensoriska kännetecken.
+  url: https://t12t.dev/wcag/sensoriska-kannetecken
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +35,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.3.3 Sensoriska kännetecken
+# Sensoriska kännetecken
 
 ## Beskrivning
 

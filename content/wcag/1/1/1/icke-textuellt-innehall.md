@@ -2,19 +2,40 @@
 title: Icke-textuellt innehåll
 description: All innehåll som inte är text ska ha ett textalternativ som presenterar motsvarande syfte eller information.
 level: A
+slug: icke-textuellt-innehall
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "icke-textuellt innehåll",
+    "alt-text",
+    "webbtillgänglighet",
+    "non-text content",
+  ]
+canonical: https://t12t.dev/wcag/icke-textuellt-innehall
+
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 1
 guidelineName: Textalternativ
 criterionNumber: 1
 
+og:
+  title: Icke-textuellt innehåll – WCAG
+  description: Allt icke-textuellt innehåll ska ha ett textalternativ som presenterar samma information.
+  url: https://dinwebbplats.se/wcag/icke-textuellt-innehall
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-26
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2025-03-26
   changefreq: monthly
   priority: 0.8
 ---
 
-# Framgångskriterium 1.1.1 Icke-textuellt innehåll
+# Icke-textuellt innehåll
 
 ## Beskrivning
 
@@ -35,15 +56,17 @@ Textalternativ fungerar också som ersättning för användare som har avstängt
 
 Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt innehåll ger du alla användare tillgång till samma information, oavsett hur de tar del av ditt digitala innehåll.
 
+---
+
 ## Exempel
 
-### Exempel på bra implementering
+### Informativ bild med alt-text
 
-#### Informativ bild med alt-text
+Om en bild förmeddelar viktig information, som ett diagram eller en illustration, ska den ha en beskrivande alt-text som förklarar vad bilden visar.
 
 ::code-group{:labels='["index.html"]'}
 
-```html
+```html {3-5} showLineNumbers
 <img
   src="diagram-energiforbrukning.png"
   alt="Diagram som visar energiförbrukning per månad under 2023. 
@@ -54,7 +77,11 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 
 ::
 
-#### Dekorativ bild
+### Dekorativ bild
+
+Om en bild inte tillför något värde eller information, som en dekorativ linje eller bakgrundsbild, kan den ha ett tomt alt-attribut [alt=""]{.inline-code}. Detta gör att skärmläsare ignorerar bilden.
+
+[role="presentation]{.inline-code} gör att skärmläsare ignorerar bilden.
 
 ::code-group{:labels='["index.html"]'}
 
@@ -64,7 +91,9 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 
 ::
 
-#### Bildlänk
+### Bildlänk
+
+Om en bild fungerar som en länk, ska den ha ett alt-attribut som beskriver syftet med länken. Om bilden är en ikon eller symbol kan alt-texten vara kortare.
 
 ::code-group{:labels='["index.html"]'}
 
@@ -76,7 +105,9 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 
 ::
 
-#### Logotyp med länk till startsida
+### Logotyp med länk till startsida
+
+Om en logotyp fungerar som en länk till startsidan, ska alt-texten vara kort och beskriva syftet med länken. Om logotypen är en bild utan text kan alt-texten vara tom.
 
 ::code-group{:labels='["index.html"]'}
 
@@ -88,11 +119,14 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 
 ::
 
-#### Komplex bild med långt textalternativ
+### Komplex bild med långt textalternativ
+
+Om en bild är komplex och innehåller mycket information, som ett organisationsschema eller en karta, kan det vara bra att ge en kort beskrivning i alt-texten och sedan länka till en mer detaljerad beskrivning i textformat.
+I det här exemplet har vi en bild av ett organisationsschema. Alt-texten ger en kort sammanfattning av vad bilden visar, och en längre beskrivning finns i figcaption-elementet.
 
 ::code-group{:labels='["index.html"]'}
 
-```html
+```html {1, 5, 7-14}
 <figure>
   <img
     src="komplext-diagram.png"
@@ -110,54 +144,14 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 
 ::
 
-### Exempel på bristande implementering
-
-#### Bild utan alt-text
-
-::code-group{:labels='["index.html"]'}
-
-```html
-<img src="diagram.png" />
-```
-
-::
-
-#### Ickebeskrivande alt-text
-
-::code-group{:labels='["index.html"]'}
-
-```html
-<img src="graf-2023.png" alt="Bild" />
-```
-
-::
-
-#### Filnamn som alt-text
-
-::code-group{:labels='["index.html"]'}
-
-```html
-<img src="IMG_20230824.jpg" alt="IMG_20230824.jpg" />
-```
-
-::
-
-#### Överflödig alt-text
-
-::code-group{:labels='["index.html"]'}
-
-```html
-<img
-  src="person.jpg"
-  alt="Bild på en person med brunt hår och blå tröja som står framför en byggnad och ler mot kameran en solig dag i augusti när löven börjat falla från träden"
-/>
-```
-
-::
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 1.1.1 Non-text Content](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html)
-- [Webbriktlinjer - R1: Beskriv med text allt innehåll som inte är text](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/beskriv-med-text-allt-innehall-som-inte-ar-text)
-- [MDN Web Docs - Alt-attributet för bilder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt)
-- [W3C WAI - Images Tutorial](https://www.w3.org/WAI/tutorials/images/)
+[WCAG 2.2 - Understanding 1.1.1 Non-text Content](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html)
+
+[Webbriktlinjer - R1: Beskriv med text allt innehåll som inte är text](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/beskriv-med-text-allt-innehall-som-inte-ar-text)
+
+[MDN Web Docs - Alt-attributet för bilder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt)
+
+[W3C WAI - Images Tutorial](https://www.w3.org/WAI/tutorials/images/)

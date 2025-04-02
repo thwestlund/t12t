@@ -1,13 +1,35 @@
 ---
 title: Princip 1 - Möjlig att uppfatta
 description: Information och komponenter i användargränssnittet måste presenteras för användare på sätt som de kan uppfatta.
+slug: mojlig-att-uppfatta
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "möjlig att uppfatta",
+    "perceivable",
+    "accessibility",
+  ]
+level: A
 principleNumber: 1
 principleName: Möjlig att uppfatta
+guidelineNumber: 0
+guidelineName: Introduktion
 
 sitemap:
   lastmod: 2025-03-19
   changefreq: monthly
   priority: 0.8
+
+og:
+  title: Princip 1 - Möjlig att uppfatta - WCAG
+  description: Information och komponenter i användargränssnittet måste presenteras för användare på sätt som de kan uppfatta.
+  url: https://t12t.dev/wcag/mojlig-att-uppfatta
+  type: article
+
+canonical: https://t12t.dev/wcag/mojlig-att-uppfatta
+datePublished: 2024-03-27
+dateModified: 2025-03-19
 ---
 
 # Princip 1: Möjlig att uppfatta

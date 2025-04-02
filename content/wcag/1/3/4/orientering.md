@@ -2,11 +2,31 @@
 title: Orientering
 description: Innehållets visning och hantering är inte begränsad till endast en skärmorientering.
 level: AA
+slug: orientering
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "orientering",
+    "skärmorientering",
+    "stående",
+    "liggande",
+    "responsiv design",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 3
 guidelineName: Anpassningsbart
 criterionNumber: 4
+
+og:
+  title: Orientering - WCAG
+  description: Innehållets visning och hantering är inte begränsad till endast en skärmorientering.
+  url: https://t12t.dev/wcag/orientering
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +34,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.3.4 Orientering
+# Orientering
 
 ## Beskrivning
 

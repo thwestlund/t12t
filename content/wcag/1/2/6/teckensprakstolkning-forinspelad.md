@@ -2,11 +2,33 @@
 title: Teckenspråkstolkning (förinspelad)
 description: Teckenspråkstolkning tillhandahålls för allt förinspelat ljudinnehåll i synkroniserade media.
 level: AAA
+slug: teckensprakstolkning-forinspelad
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "teckenspråk",
+    "teckenspråkstolkning",
+    "förinspelad",
+    "sign language",
+    "tidsbaserade media",
+    "video",
+    "döva",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 6
+
+og:
+  title: Teckenspråkstolkning (förinspelad) - WCAG
+  description: Teckenspråkstolkning tillhandahålls för allt förinspelat ljudinnehåll i synkroniserade media.
+  url: https://t12t.dev/wcag/teckensprakstolkning-forinspelad
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +36,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.6 Teckenspråkstolkning (förinspelad)
+# Teckenspråkstolkning (förinspelad)
 
 ## Beskrivning
 

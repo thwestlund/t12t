@@ -2,11 +2,32 @@
 title: Audio och video (inspelade)
 description: För inspelat audioinnehåll och videoinnehåll tillhandahålls alternativ som ger motsvarande information.
 level: A
+slug: audio-och-video
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "audio",
+    "video",
+    "inspelade",
+    "tidsbaserade media",
+    "ljud",
+    "bild",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 1
+
+og:
+  title: Audio och video (inspelade) - WCAG
+  description: För inspelat audioinnehåll och videoinnehåll tillhandahålls alternativ som ger motsvarande information.
+  url: https://t12t.dev/wcag/audio-och-video
+  type: article
+
+datePublished: 2024-03-27
+dateModified: 2025-03-19
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +35,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.1 Audio och video (inspelade)
+# Audio och video (inspelade)
 
 ## Beskrivning
 

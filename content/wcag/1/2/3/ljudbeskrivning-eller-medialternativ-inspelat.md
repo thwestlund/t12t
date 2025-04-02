@@ -2,11 +2,32 @@
 title: Ljudbeskrivning eller mediealternativ (inspelat)
 description: Ett alternativ för tidsbaserade media eller en ljudbeskrivning för förinspelat videoinnehåll tillhandahålls.
 level: A
+slug: ljudbeskrivning-eller-medialternativ
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "ljudbeskrivning",
+    "mediealternativ",
+    "inspelat",
+    "tidsbaserade media",
+    "video",
+    "synnedsättning",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 3
+
+og:
+  title: Ljudbeskrivning eller mediealternativ (inspelat) - WCAG
+  description: Ett alternativ för tidsbaserade media eller en ljudbeskrivning för förinspelat videoinnehåll tillhandahålls.
+  url: https://t12t.dev/wcag/ljudbeskrivning-eller-medialternativ
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +35,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.3 Ljudbeskrivning eller mediealternativ (inspelat)
+# Ljudbeskrivning eller mediealternativ (inspelat)
 
 ## Beskrivning
 

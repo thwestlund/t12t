@@ -2,11 +2,30 @@
 title: Synkroniserad textning
 description: Synkroniserade undertexter tillhandahålls för allt inspelat audioinnehåll i synkroniserade media.
 level: A
+slug: synkroniserad-textning
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "synkroniserad textning",
+    "undertexter",
+    "captions",
+    "tidsbaserade media",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
 guidelineName: Tidsbaserade media
 criterionNumber: 2
+
+og:
+  title: Synkroniserad textning - WCAG
+  description: Synkroniserade undertexter tillhandahålls för allt inspelat audioinnehåll i synkroniserade media.
+  url: https://t12t.dev/wcag/synkroniserad-textning
+  type: article
+
+datePublished: 2024-03-27
+dateModified: 2025-03-19
 
 sitemap:
   lastmod: 2025-03-19
@@ -14,7 +33,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Framgångskriterium 1.2.2 Synkroniserad textning
+# Synkroniserad textning
 
 ## Beskrivning
 

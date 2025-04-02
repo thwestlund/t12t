@@ -2,11 +2,30 @@
 title: Identifiera inmatningssyfte
 description: Syftet med varje inmatningsfält som samlar in information om användaren kan bestämmas programmatiskt.
 level: AA
+slug: identifiera-inmatningssyfte
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "identifiera inmatningssyfte",
+    "autocomplete",
+    "formulär",
+    "kognitiv belastning",
+  ]
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 3
 guidelineName: Anpassningsbart
 criterionNumber: 5
+
+og:
+  title: Identifiera inmatningssyfte - WCAG
+  description: Syftet med varje inmatningsfält som samlar in information om användaren kan bestämmas programmatiskt.
+  url: https://t12t.dev/wcag/identifiera-inmatningssyfte
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-27
 
 sitemap:
   lastmod: 2025-03-19
