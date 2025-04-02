@@ -19,9 +19,11 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import WcagLevelBadge from '~/components/WcagLevelBadge.vue';
+import { useWcagSeoMeta } from '~/composables/useSeoMeta';
 
 definePageMeta({
   layout: 'wcag-layout',
+
 });
 
 const route = useRoute();
@@ -30,4 +32,15 @@ const route = useRoute();
 const { data } = await useAsyncData(`wcag-criterion-${route.path}`, () => {
   return queryCollection('wcag').where('id', 'LIKE', '%' + route.path + '%').first();
 });
+
+useWcagSeoMeta({
+  title: data.value?.title,
+  description: data.value?.description,
+  keywords: data.value?.keywords,
+  og: {
+    title: data.value?.og?.title,
+    description: data.value?.og?.description,
+  },
+  canonical: data.value?.canonical,
+})
 </script>

@@ -19,8 +19,8 @@
 <script setup lang="ts">
 
 // SEO metadata
-useSeoMeta({
+/*useSeoMeta({
   title: 'Kunskapsbank - Digital Tillgänglighet - T12T',
   description: 'Omfattande information om tillgänglighetsstandarder, lagstiftning, utvecklingsmetoder och best practices för digital tillgänglighet i Sverige.'
-})
+})*/
 </script>

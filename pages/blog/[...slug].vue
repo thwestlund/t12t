@@ -54,10 +54,10 @@ const { data: post } = await useAsyncData(`blog-${slugPath}`, () => {
 })
 
 // Set SEO meta tags
-useSeoMeta({
+/*useSeoMeta({
   title: () => post.value?.title ? `${post.value.title} - T12T` : 'Blogg - T12T',
   description: () => post.value?.description || 'Artikel om digital tillgänglighet från T12T'
-})
+})*/
 
 // Calculate reading time based on content length
 /*const readingTime = computed(() => {

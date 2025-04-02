@@ -185,8 +185,8 @@ definePageMeta({
 })
 
 // Set page metadata for SEO
-useSeoMeta({
+/*useSeoMeta({
   title: 'WCAG 2.2 - Riktlinjer för tillgängligt webbinnehåll | T12T',
   description: 'Lär dig om WCAG 2.2-standarden, hur den är strukturerad och hur du kan använda den för att göra ditt webbinnehåll mer tillgängligt.'
-})
+})*/
 </script>

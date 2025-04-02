@@ -55,10 +55,10 @@ import Card from '~/components/base/Card.vue';
 import ContributionBanner from '~/components/base/ContributionBanner.vue';
 
 // Use Nuxt's useHead/useSeoMeta to set SEO metadata
-useSeoMeta({
+/*useSeoMeta({
   title: 'Om T12T - Sveriges kunskapsplattform för digital tillgänglighet',
   description: 'Lär dig mer om T12T, vår vision, värderingar och hur du kan bidra till att göra webben mer tillgänglig för alla.',
   ogTitle: 'Om T12T - Sveriges kunskapsplattform för digital tillgänglighet',
   ogDescription: 'Lär dig mer om T12T, vår vision, värderingar och hur du kan bidra till att göra webben mer tillgänglig för alla.',
-})
+})*/
 </script>

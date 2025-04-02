@@ -48,10 +48,10 @@ definePageMeta({
   layout: 'default'
 })
 
-useSeoMeta({
+/*useSeoMeta({
   title: 'Blogg - T12T - Digital Tillgänglighet',
   description: 'Senaste nyheter, artiklar och insikter om digital tillgänglighet, WCAG-standarder och tillgänglig webbutveckling.'
-})
+})*/
 
 const { data: posts } = await useAsyncData('blog-posts', () =>
   queryCollection('blog').order('date', 'DESC').all()

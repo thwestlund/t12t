@@ -45,10 +45,10 @@ import BlogSection from '~/components/blog/BlogCard.vue'
 import Card from '~/components/base/Card.vue'
 
 // Define page metadata
-useSeoMeta({
+/*useSeoMeta({
   title: 'T12T - Digital Tillgänglighet i Sverige',
   description: 'Sveriges främsta resurs för information om digital tillgänglighet, webbtillgänglighet och universell design för webbutvecklare, designers, och innehållskapare.'
-})
+})*/
 
 const features = [
   {
