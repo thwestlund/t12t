@@ -67,7 +67,10 @@ export default defineNuxtConfig({
           "remark-gfm": {},
           "remark-rehype": {},
         },
-        rehypePlugins: {},
+        rehypePlugins: {
+          "rehype-highlight": {},
+          "rehype-highlight-code-lines": {},
+        },
       },
     },
     renderer: {
