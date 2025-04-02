@@ -47,8 +47,7 @@
                     class="flex items-center pl-2 py-2 lg:pl-4 lg:py-3 text-sm border-l-2 hover:bg-neutral-50"
                     :class="isActivePath(criterion.path) ? 'border-primary text-primary font-medium' : 'border-transparent text-neutral-600 hover:text-primary hover:border-neutral-300'">
                     <div class="flex items-center flex-1">
-                      <span>{{ principle.number }}.{{ guideline.number }}.{{ criterion.number }} {{
-                        criterion.name }}</span>
+                      <span>{{ criterion.name }}</span>
                       <WcagLevelBadge :level="criterion.level" class="ml-2" />
                     </div>
                   </NuxtLink>

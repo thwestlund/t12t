@@ -87,7 +87,7 @@ const generateBreadcrumbs = async () => {
           const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
 
           if (content) {
-            title = `${relevantParts[i - 2]}.${relevantParts[i - 1]}.${relevantParts[i]} ${content.title}`;
+            title = `${content.title}`;
           } else {
             title = `${relevantParts[i - 2]}.${relevantParts[i - 1]}.${relevantParts[i]} Kriterium`;
           }
