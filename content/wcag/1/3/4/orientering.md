@@ -1,6 +1,6 @@
 ---
-title: Orientering
-description: Innehållets visning och hantering är inte begränsad till endast en skärmorientering.
+title: 1.3.4 Orientering
+description: Lås inte innehållets visning och funktion till en specifik skärmorientering (stående eller liggande), om inte en viss orientering är nödvändig.
 level: AA
 slug: orientering
 keywords:
@@ -11,108 +11,131 @@ keywords:
     "skärmorientering",
     "stående",
     "liggande",
-    "responsiv design",
+    "portrait",
+    "landscape",
+    "rotation",
+    "anpassningsbar",
+    "mobil",
+    "surfplatta",
   ]
+canonical: https://t12t.dev/wcag/1/3/4/orientering
+
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 3
-guidelineName: Anpassningsbart
+guidelineName: Anpassningsbar
 criterionNumber: 4
 
 og:
-  title: Orientering - WCAG
-  description: Innehållets visning och hantering är inte begränsad till endast en skärmorientering.
-  url: https://t12t.dev/wcag/orientering
+  title: 1.3.4 Orientering – WCAG
+  description: Lås inte innehållets visning och funktion till en specifik skärmorientering, om inte en viss orientering är nödvändig.
+  url: https://t12t.dev/wcag/1/3/4/orientering
   type: article
 
-datePublished: 2025-03-19
-dateModified: 2025-03-27
+datePublished: 2025-04-01
+dateModified: 2024-05-17
 
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.6
 ---
 
 # Orientering
 
 ## Beskrivning
 
-Innehållets visning och hantering är inte begränsad till endast en skärmorientering, såsom stående eller liggande, såvida inte en specifik skärmorientering är nödvändig.
+Innehållet begränsar inte dess visning och funktion till en enda skärmorientering, såsom stående (portrait) eller liggande (landscape), såvida inte en specifik skärmorientering är nödvändig (essentiell).
+
+Detta innebär att en webbplats eller webbapplikation ska fungera och visas korrekt oavsett om användaren håller sin enhet (t.ex. mobiltelefon, surfplatta) i stående eller liggande läge. Innehållet ska anpassa sig till den valda orienteringen.
+
+Att låsa orienteringen är endast tillåtet om det finns en stark anledning, till exempel för att funktionen i sig kräver det (som att skanna en check i en bankapp som kan kräva stående läge, eller ett spel designat för liggande läge).
 
 ## Varför detta behövs
 
-Vissa användare måste ha sin enhet i en specifik orientering på grund av fysiska begränsningar eller hur de har monterat enheten. Till exempel kan personer med rörelsenedsättningar ha sin mobiltelefon eller surfplatta monterad i en fast position, eller personer med olika typer av synnedsättningar kan behöva använda en specifik orientering för bättre läsbarhet.
+- **Användare med fysiska funktionsnedsättningar:** Vissa användare har sina enheter monterade i en fast position, till exempel på en rullstol eller ett stativ. Om innehållet är låst till en orientering som de inte kan använda, blir det otillgängligt.
+- **Användare med begränsad motorik:** Det kan vara svårt eller omöjligt för vissa användare att fysiskt rotera enheten.
+- **Användare med nedsatt syn:** Kan föredra liggande läge för att få längre textrader eller mer horisontellt utrymme, vilket kan underlätta läsning vid förstoring.
 
-Genom att säkerställa att innehållet fungerar i både stående och liggande läge ger du användarna möjlighet att använda webbplatsen eller applikationen i den orientering som passar dem bäst.
+Att tillåta båda orienteringarna ger användarna flexibilitet att använda innehållet på det sätt som passar dem bäst.
 
-Det finns få situationer där en specifik orientering är absolut nödvändig, och detta kriterium säkerställer att sådana begränsningar endast införs när de verkligen behövs.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Responsiv webbplats (Fungerar i båda lägen) ✅
 
-#### Responsiv design som fungerar i båda orienteringarna
+En webbplats som använder responsiv design anpassar sin layout automatiskt när enheten roteras. Kolumner kan flyttas om, textstorlekar justeras, och bilder skalas om för att passa den nya skärmbredden och -höjden.
 
-```css
-/* CSS som anpassar layouten baserat på tillgängligt utrymme, inte orientering */
-@media screen and (min-width: 600px) {
+::code-group{:labels='["Koncept (CSS Media Query)"]'}
+
+```css [Styling för olika orienteringar] showLineNumbers
+/* Generella stilar */
+body {
+  font-size: 16px;
+}
+
+/* Stilar specifika för liggande läge */
+@media (orientation: landscape) {
   .container {
-    display: flex;
+    display: flex; /* Använd flexbox för kolumner */
+  }
+  nav {
+    width: 25%; /* Smalare nav */
+  }
+  main {
+    width: 75%; /* Bredare huvudinnehåll */
   }
 }
 
-@media screen and (max-width: 599px) {
+/* Stilar specifika för stående läge */
+@media (orientation: portrait) {
   .container {
-    display: block;
+    display: block; /* Element under varandra */
+  }
+  nav,
+  main {
+    width: 100%; /* Full bredd */
   }
 }
 ```
 
-#### App som tillåter både stående och liggande läge
+::
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Ingen begränsning av orientering -->
-```
+**Resultat:** Användaren kan rotera sin enhet och webbplatsen anpassar sig och förblir fullt användbar i både stående och liggande läge.
 
-### Exempel på bristande implementering
+### Webbplats låst till en orientering (Fel, om inte nödvändigt) ❌
 
-#### Webbplats som låser orienteringen
+En webbplats eller webbapp kan tekniskt låsa orienteringen (t.ex. via inställningar i en webbapps manifest eller via JavaScript som försöker förhindra rotation). Detta bryter mot kriteriet om det inte finns en nödvändig anledning.
 
-```html
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, user-scalable=no, orientation=portrait"
-/>
-<!-- Tvingar stående läge utan motivering -->
-```
+::code-group{:labels='["Exempel på låsning (Web App Manifest) ❌"]'}
 
-#### App som bara fungerar i en orientering utan motivering
-
-```javascript
-// JavaScript som visar ett felmeddelande om användaren roterar enheten
-window.addEventListener("orientationchange", function () {
-  if (window.orientation === 90 || window.orientation === -90) {
-    displayError(
-      "Denna app fungerar endast i stående läge. Vänligen rotera din enhet."
-    );
-  }
-});
-```
-
-#### CSS som inte anpassar sig efter orientering
-
-```css
-/* CSS som endast är designad för en orientering */
-.content {
-  width: 320px; /* Fast bredd som inte anpassas */
-  height: 500px; /* Fast höjd som inte anpassas */
+```json [manifest.json]
+{
+  "name": "Min App",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait" /* Låser till stående läge */
 }
 ```
+
+::
+
+**Resultat:** Användaren tvingas använda enheten i stående läge, även om liggande vore bättre eller nödvändigt för dem. Om enheten är monterad i liggande läge blir appen oanvändbar.
+
+### Nödvändig (Essentiell) Låsning (Undantag) ✅
+
+Vissa specifika fall kan kräva en låst orientering:
+
+- En bankapp som har en funktion för att skanna en check, vilket kräver stående läge för kameran.
+- Ett pianospel eller en app för att simulera ett instrument som kräver liggande läge för att få plats med alla tangenter/kontroller.
+- En presentation eller bildspel som är designat för att visas i ett specifikt format (t.ex. alltid liggande).
+
+I dessa fall är låsningen acceptabel eftersom funktionaliteten i sig är beroende av orienteringen.
+
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 1.3.4 Orientation](https://www.w3.org/WAI/WCAG22/Understanding/orientation.html)
-- [MDN Web Docs - Responsive design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
-- [W3C - Mobile Accessibility](https://www.w3.org/WAI/standards-guidelines/mobile/)
+- [WCAG 2.2: Success Criterion 1.3.4 Orientation (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/orientation.html)
+- [Webbriktlinjer: R106 Lås inte gränssnittet i stående eller liggande läge](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/las-inte-granssnittet-i-staende-eller-liggande-lage)

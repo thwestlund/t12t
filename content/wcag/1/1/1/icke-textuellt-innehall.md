@@ -1,5 +1,5 @@
 ---
-title: Icke-textuellt innehåll
+title: 1.1.1 Icke-textuellt innehåll
 description: All innehåll som inte är text ska ha ett textalternativ som presenterar motsvarande syfte eller information.
 level: A
 slug: icke-textuellt-innehall
@@ -12,7 +12,7 @@ keywords:
     "webbtillgänglighet",
     "non-text content",
   ]
-canonical: https://t12t.dev/wcag/icke-textuellt-innehall
+canonical: https://www.t12t.dev/wcag/1/1/1/icke-textuellt-innehall
 
 principleNumber: 1
 principleName: Möjlig att uppfatta
@@ -21,9 +21,9 @@ guidelineName: Textalternativ
 criterionNumber: 1
 
 og:
-  title: Icke-textuellt innehåll – WCAG
+  title: 1.1.1 Icke-textuellt innehåll – WCAG
   description: Allt icke-textuellt innehåll ska ha ett textalternativ som presenterar samma information.
-  url: https://dinwebbplats.se/wcag/icke-textuellt-innehall
+  url: https://www.t12t.dev/wcag/1/1/1/icke-textuellt-innehall
   type: article
 
 datePublished: 2025-03-19

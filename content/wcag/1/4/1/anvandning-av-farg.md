@@ -1,172 +1,207 @@
 ---
-title: Användning av färg
-description: Färg används inte som det enda visuella sättet att förmedla information, indikera en handling, be om respons eller särskilja ett visuellt element.
+title: 1.4.1 Användning av färg
+description: Säkerställ att färg inte är det enda visuella sättet att förmedla information, indikera en handling, uppmana till respons eller särskilja ett visuellt element.
 level: A
+slug: anvandning-av-farg
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "färg",
+    "färgblindhet",
+    "kontrast",
+    "visuell information",
+    "uppfatta",
+  ]
+canonical: https://t12t.dev/wcag/1/4/1/anvandning-av-farg
+
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 4
-guidelineName: Urskiljbart
+guidelineName: Skiljbar
 criterionNumber: 1
 
+og:
+  title: 1.4.1 Användning av färg – WCAG
+  description: Säkerställ att färg inte är det enda visuella sättet att förmedla information eller särskilja element.
+  url: https://t12t.dev/wcag/1/4/1/anvandning-av-farg
+  type: article
+
+datePublished: 2025-04-10
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.8 # A-kriterier har hög prio
 ---
 
-# Framgångskriterium 1.4.1 Användning av färg
+# Användning av färg
 
 ## Beskrivning
 
-Färg används inte som det enda visuella sättet att förmedla information, indikera en handling, be om respons eller särskilja ett visuellt element.
+Färg används inte som det enda visuella sättet att förmedla information, indikera en handling, uppmana till respons eller särskilja ett visuellt element.
+
+Detta innebär att om färg används för att kommunicera något viktigt (t.ex. status, obligatoriska fält, skillnaden mellan olika dataserier i ett diagram), måste det också finnas ett annat visuellt sätt att förmedla samma information. Detta andra sätt ska inte vara beroende av att kunna urskilja färger.
 
 ## Varför detta behövs
 
-Personer med färgblindhet eller andra synnedsättningar kan ha svårt att uppfatta färgskillnader. Cirka 8% av alla män och 0,5% av alla kvinnor har någon form av färgseendedefekt.
+- **Personer med färgblindhet:** Cirka 8% av männen och 0,5% av kvinnorna har någon form av färgseende-defekt (oftast röd-grön färgblindhet). Om information endast kodas med färg (t.ex. röda felmeddelanden, gröna framgångsmeddelanden) kan de missa eller misstolka informationen.
+- **Personer med nedsatt syn:** Vissa synnedsättningar påverkar färgseendet eller förmågan att urskilja färger med låg kontrast.
+- **Användare med monokroma skärmar:** Vissa enheter eller inställningar (t.ex. högkontrastläge) visar innehåll utan färg.
+- **Alla användare i vissa situationer:** Starkt solljus eller dålig skärmkvalitet kan göra det svårt att urskilja färger.
 
-När information endast förmedlas genom färg riskerar dessa användare att missa viktig information eller funktionalitet. Dessutom kan situationella begränsningar som dålig belysning, reflektioner på skärmen eller svartvita utskrifter göra färginformation otillgänglig även för användare utan synnedsättningar.
+Genom att tillhandahålla ett komplement till färg, såsom text, ikoner, mönster, understrykning eller fetstil, säkerställer man att informationen är tillgänglig för alla, oavsett deras förmåga att se färg.
 
-Genom att säkerställa att färg inte är det enda sättet att förmedla information gör du innehållet tillgängligt för alla, oavsett deras förmåga att uppfatta färger.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Statusindikatorer
 
-#### Felmeddelande med både färg och ikon/text
+Om färg används för att visa status (t.ex. rött för fel, grönt för ok) måste en ikon eller text också användas.
 
-::code-group{:labels='["index.html", "styles.css"]'}
+::code-group{:labels='["Exempel (Rätt) ✅", "Exempel (Fel) ❌"]'}
 
-```html
-<div class="error" role="alert">
-  <span class="error-icon">❌</span>
-  <strong>Fel:</strong> Användarnamnet eller lösenordet är felaktigt.
-</div>
+```html [Färg + Ikon/Text]
+<!-- Rätt: Ikon och/eller text kompletterar färgen -->
+<style>
+  .status {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    color: white;
+  }
+  .error {
+    background-color: red;
+  }
+  .success {
+    background-color: green;
+  }
+  .icon::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 0.3em;
+  } /* Exempel med Font Awesome */
+  .icon-error::before {
+    content: "\f071"; /* warning sign */
+  }
+  .icon-success::before {
+    content: "\f00c"; /* check mark */
+  }
+</style>
+<span>Status: <span class="status error icon icon-error">Fel</span></span>
+<span>Status: <span class="status success icon icon-success">OK</span></span>
 ```
 
-```css
-.error {
-  color: #721c24;
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  padding: 10px;
-}
+```html [Endast färg]
+<!-- Fel: Användaren måste se skillnad på röd/grön färg -->
+<style>
+  .status {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
+  .error {
+    background-color: red;
+  }
+  .success {
+    background-color: green;
+  }
+</style>
+<span>Status: <span class="status error"></span></span>
+<span>Status: <span class="status success"></span></span>
 ```
 
 ::
 
-#### Länk som markeras med både färg och understrykning
+### Länkar i löpande text
 
-::code-group{:labels='["index.html", "styles.css"]'}
+Länkar måste kunna särskiljas från omgivande text även utan färg. Vanligtvis görs detta med understrykning.
 
-```html
-<p>Besök vår <a href="/kontakt">kontaktsida</a> för mer information.</p>
-```
+::code-group{:labels='["CSS (Rätt) ✅", "CSS (Fel) ❌"]'}
 
-```css
+```css [Färg + Understrykning]
+/* Rätt: Understrykning är ett ickefärgberoende sätt att
+   identifiera länkar */
+p {
+  color: black;
+}
 a {
-  color: #0066cc;
+  color: blue;
   text-decoration: underline;
 }
+
+/* Alternativ (Rätt): Om man absolut inte vill ha understrykning
+   ALLTID, måste kontrasten vara hög (3:1 mot text, 4.5:1 mot bakgrund)
+   OCH det måste finnas en annan visuell skillnad vid hover/fokus,
+   ofta genom att lägga till understrykning då. Detta täcks även av 1.4.11. */
 a:hover,
 a:focus {
-  color: #004080;
   text-decoration: underline;
 }
 ```
 
-::
-
-#### Diagram med både färg och mönster
-
-::code-group{:labels='["index.html"]'}
-
-```html
-<figure>
-  <img
-    src="diagram.png"
-    alt="Stapeldiagram som visar försäljning per kvartal. Q1: 23%, Q2: 28%, Q3: 31%, Q4: 18%. Varje stapel har både olika färg och olika mönster för att särskilja dem."
-  />
-  <figcaption>
-    Försäljning per kvartal 2023 (Q1: randigt, Q2: prickigt, Q3: rutat, Q4:
-    linjerat)
-  </figcaption>
-</figure>
-```
-
-::
-
-### Exempel på bristande implementering
-
-#### Obligatoriska fält markerade endast med färg
-
-::code-group{:labels='["index.html", "styles.css"]'}
-
-```html
-<form>
-  <div>
-    <label class="required">Namn</label>
-    <input type="text" name="name" />
-  </div>
-  <div>
-    <label>Telefon</label>
-    <input type="tel" name="phone" />
-  </div>
-  <!-- Inget annat indikerar vilka fält som är obligatoriska -->
-</form>
-```
-
-```css
-.required {
-  color: red;
+```css [Endast färg skiljer länkar]
+/* Fel: Om en användare inte kan se blått, eller om
+   kontrasten är låg, syns inte länken */
+p {
+  color: black;
 }
-```
-
-::
-
-#### Tillstånd indikeras endast med färg
-
-::code-group{:labels='["index.html", "styles.css"]'}
-
-```html
-<p>Produktstatus:</p>
-<ul>
-  <li class="available">Produkt A</li>
-  <li class="unavailable">Produkt B</li>
-  <li class="available">Produkt C</li>
-  <!-- Inget annat än färg indikerar tillgänglighet -->
-</ul>
-```
-
-```css
-.available {
-  color: green;
-}
-.unavailable {
-  color: red;
-}
-```
-
-#### Länkar som skiljer sig från omgivande text endast genom färg
-
-::code-group{:labels='["index.html", "styles.css"]'}
-
-```html
-<p>Läs mer om våra tjänster på vår serviceavdelning.</p>
-<!-- "serviceavdelning" är en länk, men det framgår endast av färgen -->
-```
-
-```css
 a {
-  color: #0066cc;
-  text-decoration: none; /* Ingen understrykning */
-}
+  color: blue;
+  text-decoration: none;
+} /* Ingen understrykning */
 ```
 
 ::
+
+### Obligatoriska formulärfält
+
+Att endast markera obligatoriska fält med röd färg (t.ex. röd etikett eller röd ram) räcker inte.
+
+::code-group{:labels='["Exempel (Rätt) ✅", "Exempel (Fel) ❌"]'}
+
+```html [Röd etikett + Asterisk/Text]
+<style>
+  .required-label {
+    color: red;
+  }
+</style>
+
+<!-- Rätt: Asterisk (*) eller text (obligatoriskt) läggs till -->
+<label for="name" class="required-label">Namn: *</label>
+<input type="text" id="name" name="name" required aria-required="true" />
+
+<!-- Eller -->
+<label for="email">E-post (obligatoriskt):</label>
+<input type="email" id="email" name="email" required aria-required="true" />
+```
+
+```html [Endast röd etikett]
+<style>
+  .required-label {
+    color: red;
+  }
+</style>
+<label for="name" class="required-label">Namn:</label>
+<input type="text" id="name" name="name" />
+<!-- Fel: 'required-label' använder bara färg -->
+```
+
+::
+**Notera:** Attributet [required]{.inline-code} och [aria-required="true"]{.inline-code} är också viktiga för att programmatiskt indikera att fältet är obligatoriskt (täcks av andra kriterier som 3.3.2 Etiketter eller instruktioner och 4.1.2 Namn, roll, värde).
+
+### Diagram
+
+I diagram (t.ex. stapeldiagram, linjediagram) får inte färg vara det enda sättet att skilja mellan olika dataserier. Använd även mönster, olika typer av linjer, eller direkta etiketter på serierna.
+
+_(Inget kodexempel här, då det handlar om visuell design av diagram)._
+
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 1.4.1 Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
-- [Webbriktlinjer - R122: Använd inte enbart färg för att förmedla information](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-inte-enbart-farg-for-att-formedla-information)
-- [WebAIM - Color Blindness](https://webaim.org/articles/visual/colorblind)
-- [Färgblindhetssimulatorer](https://www.color-blindness.com/coblis-color-blindness-simulator/)
+- [WCAG 2.2: Success Criterion 1.4.1 Use of Color (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
+- [Webbriktlinjer: R109 Använd inte enbart färg för att förmedla information eller särskilja innehåll](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-inte-enbart-farg-for-att-formedla-information-eller-sarskilja-innehall)

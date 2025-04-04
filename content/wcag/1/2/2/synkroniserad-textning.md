@@ -1,98 +1,112 @@
 ---
-title: Synkroniserad textning
-description: Synkroniserade undertexter tillhandahålls för allt inspelat audioinnehåll i synkroniserade media.
+title: 1.2.2 Textning av media (förinspelad)
+description: Tillhandahåll textning för allt förinspelat ljudinnehåll i synkroniserad media.
 level: A
-slug: synkroniserad-textning
+slug: textning-av-media-forinspelad
 keywords:
   [
     "WCAG",
     "tillgänglighet",
-    "synkroniserad textning",
-    "undertexter",
+    "textning",
     "captions",
-    "tidsbaserade media",
+    "förinspelad media",
+    "video",
+    "ljud",
+    "synkroniserad media",
   ]
+canonical: https://t12t.dev/wcag/1/2/2/synkroniserad-textning
+
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 2
-guidelineName: Tidsbaserade media
+guidelineName: Tidsberoende media
 criterionNumber: 2
 
 og:
-  title: Synkroniserad textning - WCAG
-  description: Synkroniserade undertexter tillhandahålls för allt inspelat audioinnehåll i synkroniserade media.
-  url: https://t12t.dev/wcag/synkroniserad-textning
+  title: 1.2.2 Textning av media (förinspelad) – WCAG
+  description: Tillhandahåll textning för allt förinspelat ljudinnehåll i synkroniserad media.
+  url: https://t12t.dev/wcag/1/2/2/synkroniserad-textning
   type: article
 
-datePublished: 2024-03-27
-dateModified: 2025-03-19
+datePublished: 2025-03-21
+# Uppdaterad
+dateModified: 2024-05-16
 
 sitemap:
-  lastmod: 2025-03-19
+  # Uppdaterad
+  lastmod: 2024-05-16
   changefreq: monthly
-  priority: 0.8
+  priority: 0.7
 ---
 
-# Synkroniserad textning
+# Textning av media (förinspelad)
 
 ## Beskrivning
 
-Synkroniserade undertexter tillhandahålls för allt förinspelat audioinnehåll i synkroniserade media, förutom när mediet är ett mediaalternativ till text och är tydligt märkt som sådant.
+Textning ska tillhandahållas för allt förinspelat ljudinnehåll i synkroniserad media, förutom när mediet är ett mediealternativ till text och tydligt märkt som sådant.
+
+Synkroniserad media innebär media där ljud och bild är samordnade, till exempel en film eller en föreläsningsinspelning med både video och ljud. Textningen ska innehålla allt tal samt viktiga ljudhändelser (t.ex. [musik], [applåder], [dörr stängs]) som behövs för att förstå innehållet.
 
 ## Varför detta behövs
 
-Personer som är döva eller har nedsatt hörsel kan inte ta del av information som endast presenteras via ljud. Synkroniserade undertexter gör det möjligt för dessa användare att följa med i både visuellt och ljudbaserat innehåll i videoklipp.
+Textning är avgörande för personer som är döva eller har nedsatt hörsel, eftersom de inte kan ta del av ljudinformationen.
+
+Det är också till nytta för:
+
+- Personer som befinner sig i bullriga miljöer där ljudet är svårt att höra.
+- Personer som befinner sig i tysta miljöer där ljud inte kan spelas upp (t.ex. bibliotek, kontor).
+- Personer som inte har språket som modersmål och kan ha lättare att följa med via text.
+- Personer som lär sig bättre genom att läsa samtidigt som de lyssnar.
+- Sökmotorer, som kan indexera textinnehållet.
 
 ## Exempel
 
-### Exempel på bra implementering
+### Video med textningsfil
 
-#### Video med undertexter via track-element
+En video ([\<video\>]{.inline-code}) inkluderas på en webbsida. En separat textningsfil (ofta i WebVTT-format, [.vtt]{.inline-code}) länkas in med hjälp av [\<track\>]{.inline-code}-elementet. Attributet [kind="captions"]{.inline-code} anger att det är textning för döva och hörselskadade. [srclang]{.inline-code} anger språket för textningen och [label]{.inline-code} ger en läsbar etikett för textningsspåret.
 
-```html
-<video controls>
+::code-group{:labels='["index.html", "textning.vtt"]'}
+
+```html {3-8} showLineNumbers
+<video controls width="640" height="360">
   <source src="forelasning.mp4" type="video/mp4" />
   <track
-    kind="captions"
-    src="forelasning-undertexter.vtt"
-    srclang="sv"
     label="Svenska"
+    kind="captions"
+    srclang="sv"
+    src="textning_sv.vtt"
     default
   />
-  Din webbläsare stödjer inte video-elementet.
+  <!-- 'default' gör att textningen visas automatiskt om möjligt -->
+  <!-- Fallback-text -->
+  Din webbläsare stödjer inte videoelementet.
 </video>
 ```
 
-#### Video med inbäddade undertexter
+```vtt showLineNumbers
+WEBVTT
 
-```html
-<iframe
-  src="https://www.youtube-nocookie.com/embed/videoID?cc_load_policy=1"
-  title="Videoföreläsning med undertexter"
-  allowfullscreen
-></iframe>
+00:00:00.500 --> 00:00:03.800
+Välkomna till dagens föreläsning om webbtillgänglighet.
+
+00:00:04.200 --> 00:00:07.000
+Idag ska vi prata om vikten av textning.
+[Skratt från publiken]
+
+00:00:07.500 --> 00:00:10.100
+Textning gör innehållet tillgängligt för fler.
 ```
 
-### Exempel på bristande implementering
+::
 
-#### Video utan undertexter
+**Notera:** Textningsfilen ([.vtt]{.inline-code}) innehåller tidsstämplad text som synkroniseras med ljudet i videon. Den inkluderar både tal och relevanta ljudhändelser.
 
-```html
-<video controls src="intervju.mp4">
-  Din webbläsare stödjer inte video-elementet.
-</video>
-```
-
-#### Videospelare utan möjlighet att aktivera undertexter
-
-```html
-<video controls>
-  <source src="forelasning.mp4" type="video/mp4" />
-  Din webbläsare stödjer inte video-elementet.
-</video>
-```
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 1.2.2 Captions (Prerecorded)](https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html)
-- [Webbriktlinjer - R115: Texta inspelad rörlig media](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/texta-inspelad-rorlig-media)
+- [WCAG 2.2: Success Criterion 1.2.2 Captions (Prerecorded) (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html)
+- [Webbriktlinjer: R4 Texta video och ljud som publiceras på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/texta-video-och-ljud-som-publiceras-pa-webbplatsen)
+- [MDN Web Docs: WebVTT (Web Video Text Tracks)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
+- [MDN Web Docs: The Track element (\<track\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
+- [W3C WAI: Captions/Subtitles](https://www.w3.org/WAI/media/av/captions/)

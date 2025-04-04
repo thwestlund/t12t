@@ -1,190 +1,153 @@
 ---
-title: Visuell presentation
-description: För visuell presentation av textblock finns en mekanism för att åstadkomma specifika formateringsval.
+title: 1.4.8 Visuell presentation
+description: Ge användare möjlighet att anpassa den visuella presentationen av textblock, inklusive bredd, justering, rad- och styckeavstånd.
 level: AAA
+slug: visuell-presentation
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "visuell presentation",
+    "textblock",
+    "radlängd",
+    "marginaljustering",
+    "radavstånd",
+    "styckeavstånd",
+    "läsbarhet",
+    "kognitiv",
+    "dyslexi",
+    "skiljbar",
+  ]
+canonical: https://t12t.dev/wcag/1/4/8/visuell-presentation
+
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 4
-guidelineName: Urskiljbart
+guidelineName: Skiljbar
 criterionNumber: 8
 
+og:
+  title: 1.4.8 Visuell presentation – WCAG
+  description: Ge användare möjlighet att anpassa den visuella presentationen av textblock.
+  url: https://t12t.dev/wcag/1/4/8/visuell-presentation
+  type: article
+
+datePublished: 2025-04-17
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.4 # AAA-kriterier lägre prio
 ---
 
-# Framgångskriterium 1.4.8 Visuell presentation
+# Visuell presentation
 
 ## Beskrivning
 
-För visuell presentation av textblock finns en mekanism för att åstadkomma följande:
+För den visuella presentationen av **textblock** ska en mekanism finnas tillgänglig för att uppnå följande, utan att information eller funktion går förlorad:
 
-1. Förgrund- och bakgrundsfärger kan väljas av användaren.
-2. Bredden överstiger inte 80 tecken eller glyfer (40 för kinesiska, japanska eller koreanska).
-3. Text är inte justerad (anpassad till både höger och vänster marginal).
-4. Radavståndet är minst 1,5 i textblock och avståndet mellan stycken är minst 1,5 gånger så stort som radavståndet.
-5. Textstorlek kan ändras utan hjälpmedelsteknik upp till 200 procent på ett sätt som inte kräver att användaren rullar horisontellt för att läsa en rad i ett fönster med full skärmbredd.
+1.  **Anpassade färger:** Användaren kan välja förgrunds- och bakgrundsfärger.
+2.  **Bredd:** Radbredden är inte mer än 80 tecken eller glyfer (40 för CJK - kinesiska, japanska, koreanska).
+3.  **Justering:** Text är inte marginaljusterad (justified) åt båda marginalerna (vänster- eller högerjustering är OK).
+4.  **Radavstånd:** Radavståndet (ledande) är minst 1.5 gånger teckenstorleken inuti stycken.
+5.  **Styckeavstånd:** Avståndet mellan stycken är minst 1.5 gånger radavståndet.
+6.  **Textstorlek:** Text kan ändras i storlek upp till 200 procent utan att hjälpmedel krävs (detta täcks redan av 1.4.4 på AA-nivå, men upprepas här för sammanhanget).
+
+Detta kriterium (Nivå AAA) syftar till att säkerställa att användare med nedsatt syn eller kognitiva funktionsnedsättningar (som dyslexi) kan anpassa textens utseende för optimal läsbarhet, eller att standardpresentationen uppfyller vissa läsbarhetskrav. "Mekanism" kan innebära att webbplatsen erbjuder kontroller för detta, eller att webbplatsen är byggd så att användarens egna inställningar (via webbläsare eller hjälpmedel) kan appliceras utan att sidan går sönder.
 
 ## Varför detta behövs
 
-Personer med dyslexi, andra läs- eller inlärningssvårigheter, eller kognitiva funktionsnedsättningar kan ha svårt att läsa text som inte är optimalt formaterad för deras behov. Även personer med synnedsättningar kan behöva anpassa texten för bättre läsbarhet.
+Möjligheten att anpassa textens presentation är avgörande för många användare:
 
-Genom att ge användarna möjlighet att anpassa texten enligt dessa riktlinjer kan du förbättra läsbarheten avsevärt för många. De specifika kriterierna (radlängd, radavstånd, styckesavstånd, textjustering) baseras på forskning om läsbarhet och är särskilt viktiga för personer med lässvårigheter.
+- **Personer med nedsatt syn:** Behöver ofta specifika färgkombinationer med hög kontrast eller möjlighet att förstora text och justera avstånd för att kunna läsa.
+- **Personer med dyslexi och andra lässvårigheter:** Kan ha stor nytta av kortare radlängder, ökat rad- och styckeavstånd, och vänsterjusterad text (marginaljusterad text skapar oregelbundna mellanrum mellan ord som kan försvåra läsningen).
+- **Kognitiva funktionsnedsättningar:** En luftig och konsekvent layout med lagom radlängd underlättar fokus och förståelse.
 
-Detta kriterium går utöver grundläggande anpassningsbarhet genom att ställa specifika krav på hur text bör kunna presenteras för optimal läsbarhet.
+Att uppfylla dessa krav, antingen som standard eller genom att tillåta anpassning, gör textinnehåll mer tillgängligt och bekvämt att läsa för en bredare publik.
+
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Flexibel och läsbar textlayout (Rätt) ✅
 
-#### Textpresentation med användarkontroller
+Denna CSS skapar en layout som respekterar kraven för bredd, justering och avstånd, samt tillåter användaren att zooma och potentiellt ändra färger via webbläsarinställningar eller tillägg.
 
-```html
-<div class="article-container">
-  <div class="reading-controls">
-    <label>
-      Textstorlek:
-      <select id="font-size-control">
-        <option value="100%">Normal</option>
-        <option value="125%">Större</option>
-        <option value="150%">Mycket större</option>
-        <option value="200%">Dubbel storlek</option>
-      </select>
-    </label>
+::code-group{:labels='["CSS (Läsbar standard) ✅"]'}
 
-    <label>
-      Färgschema:
-      <select id="color-scheme">
-        <option value="default">Standard (svart på vitt)</option>
-        <option value="dark">Mörkt läge (vitt på svart)</option>
-        <option value="sepia">Sepia (mörk text på beige)</option>
-        <option value="blue">Blå (gul text på mörkblå)</option>
-      </select>
-    </label>
-
-    <button id="toggle-justify">Växla textjustering</button>
-  </div>
-
-  <article id="readable-content" class="readable-text">
-    <h1>Artikelrubrik</h1>
-    <p>
-      Artikelinnehåll med god läsbarhet. Texten är formaterad med radavstånd på
-      1.5 och styckesavstånd på 2.25em. Radlängden är begränsad till max 80
-      tecken.
-    </p>
-    <p>Fler stycken med innehåll...</p>
-  </article>
-</div>
-
-<style>
-  .readable-text {
-    max-width: 70ch; /* Ungefär 70-80 tecken per rad */
-    line-height: 1.5;
-    text-align: left; /* Vänsterjusterad text, inte blocktextjustering */
-  }
-
-  .readable-text p {
-    margin-bottom: 1.5em; /* Minst 1,5 gånger radavståndet mellan stycken */
-  }
-</style>
-
-<script>
-  // JavaScript för att hantera användarens anpassningar av text
-</script>
-```
-
-#### CSS som stödjer läsbarhet
-
-```css
-/* Grundläggande stilar för god läsbarhet */
-.readable-content {
-  max-width: 70ch; /* Begränsar textbredden till ca 70-80 tecken */
-  line-height: 1.5; /* Radavstånd på 1,5 */
-  text-align: left; /* Vänsterjusterad text */
-}
-
-.readable-content p {
-  margin-bottom: 2.25em; /* 1,5 * radavståndet (1.5) = 2.25 */
-}
-
-/* Stöd för olika färgscheman som användaren kan välja */
-.light-theme {
-  color: #000000;
+```css showLineNumbers
+body {
+  /* Låter användaren (eller webbläsaren) sätta standardfärger,
+     eller så sätts färger med god kontrast (AAA rekommenderas) */
   background-color: #ffffff;
+  color: #000000; /* Uppfyller 1.4.6 Kontrast (Förbättrad) */
 }
 
-.dark-theme {
-  color: #ffffff;
-  background-color: #222222;
+.text-block {
+  font-size: 1rem; /* Basstorlek, kan zoomas av användaren */
+  line-height: 1.5; /* Krav: minst 1.5 */
+  max-width: 80ch; /* Krav: max 80 tecken bredd (ch-enheten är teckenbredd) */
+  /* Alternativt: max-width: 40em; (ca 80 tecken för de flesta typsnitt) */
+  text-align: left; /* Krav: inte 'justify' */
+  margin-left: auto; /* Centrera blocket om så önskas */
+  margin-right: auto;
 }
 
-.sepia-theme {
-  color: #5b4636;
-  background-color: #f4ecd8;
+.text-block p {
+  /* Krav: Styckeavstånd minst 1.5 * radavstånd */
+  /* Om line-height är 1.5, blir detta 1.5 * 1.5 = 2.25 */
+  margin-bottom: 2.25rem;
+  /* Alternativ: Använd em relativt till font-size, t.ex. margin-bottom: 1.5em;
+     vilket ofta räcker om line-height är 1.5, men 2.25rem är striktare */
 }
 
-/* CSS för att hantera textförstoring upp till 200% utan horisontell scrollning */
-@media (max-width: 992px) {
-  .readable-content {
-    max-width: 100%;
-    padding: 0 15px;
-  }
+/* Säkerställ att inga !important blockerar användarens färgval om möjligt */
+```
+
+::
+**Resultat:** Textblocket har en maximal bredd som främjar läsbarhet, är vänsterjusterad, har tillräckligt rad- och styckeavstånd som standard, och kan förstoras och få sina färger ändrade av användaren utan att layouten går sönder.
+
+### Layout som försvårar läsning (Fel) ❌
+
+Denna CSS skapar problem genom fasta layouter, marginaljustering och för täta avstånd.
+
+::code-group{:labels='["CSS (Problem för läsbarhet) ❌"]'}
+
+```css showLineNumbers
+body {
+  /* Kan ha otillräcklig kontrast (bryter mot 1.4.6) */
+  background-color: #eeeeee;
+  color: #777777;
+}
+
+.narrow-justified-block {
+  font-size: 14px; /* Svårare att utgå ifrån för relativa enheter */
+  line-height: 1.2; /* Fel: För tätt, mindre än 1.5 */
+  width: 400px; /* Fast bredd, kan bli mer än 80 tecken om texten zoomas mycket */
+  text-align: justify; /* Fel: Försvårar för personer med dyslexi */
+  margin: 10px;
+}
+
+.narrow-justified-block p {
+  margin-bottom: 5px; /* Fel: För litet styckeavstånd (t.ex. < 1.5 * line-height) */
+}
+
+/* Användning av !important kan förhindra användarens anpassningar */
+.narrow-justified-block {
+  color: #777777 !important;
+  background-color: #eeeeee !important;
 }
 ```
 
-### Exempel på bristande implementering
+::
+**Resultat:** Texten är marginaljusterad, har för tätt rad- och styckeavstånd, och kan ha en radlängd som blir för lång vid förstoring om den fasta bredden är olämplig. [!important]{.inline-code} kan hindra användaren från att ändra färger.
 
-#### Text utan läsbarhetsstöd
-
-```html
-<style>
-  .poor-readability {
-    width: 100%; /* Kan bli mycket bred på stora skärmar */
-    line-height: 1.2; /* För litet radavstånd */
-    text-align: justify; /* Blocktextjustering som kan skapa ojämna ordmellanrum */
-  }
-
-  .poor-readability p {
-    margin-bottom: 0.8em; /* För litet styckesavstånd */
-  }
-
-  /* Saknar stöd för användaranpassning av färger */
-  /* Saknar stöd för att anpassa textstorlek */
-</style>
-
-<div class="poor-readability">
-  <p>
-    Denna text har dålig läsbarhet med för långa rader, för litet radavstånd,
-    blocktextjustering och för litet avstånd mellan stycken. Användaren kan inte
-    anpassa färger eller textstorlek.
-  </p>
-  <p>Mer text i samma format...</p>
-</div>
-```
-
-#### Fixerad textstorlek som inte kan förstoras
-
-```html
-<style>
-  .fixed-text {
-    font-size: 12px !important; /* Förhindrar förstoring */
-    width: 800px; /* Fast bredd */
-    white-space: nowrap; /* Text bryter inte om vid förstoring */
-  }
-</style>
-
-<div class="fixed-text">
-  <p>
-    Denna text kan inte förstoras ordentligt eftersom storleken är fixerad och
-    bredden är fast.
-  </p>
-</div>
-```
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 1.4.8 Visual Presentation](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html)
-- [WebAIM - Contrast and Color Accessibility](https://webaim.org/articles/contrast/)
-- [Dyslexia Friendly Style Guide](https://www.dyslexia.com/about-dyslexia/understanding-dyslexia/guide-to-dyslexia-friendly-style/)
-- [MDN Web Docs - Readability: The Optimal Line Length](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small)
+- [WCAG 2.2: Success Criterion 1.4.8 Visual Presentation (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html)
+- [Webbriktlinjer: R115 Gör det möjligt att anpassa textens utseende](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-anpassa-textens-utseende)
+- [CSS basic user interface module Level 4 - text-align](https://www.w3.org/TR/css-ui-4/#propdef-text-align) (Specifikt [text-align: justify]{.inline-code})
+- [CSS ch unit - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/length#ch) (För att sätta maxbredd baserat på tecken)
