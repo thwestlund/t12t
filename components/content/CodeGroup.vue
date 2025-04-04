@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg border border-gray-200 overflow-hidden mb-12">
+  <div class="rounded-lg border border-gray-200 overflow-hidden mb-6">
     <!-- Tabs navigation with copy button -->
     <div class="flex justify-between items-center border-b border-gray-200 p-3">
       <!-- Tab buttons on the left -->
