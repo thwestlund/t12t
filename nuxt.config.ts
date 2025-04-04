@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "nuxt-time",
     "dayjs-nuxt",
+    "@nuxt/eslint",
   ],
   css: ["~/assets/css/main.css"],
   postcss: {
