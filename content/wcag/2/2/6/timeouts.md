@@ -1,295 +1,137 @@
 ---
-title: Timeouts
-description: Användare varnas för varaktigheten av användarens inaktivitet som kan orsaka dataförlust, såvida inte data bevaras i mer än 20 timmar när användaren inte vidtar några åtgärder.
+title: 2.2.6 Timeouts
+description: Informera användare om hur lång tids inaktivitet som kan leda till dataförlust.
 level: AAA
+slug: timeouts
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "timeout",
+    "tidsgräns",
+    "inaktivitet",
+    "dataförlust",
+    "session",
+    "information",
+    "operabel",
+    "kognitiv",
+  ]
+canonical: https://t12t.dev/wcag/2/2/6/timeouts
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 2
 guidelineName: Tillräckligt med tid
 criterionNumber: 6
 
+og:
+  title: 2.2.6 Timeouts – WCAG
+  description: Informera användare om hur lång tids inaktivitet som kan leda till dataförlust.
+  url: https://t12t.dev/wcag/2/2/6/timeouts
+  type: article
+
+datePublished: 2025-05-15
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.4 # AAA-kriterier lägre prio
 ---
 
-# Framgångskriterium 2.2.6 Timeouts
+# Timeouts
 
 ## Beskrivning
 
-Användare varnas för varaktigheten av användarens inaktivitet som kan orsaka dataförlust, såvida inte data bevaras i mer än 20 timmar när användaren inte vidtar några åtgärder.
+Användare varnas om hur lång användarinaktivitet som kan orsaka dataförlust, om inte datan sparas i mer än 20 timmar när användaren inte gör någonting.
+
+Detta kriterium (Nivå AAA) kräver att om det finns en risk att användaren förlorar data (t.ex. information i ett formulär som inte skickats) på grund av inaktivitet och en efterföljande timeout, måste användaren **i förväg** informeras om hur länge de kan vara inaktiva innan detta sker.
+
+Det kompletterar Kriterium 2.2.1 (som kräver möjlighet att justera/förlänga tidsgränser) och 2.2.5 (som kräver att data bevaras vid återautentisering). Detta kriterium fokuserar specifikt på att _informera_ användaren om själva inaktivitetsgränsen som kan leda till _dataförlust_.
+
+Undantaget är om systemet automatiskt sparar användarens data under minst 20 timmars inaktivitet.
 
 ## Varför detta behövs
 
-Många användare, särskilt personer med kognitiva eller inlärningssvårigheter, kan behöva ta pauser under längre interaktioner med en webbplats. Om data förloras på grund av att en session löper ut under en inaktivitetsperiod utan varning, kan det leda till frustration, upprepat arbete och i vissa fall oförmåga att slutföra viktiga uppgifter.
+Att i förväg veta hur länge man kan vara inaktiv innan data riskerar att gå förlorad hjälper användare att planera och undvika problem:
 
-Timeout-varningar är särskilt viktiga för:
+- **Medvetenhet och planering:** Användare som vet att de behöver mer tid, eller som kan bli avbrutna, kan bättre bedöma om de hinner slutföra en uppgift innan en eventuell timeout som raderar deras data.
+- **Minskar oro:** Att känna till tidsramen kan minska stress och osäkerhet, särskilt för användare med kognitiva funktionsnedsättningar som oroar sig för att förlora sitt arbete.
+- **Komplement till andra krav:** Även om data _bör_ bevaras (2.2.5), kan det finnas situationer där detta inte är fullt möjligt. Att då åtminstone varna om tidsgränsen för dataförlust är ett viktigt skyddsnät på AAA-nivå.
 
-- Personer med kognitiva funktionsnedsättningar som kan behöva längre tid att bearbeta information
-- Personer med uppmärksamhetsstörningar som kan bli distraherade och lämna en uppgift tillfälligt
-- Personer med motoriska funktionsnedsättningar som behöver längre tid för att interagera med gränssnitt
-- Äldre användare som kan arbeta i långsammare takt
-- Alla användare som kan behöva pausa sitt arbete för att hantera avbrott
+Informationen gör det möjligt för användaren att fatta informerade beslut om hur de interagerar med systemet.
 
-Genom att tydligt informera om timeout-varaktighet innan användaren börjar en process, kan de bättre planera sin interaktion och undvika dataförlust.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Information vid formulärstart (Rätt) ✅
 
-#### Formulär med tydlig timeout-information
+När användaren startar ett längre formulär visas ett meddelande i början: "Observera: Av säkerhetsskäl kommer osparade ändringar i detta formulär att gå förlorade efter 25 minuters inaktivitet. Kom ihåg att spara dina framsteg om du behöver ta en paus (om sparfunktion finns)."
 
-```html
-<form action="/submit-application" method="post">
-  <div class="form-header">
-    <h2>Ansökningsformulär</h2>
-    <div class="timeout-info" role="status">
-      <p>
-        <strong>OBS:</strong> Din session kommer att vara aktiv i
-        <span id="timeout-duration">60 minuter</span> från senaste aktivitet. Om
-        du behöver mer tid, klicka på "Spara utkast" för att spara ditt arbete.
-      </p>
-    </div>
-  </div>
+::code-group{:labels='["Koncept (Rätt) ✅"]'}
 
-  <!-- Formulärfält... -->
-
-  <div class="form-actions">
-    <button type="submit">Skicka in</button>
-    <button type="button" id="save-draft">Spara utkast</button>
-  </div>
-</form>
-
-<div
-  id="timeout-warning"
-  class="modal"
-  hidden
-  role="alertdialog"
-  aria-labelledby="warning-title"
-  aria-describedby="warning-desc"
->
-  <div class="modal-content">
-    <h3 id="warning-title">Session håller på att löpa ut</h3>
-    <p id="warning-desc">
-      Din session kommer att löpa ut om
-      <span id="timeout-countdown">5 minuter</span> på grund av inaktivitet.
-      Vill du fortsätta arbeta?
-    </p>
-    <div class="modal-actions">
-      <button id="continue-session">Fortsätt sessionen</button>
-      <button id="save-and-exit">Spara och avsluta</button>
-    </div>
-  </div>
+```html {3-7} showLineNumbers
+<div class="form-container">
+  <h1>Ansökningsformulär</h1>
+  <p class="timeout-warning">
+    <strong>Viktigt:</strong> Om du är inaktiv i mer än 25 minuter kommer
+    eventuella osparade data i formuläret att gå förlorade och du kan behöva
+    börja om.
+  </p>
+  <form>
+    <!-- Formulärfält -->
+  </form>
 </div>
-
-<script>
-  // Visa tidsgräns vid formulärstart
-  document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("timeout-duration").textContent = "60 minuter";
-  });
-
-  // Aktivitetsspårning för att återställa timer
-  let inactivityTimer;
-
-  function resetInactivityTimer() {
-    clearTimeout(inactivityTimer);
-    inactivityTimer = setTimeout(showTimeoutWarning, 55 * 60 * 1000); // Visa varning efter 55 minuter
-  }
-
-  // Återställ timer vid användaraktivitet
-  ["click", "keypress", "mousemove", "touchstart"].forEach((eventType) => {
-    document.addEventListener(eventType, resetInactivityTimer, {
-      passive: true,
-    });
-  });
-
-  // Starta timer när sidan laddas
-  resetInactivityTimer();
-
-  // Visa timeout-varning
-  function showTimeoutWarning() {
-    document.getElementById("timeout-warning").hidden = false;
-
-    // Räkna ned återstående tid
-    let secondsLeft = 300; // 5 minuter
-    const countdownInterval = setInterval(() => {
-      secondsLeft--;
-
-      const minutes = Math.floor(secondsLeft / 60);
-      const seconds = secondsLeft % 60;
-
-      document.getElementById(
-        "timeout-countdown"
-      ).textContent = `${minutes} minut${
-        minutes !== 1 ? "er" : ""
-      } och ${seconds} sekund${seconds !== 1 ? "er" : ""}`;
-
-      if (secondsLeft <= 0) {
-        clearInterval(countdownInterval);
-        // Automatiskt spara och logga ut
-        saveFormData();
-        window.location.href = "/session-expired";
-      }
-    }, 1000);
-
-    // Fortsätt sessionen
-    document
-      .getElementById("continue-session")
-      .addEventListener("click", () => {
-        document.getElementById("timeout-warning").hidden = true;
-        clearInterval(countdownInterval);
-        resetInactivityTimer();
-      });
-
-    // Spara och avsluta
-    document.getElementById("save-and-exit").addEventListener("click", () => {
-      saveFormData();
-      window.location.href = "/saved-draft";
-    });
-  }
-
-  // Funktion för att spara formulärdata
-  function saveFormData() {
-    const formData = new FormData(document.querySelector("form"));
-
-    // Spara i localStorage som backup
-    const formValues = {};
-    for (const [key, value] of formData.entries()) {
-      formValues[key] = value;
-    }
-    localStorage.setItem("saved-form-data", JSON.stringify(formValues));
-
-    // Skicka till server
-    fetch("/api/save-draft", {
-      method: "POST",
-      body: formData,
-      credentials: "same-origin",
-    });
-  }
-</script>
 ```
 
-#### E-handel med tydlig korginformation
+::
+**Resultat:** Användaren är informerad om tidsgränsen för dataförlust _innan_ de börjar fylla i formuläret.
 
-```html
-<div class="shopping-cart">
-  <div class="cart-header">
-    <h2>Din varukorg</h2>
-    <div class="cart-info" role="status">
-      <p>
-        Varor sparas i varukorgen i 24 timmar. Efter det måste du lägga till dem
-        igen.
-      </p>
-    </div>
-  </div>
+### Information i hjälpavsnitt (Rätt) ✅
 
-  <div class="cart-items">
-    <!-- Varukorgsobjekt... -->
-  </div>
+Webbplatsens hjälp- eller FAQ-sektion innehåller information om sessionshantering, där det tydligt framgår: "För din säkerhet avslutas din inloggade session automatiskt efter 15 minuters inaktivitet. Om du håller på att fylla i ett formulär när detta sker, och formuläret inte har en 'Spara utkast'-funktion, kan dina data gå förlorade."
 
-  <div class="cart-actions">
-    <button type="button" id="save-for-later">Spara för senare</button>
-    <button type="button" id="proceed-to-checkout">Till kassan</button>
-  </div>
-</div>
+::code-group{:labels='["Koncept (Rätt) ✅"]'}
 
-<script>
-  // Visa förfallodatum/tid för varukorgen
-  function updateCartExpiryInfo() {
-    const cartTimestamp = localStorage.getItem("cart-timestamp");
-
-    if (cartTimestamp) {
-      const expiryDate = new Date(
-        parseInt(cartTimestamp) + 24 * 60 * 60 * 1000
-      );
-      const formattedDate = expiryDate.toLocaleDateString();
-      const formattedTime = expiryDate.toLocaleTimeString();
-
-      const cartInfo = document.querySelector(".cart-info p");
-      cartInfo.textContent = `Varor sparas i varukorgen till ${formattedDate} kl ${formattedTime}.`;
-    }
-  }
-
-  // Uppdatera tidsstämpel när användaren lägger till varor
-  function updateCartTimestamp() {
-    localStorage.setItem("cart-timestamp", Date.now());
-    updateCartExpiryInfo();
-  }
-
-  // Uppdatera information när sidan laddas
-  document.addEventListener("DOMContentLoaded", () => {
-    updateCartExpiryInfo();
-  });
-
-  // Uppdatera tidsstämpel när användaren interagerar med varukorgen
-  document
-    .getElementById("save-for-later")
-    .addEventListener("click", updateCartTimestamp);
-</script>
+```text [Hjälptext]
+**Sessionslängd och säkerhet**
+För att skydda ditt konto loggas du automatiskt ut från [Webbplatsens Namn] efter 15 minuters inaktivitet. Om du är mitt uppe i att skriva ett inlägg eller fylla i ett formulär utan sparfunktion när sessionen går ut, kan information som inte skickats gå förlorad. Vi rekommenderar att du slutför din uppgift inom denna tid eller använder eventuella funktioner för att spara utkast.
 ```
 
-### Exempel på bristande implementering
+::
+**Resultat:** Informationen finns tillgänglig för användaren, även om den inte visas direkt vid varje interaktion.
 
-#### Formulär utan timeout-information
+### Automatisk datarensning utan information (Fel) ❌
 
-```html
-<!-- Dåligt exempel - inget meddelande om timeout-period -->
-<form action="/apply" method="post">
-  <h2>Ansökningsformulär</h2>
+Ett system loggar ut användaren efter 10 minuters inaktivitet. Om användaren var mitt i att skriva ett meddelande, rensas meddelandetexten. Användaren informerades aldrig i förväg om denna 10-minutersgräns för dataförlust.
 
-  <!-- Formulärfält... -->
+::code-group{:labels='["Koncept (Fel - AAA) ❌"]'}
 
-  <button type="submit">Skicka in</button>
-</form>
-
-<script>
-  // Session timeout efter 30 minuter utan varning
-  setTimeout(() => {
-    window.location.href = "/session-expired";
-  }, 30 * 60 * 1000);
-</script>
+```text [Beskrivning]
+Användaren skriver ett långt e-postmeddelande. De tar en kort paus. När de kommer tillbaka har de blivit utloggade, och när de loggar in igen är utkastet borta. Ingenstans på webbplatsen fanns information om att inaktivitet på 10 minuter skulle leda till att utkastet raderas.
 ```
 
-#### Överraskande dataförlust
+::
+**Resultat:** Användaren drabbas av oväntad dataförlust eftersom de inte varnades om tidsgränsen för inaktivitet.
 
-```html
-<!-- Dåligt exempel - varning kommer först när det är för sent -->
-<div class="editor">
-  <h2>Online dokumentredigerare</h2>
+### Undantag: Långtidssparande (Tillåtet) ✅
 
-  <div contenteditable="true" class="document-content">
-    <!-- Redigerbart innehåll -->
-  </div>
+Ett online-dokumentredigeringsverktyg (som Google Docs eller Microsoft 365 Online) sparar automatiskt användarens ändringar kontinuerligt eller med mycket korta intervall. Även om användaren är inaktiv i timmar eller dagar, finns dokumentet kvar med de senaste ändringarna när de återvänder.
 
-  <button id="save">Spara dokument</button>
-</div>
+::code-group{:labels='["Koncept (Tillåtet) ✅"]'}
 
-<script>
-  // Förlorar data utan varning
-  let sessionTimeout;
-
-  function checkSession() {
-    fetch("/api/session-status")
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.active) {
-          // Användaren får bara veta att sessionen har upphört
-          // efter att det redan har hänt, utan möjlighet att återställa
-          alert("Din session har löpt ut och ditt arbete har inte sparats.");
-          window.location.href = "/login";
-        }
-      });
-  }
-
-  // Kontrollera bara sessionen var 10:e minut, utan varning innan
-  setInterval(checkSession, 10 * 60 * 1000);
-</script>
+```text [Beskrivning]
+Användaren skriver i ett dokument i en molnbaserad ordbehandlare. Programmet sparar automatiskt var tionde sekund. Användaren kan stänga webbläsaren, vara inaktiv i flera dagar, och sedan öppna dokumentet igen – alla data finns kvar.
 ```
+
+::
+**Resultat:** Eftersom data sparas under mer än 20 timmars inaktivitet (i praktiken kontinuerligt), behöver användaren inte varnas om en specifik inaktivitetsgräns för dataförlust.
+
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.2.6 Timeouts](https://www.w3.org/WAI/WCAG22/Understanding/timeouts.html)
-- [W3C WAI - User Notifications](https://www.w3.org/WAI/WCAG21/Understanding/timeouts.html)
-- [Nielsen Norman Group - Session Timeout Guidelines](https://www.nngroup.com/articles/session-timeouts/)
-- [WebAIM - Cognitive Disabilities](https://webaim.org/articles/cognitive/)
+- [WCAG 2.2: Success Criterion 2.2.6 Timeouts (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/timeouts.html)
+- [Förstå WCAG SC 2.2.1 (Nivå A)](https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html) (Relaterat krav om att kunna justera/förlänga timeouts).
+- [Förstå WCAG SC 2.2.5 (Nivå AAA)](https://www.w3.org/WAI/WCAG22/Understanding/re-authenticating.html) (Relaterat krav om att bevara data vid återautentisering).

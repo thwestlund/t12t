@@ -1,56 +1,173 @@
 ---
-title: Riktlinje 2.5.3 - Etikett i namn
-description: För användargränssnittskomponenter med etiketter som innehåller text eller bilder av text, måste namnet innehålla den text som visas visuellt.
+title: 2.5.3 Etikett i namn
+description: Säkerställ att det tillgängliga namnet för en komponent innehåller den text som är synlig i dess etikett.
 level: A
+slug: etikett-i-namn
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "etikett i namn",
+    "label in name",
+    "tillgängligt namn",
+    "accessible name",
+    "etikett",
+    "label",
+    "talinmatning",
+    "talstyrning",
+    "aria-label",
+    "operabel",
+    "indatametoder",
+  ]
+canonical: https://t12t.dev/wcag/2/5/3/etikett-i-namn
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 5
-guidelineName: Inmatningsmetoder
+guidelineName: Indatametoder
 criterionNumber: 3
 
+og:
+  title: 2.5.3 Etikett i namn – WCAG
+  description: Säkerställ att det tillgängliga namnet för en komponent innehåller den synliga etiketttexten.
+  url: https://t12t.dev/wcag/2/5/3/etikett-i-namn
+  type: article
+
+datePublished: 2025-06-12
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
-  changefreq: monthly
-  priority: 0.8
+  lastmod: 2024-05-17
+  changefreq: weekly # Common issue with custom components/aria
+  priority: 0.9 # Nivå A, fundamental
 ---
 
-# 2.5.3 Etikett i namn
-
-## Syfte
-
-Att säkerställa att användare som använder olika inmatningsmetoder kan interagera med gränssnittskomponenter genom att referera till deras synliga etiketter.
+# Etikett i namn
 
 ## Beskrivning
 
-För användargränssnittskomponenter med etiketter som innehåller text eller bilder av text, måste namnet som kan bestämmas programmatiskt innehålla den text som visas visuellt.
+För användargränssnittskomponenter med **etiketter som inkluderar text eller bilder av text**, måste det **tillgängliga namnet (accessible name)** innehålla den text som presenteras visuellt.
 
-## Uppfyllnadskriterier
+Detta innebär att om en knapp visuellt har texten "Skicka beställning", måste det namn som hjälpmedel (som skärmläsare och talstyrningsprogram) får för knappen också innehålla "Skicka beställning". Det tillgängliga namnet får innehålla mer text (t.ex. "Skicka beställning till kundtjänst"), men det måste börja med eller åtminstone inkludera den synliga texten.
 
-För att uppfylla denna riktlinje måste webbplatsen eller applikationen:
+Det **tillgängliga namnet** bestäms av en specifik algoritm (Accessible Name and Description Computation) och kan komma från olika källor, i prioritetsordning:
 
-- Säkerställa att den programmatiskt bestämbara namnet för en komponent innehåller samma text som visas visuellt
-- Ordna texten i namnet så att den visuellt synliga texten förekommer först i det programmatiskt bestämbara namnet
-- Tillgodose att användare som använder röststyrning kan interagera med komponenter genom att uttala deras synliga etikett
+1.  [aria-labelledby]{.inline-code} (om det används)
+2.  [aria-label]{.inline-code} (om det används och inget [aria-labelledby]{.inline-code} finns)
+3.  Elementets eget innehåll (t.ex. texten inuti ett [\<button\>]{.inline-code} eller [\<a\>]{.inline-code}-element)
+4.  Ett associerat [\<label\>]{.inline-code}-element (för formulärkontroller)
+5.  [title]{.inline-code}-attributet (används som sista utväg, rekommenderas ej för detta syfte)
+
+Problemet uppstår oftast när [aria-label]{.inline-code} används för att ge ett _annat_ namn än det som syns visuellt.
+
+## Varför detta behövs
+
+Detta krav är främst till för att stödja användare av **talstyrning (voice control)** och **talinmatning (speech input)**:
+
+- **Talstyrning:** Användare interagerar med sidan genom att säga namnet på det element de vill aktivera (t.ex. "Klicka Skicka beställning"). Om det tillgängliga namnet (som talstyrningsprogrammet använder) inte matchar den synliga etiketten, kommer kommandot inte att fungera. Användaren ser "Skicka beställning" men måste kanske säga "Klicka Skicka" för att det ska fungera, vilket är förvirrande och ineffektivt.
+- **Tydlighet för alla:** Även om det primärt hjälper talstyrning, bidrar det också till konsekvens och minskar förvirring om det namn som skärmläsare meddelar matchar det som syns på skärmen.
+
+Att säkerställa att etiketten finns i namnet skapar en mer robust och förutsägbar interaktion för användare med olika inmatningsmetoder.
+
+---
 
 ## Exempel
 
-- En knapp med texten "Skicka" har "Skicka" som sitt programmatiskt bestämbara namn
-- En länk med texten "Läs mer" har "Läs mer om produkten" som sitt programmatiskt bestämbara namn, där "Läs mer" kommer först
-- Ett formulärfält med etiketten "Namn" har "Namn" som en del av sitt programmatiskt bestämbara namn
+### Standardknapp och -länk (Rätt) ✅
 
-## Vanliga problem
+För vanliga knappar och länkar kommer det tillgängliga namnet normalt från innehållet, vilket uppfyller kravet automatiskt.
 
-- Knappar eller länkar där det programmatiskt bestämbara namnet inte matchar den visuella texten
-- Formfält där den programmatiskt bestämbara etiketten inte innehåller samma text som den visuella etiketten
-- Ikoner med text som har namn som inte innehåller den visuella texten
+::code-group{:labels='["HTML (Rätt) ✅"]'}
 
-## Testmetoder
+```html showLineNumbers
+<!-- Tillgängligt namn: "Sök produkter" (från innehållet) -->
+<button>Sök produkter</button>
 
-- Inspektera koden för att kontrollera att programmatiskt bestämbara namn för komponenter innehåller den visuella texten
-- Testa med röststyrning för att verifiera att komponenter kan aktiveras genom att säga deras visuella etikett
+<!-- Tillgängligt namn: "Läs mer om våra tjänster" (från innehållet) -->
+<a href="/tjanster">Läs mer om våra tjänster</a>
+```
 
-## Relaterade riktlinjer
+::
+**Resultat:** Det tillgängliga namnet matchar exakt den synliga etiketten. En användare kan säga "Klicka Sök produkter".
 
-- [1.1.1 Icke-textuellt innehåll](/wcag/1/1/1/icke-textuellt-innehall)
-- [2.4.6 Rubriker och etiketter](/wcag/2/4/6/rubriker-och-etiketter)
-- [3.3.2 Etiketter eller instruktioner](/wcag/3/3/2/etiketter-eller-instruktioner)
+### Formulärfält med korrekt [\<label\>]{.inline-code} (Rätt) ✅
+
+Det tillgängliga namnet för ett formulärfält kommer från dess associerade [\<label\>]{.inline-code}.
+
+::code-group{:labels='["HTML (Rätt) ✅"]'}
+
+```html showLineNumbers
+<!-- Tillgängligt namn: "Förnamn:" (från <label>) -->
+<label for="fname">Förnamn:</label>
+<input type="text" id="fname" name="firstname" />
+```
+
+::
+**Resultat:** Det tillgängliga namnet matchar den synliga etiketten.
+
+### Användning av [aria-label]{.inline-code} som kompletterar (Rätt) ✅
+
+[aria-label]{.inline-code} används för att lägga till information, men den synliga texten inkluderas fortfarande i början.
+
+::code-group{:labels='["HTML (Rätt) ✅"]'}
+
+```html showLineNumbers
+<!-- Visuell etikett: "Spara" -->
+<!-- Tillgängligt namn: "Spara ändringar i profil" (innehåller "Spara") -->
+<button aria-label="Spara ändringar i profil">Spara</button>
+```
+
+::
+**Resultat:** Talstyrning fungerar fortfarande om användaren säger "Klicka Spara", eftersom "Spara" finns i början av det tillgängliga namnet. Skärmläsaren ger också mer kontext.
+
+### Användning av [aria-label]{.inline-code} som helt ersätter (Fel) ❌
+
+[aria-label]{.inline-code} används för att ge ett helt annat tillgängligt namn än den synliga etiketten.
+
+::code-group{:labels='["HTML (Fel) ❌"]'}
+
+```html showLineNumbers
+<!-- Visuell etikett: "OK" -->
+<!-- Tillgängligt namn: "Bekräfta och stäng dialog" (innehåller INTE "OK") -->
+<button aria-label="Bekräfta och stäng dialog">OK</button>
+
+<!-- Visuell etikett: "Läs mer" -->
+<!-- Tillgängligt namn: "Artikel om webbtillgänglighet" (innehåller INTE "Läs mer") -->
+<a href="/artikel" aria-label="Artikel om webbtillgänglighet">Läs mer</a>
+```
+
+::
+**Resultat:** En användare som försöker säga "Klicka OK" eller "Klicka Läs mer" kommer att misslyckas, eftersom talstyrningsprogrammet letar efter "Bekräfta och stäng dialog" respektive "Artikel om webbtillgänglighet".
+
+### Lösning för [aria-label]{.inline-code}-exemplet ovan (Rätt) ✅
+
+Inkludera den synliga texten i början av [aria-label]{.inline-code}.
+
+::code-group{:labels='["HTML (Rätt) ✅"]'}
+
+```html showLineNumbers
+<!-- Visuell etikett: "OK" -->
+<!-- Tillgängligt namn: "OK - Bekräfta och stäng dialog" -->
+<button aria-label="OK - Bekräfta och stäng dialog">OK</button>
+
+<!-- Visuell etikett: "Läs mer" -->
+<!-- Tillgängligt namn: "Läs mer - Artikel om webbtillgänglighet" -->
+<a href="/artikel" aria-label="Läs mer - Artikel om webbtillgänglighet"
+  >Läs mer</a
+>
+
+<!-- Alternativ (ofta bättre): Gör den synliga texten mer beskrivande -->
+<a href="/artikel">Läs mer om webbtillgänglighet</a>
+```
+
+::
+**Resultat:** Nu fungerar talstyrning med den synliga etiketten, samtidigt som skärmläsare får den extra informationen. Att göra den synliga texten tydligare från början är dock oftast den bästa lösningen för alla.
+
+---
+
+## Länk till mer information
+
+- [WCAG 2.2: Success Criterion 2.5.3 Label in Name (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html)
+- [Webbriktlinjer: R137 Se till att knappars och andra komponenters namn motsvarar deras synliga etiketter](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-knappars-och-andra-komponenters-namn-motsvarar-deras-synliga-etiketter)
+- [Accessible Name and Description Computation 1.1 (W3C Recommendation)](https://www.w3.org/TR/accname-1.1/)
+- [Understanding WCAG SC 2.5.3: Label in Name (W3C Understanding Document)](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html#intent)

@@ -1,200 +1,137 @@
 ---
-title: Avbrott
-description: Avbrott kan skjutas upp eller stoppas av användaren.
+title: 2.2.4 Avbrott
+description: Tillåt användare att skjuta upp eller avbryta avbrott, förutom när avbrottet gäller en nödsituation.
 level: AAA
+slug: avbrott
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "avbrott",
+    "interruptions",
+    "uppdateringar",
+    "meddelanden",
+    "kontextändring",
+    "uppskjuta",
+    "avbryta",
+    "kognitiv",
+    "operabel",
+  ]
+canonical: https://t12t.dev/wcag/2/2/4/avbrott
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 2
 guidelineName: Tillräckligt med tid
 criterionNumber: 4
 
+og:
+  title: 2.2.4 Avbrott – WCAG
+  description: Tillåt användare att skjuta upp eller avbryta avbrott, förutom i nödsituationer.
+  url: https://t12t.dev/wcag/2/2/4/avbrott
+  type: article
+
+datePublished: 2025-05-13
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.4 # AAA-kriterier lägre prio
 ---
 
-# Framgångskriterium 2.2.4 Avbrott
+# Avbrott
 
 ## Beskrivning
 
-Avbrott kan skjutas upp eller stoppas av användaren, förutom avbrott som involverar en nödsituation.
+Avbrott kan skjutas upp eller undertryckas av användaren, förutom avbrott som gäller en nödsituation.
+
+Detta kriterium (Nivå AAA) innebär att om en webbplats eller applikation presenterar information som bryter användarens nuvarande aktivitet (t.ex. genom en pop-up, en plötslig uppdatering av innehållet, eller en omdirigering), måste användaren ges möjlighet att skjuta upp eller helt stänga av detta avbrott.
+
+Det enda undantaget är när avbrottet signalerar en **nödsituation**, vilket definieras som en plötslig, oväntad situation eller händelse som kräver omedelbar åtgärd för att bevara hälsa, säkerhet eller egendom.
 
 ## Varför detta behövs
 
-Avbrott, som popupfönster, uppdateringar och notiser, kan vara störande och förvirrande för många användare, särskilt för personer med kognitiva funktionsnedsättningar, uppmärksamhetsstörningar eller personer som använder skärmläsare.
+Oväntade avbrott kan vara mycket problematiska, särskilt för:
 
-När användare blir avbrutna kan de:
+- **Personer med kognitiva funktionsnedsättningar eller uppmärksamhetsstörningar:** Avbrott kan göra att de tappar tråden helt, glömmer vad de höll på med, och har svårt att återuppta sin ursprungliga uppgift.
+- **Skärmläsaranvändare:** Ett plötsligt avbrott eller en kontextändring (som att en ny sida laddas eller fokus flyttas oväntat) kan vara desorienterande och kräva att användaren navigerar om för att förstå vad som hände och var de är.
+- **Personer med nedsatt syn:** Kan behöva längre tid för att läsa och förstå innehållet. Ett avbrott kan tvinga dem att börja om eller leta efter var de var.
 
-- Förlora fokus och behöva börja om med en uppgift
-- Glömma vad de höll på med
-- Uppleva stress och ångest
-- Missta ett avbrott för innehåll de aktivt sökte
+Att ge användaren kontroll över när och om avbrott sker gör det möjligt för dem att arbeta ostört och i sin egen takt, vilket är avgörande för en tillgänglig upplevelse på AAA-nivå.
 
-Personer med vissa kognitiva funktionsnedsättningar, som ADHD eller autism, kan ha särskilt svårt att återfå fokus efter ett avbrott. Skärmläsaranvändare kan bli särskilt förvirrade om fokus plötsligt flyttas till ett nytt element.
-
-Genom att ge användare kontroll över när och hur avbrott sker, kan de interagera med innehållet på ett sätt som fungerar för deras individuella behov.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Diskret avisering (Rätt) ✅
 
-#### Skjutbar notification
+En webbapplikation visar en liten, icke-störande indikator (t.ex. en siffra på en ikon) när nya meddelanden har anlänt. Meddelandena visas inte förrän användaren aktivt klickar på ikonen.
 
-```html
-<div id="notification" class="notification" role="status" aria-live="polite">
-  <div class="notification-content">
-    <h3>Ny version tillgänglig</h3>
-    <p>En uppdatering av webbplatsen finns tillgänglig.</p>
-  </div>
-  <div class="notification-actions">
-    <button id="notification-later">Visa senare</button>
-    <button id="notification-dismiss">Stäng</button>
-    <button id="notification-update">Uppdatera nu</button>
-  </div>
-</div>
+::code-group{:labels='["Koncept (Rätt) ✅"]'}
 
-<script>
-  const notification = document.getElementById("notification");
-
-  // Visa notifikation på ett icke-störande sätt
-  setTimeout(() => {
-    notification.classList.add("show");
-  }, 30000); // Visa efter 30 sekunder
-
-  // Skjut upp notifikationen
-  document
-    .getElementById("notification-later")
-    .addEventListener("click", () => {
-      notification.classList.remove("show");
-      // Schemalägg för senare
-      localStorage.setItem("notification-snoozed", Date.now());
-    });
-
-  // Stäng notifikationen
-  document
-    .getElementById("notification-dismiss")
-    .addEventListener("click", () => {
-      notification.classList.remove("show");
-      // Spara att användaren avfärdat notifikationen
-      localStorage.setItem("notification-dismissed", "true");
-    });
-</script>
+```text [Beskrivning]
+I en chattapplikation visas en diskret röd prick på chattikonen när ett nytt meddelande kommer. Inget ljud spelas, inget fönster poppar upp. Användaren kan välja att läsa meddelandet när det passar.
 ```
 
-#### Chattwdget med användarkontroll
+::
+**Resultat:** Användaren blir medveten om ny information utan att bli avbruten i sin nuvarande uppgift.
 
-```html
-<div id="chat-widget" class="chat-widget minimized">
-  <div class="chat-header">
-    <h3>Kundtjänst</h3>
-    <div class="chat-controls">
-      <button id="chat-minimize" aria-label="Minimera chat">_</button>
-      <button id="chat-preferences" aria-label="Inställningar">⚙️</button>
-      <button id="chat-close" aria-label="Stäng chat">×</button>
-    </div>
-  </div>
+### Uppskjutbar uppdateringsnotis (Rätt) ✅
 
-  <div id="chat-preferences-panel" class="hidden">
-    <h4>Chattinställningar</h4>
-    <label>
-      <input type="checkbox" id="pref-autoshow" /> Visa chatten automatiskt
-    </label>
-    <label>
-      <input type="checkbox" id="pref-sound" /> Spela ljud vid nya meddelanden
-    </label>
-    <label>
-      <input type="checkbox" id="pref-notifications" /> Visa notifieringar
-    </label>
-    <button id="save-preferences">Spara inställningar</button>
-  </div>
+Ett program informerar om en tillgänglig programuppdatering via en dialogruta. Dialogrutan har knappar som "Uppdatera nu", "Påminn mig senare" och "Hoppa över den här versionen".
 
-  <div class="chat-body">
-    <!-- Chattinnehåll -->
-  </div>
-</div>
+::code-group{:labels='["Koncept (Rätt) ✅"]'}
 
-<script>
-  const chatWidget = document.getElementById("chat-widget");
-
-  // Minimera/maximera chatten
-  document.getElementById("chat-minimize").addEventListener("click", () => {
-    chatWidget.classList.toggle("minimized");
-  });
-
-  // Stäng chatten
-  document.getElementById("chat-close").addEventListener("click", () => {
-    chatWidget.classList.add("hidden");
-    localStorage.setItem("chat-closed", "true");
-  });
-
-  // Visa/dölj inställningspanelen
-  document.getElementById("chat-preferences").addEventListener("click", () => {
-    document
-      .getElementById("chat-preferences-panel")
-      .classList.toggle("hidden");
-  });
-
-  // Spara användarens inställningar
-  document.getElementById("save-preferences").addEventListener("click", () => {
-    const autoshow = document.getElementById("pref-autoshow").checked;
-    const sound = document.getElementById("pref-sound").checked;
-    const notifications = document.getElementById("pref-notifications").checked;
-
-    localStorage.setItem("chat-pref-autoshow", autoshow);
-    localStorage.setItem("chat-pref-sound", sound);
-    localStorage.setItem("chat-pref-notifications", notifications);
-
-    document.getElementById("chat-preferences-panel").classList.add("hidden");
-  });
-</script>
+```text [Beskrivning]
+En textredigerare visar en pop-up: "En ny version finns tillgänglig!". Användaren kan välja att starta uppdateringen, be programmet påminna igen om en timme, eller ignorera just denna uppdatering.
 ```
 
-### Exempel på bristande implementering
+::
+**Resultat:** Användaren kan välja att hantera uppdateringen när det passar och inte bli tvingad att avbryta sitt arbete.
 
-#### Påtvingad uppdatering
+### Plötslig omdirigering (Fel) ❌
 
-```html
-<!-- Dåligt exempel - påtvingad uppdatering utan möjlighet att skjuta upp -->
-<div class="update-notification">
-  <p>Uppdaterar sidan om <span id="countdown">5</span> sekunder...</p>
-</div>
+Efter att ha loggat in på en sida, omdirigeras användaren automatiskt till en "Välkommen tillbaka!"-sida som visas i 5 sekunder innan de omdirigeras vidare till den sida de egentligen ville nå. Det finns inget sätt att hoppa över välkomstsidan.
 
-<script>
-  let countdown = 5;
+::code-group{:labels='["Koncept (Fel - AAA) ❌"]'}
 
-  const timer = setInterval(() => {
-    countdown--;
-    document.getElementById("countdown").textContent = countdown;
-
-    if (countdown <= 0) {
-      clearInterval(timer);
-      location.reload(); // Tvingar omladdning
-    }
-  }, 1000);
-</script>
+```text [Beskrivning]
+Användaren klickar på en länk till "Mina sidor". Efter inloggning visas en kort animerad välkomstsida som inte kan hoppas över, innan användaren slutligen hamnar på "Mina sidor". Detta är ett oväntat och påtvingat avbrott/kontextändring.
 ```
 
-#### Autostart-video utan kontroller
+::
+**Resultat:** Användaren tvingas vänta och upplever ett onödigt avbrott. För en skärmläsaranvändare kan de plötsliga omdirigeringarna vara förvirrande.
 
-```html
-<!-- Dåligt exempel - video som startar automatiskt utan möjlighet att pausa -->
-<video autoplay src="promo-video.mp4">
-  Din webbläsare stödjer inte videouppspelning.
-</video>
+### Påträngande reklam-pop-up (Fel) ❌
 
-<script>
-  // Video spelas automatiskt efter 10 sekunder
-  setTimeout(() => {
-    const video = document.querySelector("video");
-    video.play();
-  }, 10000);
-</script>
+Mitt under läsningen av en artikel visas en stor modal annons som täcker innehållet och kräver att användaren klickar på ett litet kryss för att stänga den.
+
+::code-group{:labels='["Koncept (Fel - AAA) ❌"]'}
+
+```text [Beskrivning]
+En nyhetssida visar en annons i ett modalfönster som dyker upp efter att användaren scrollat halvvägs ner på sidan. Annonsen blockerar artikeln och måste aktivt stängas.
 ```
+
+::
+**Resultat:** Detta är ett oväntat avbrott som stör läsningen och kräver omedelbar interaktion.
+
+### Undantag: Nödvarning (Tillåtet) ✅
+
+En officiell myndighetssida visar en omedelbar, sidtäckande varning om en pågående naturkatastrof (t.ex. skogsbrand, översvämning) med instruktioner för allmänheten.
+
+::code-group{:labels='["Koncept (Tillåtet) ✅"]'}
+
+```text [Beskrivning]
+Krisinformation.se visar en röd varningsruta högst upp på alla sidor, eller ett modalfönster, som informerar om ett VMA (Viktigt Meddelande till Allmänheten) om en gasläcka i ett visst område.
+```
+
+::
+**Resultat:** Detta är en nödsituation där omedelbar information är avgörande för säkerheten. Avbrottet är därför tillåtet och behöver inte kunna skjutas upp.
+
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.2.4 Interruptions](https://www.w3.org/WAI/WCAG22/Understanding/interruptions.html)
-- [WebAIM - Cognitive Disabilities: Design Considerations](https://webaim.org/articles/cognitive/design)
-- [W3C WAI - Designing for People with Attention Deficit Disorder](https://www.w3.org/WAI/cognitive/attention/)
-- [Nielsen Norman Group - Interruption Science](https://www.nngroup.com/articles/interruption-science/)
+- [WCAG 2.2: Success Criterion 2.2.4 Interruptions (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/interruptions.html)
+- (Digg har ingen specifik riktlinje för 2.2.4, men principen om att undvika störningar täcks generellt i deras material om kognitiv tillgänglighet).

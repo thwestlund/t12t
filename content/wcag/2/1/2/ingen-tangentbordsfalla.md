@@ -1,152 +1,170 @@
 ---
-title: Ingen tangentbordsfälla
-description: Om tangentbordsfokus kan flyttas till en komponent med hjälp av ett tangentbordsgränssnitt, kan fokus flyttas bort från komponenten med enbart tangentbordsgränssnitt.
+title: 2.1.2 Ingen tangentbordsfälla
+description: Säkerställ att tangentbordsfokus inte fastnar i en del av innehållet, så att användaren alltid kan navigera vidare med enbart tangentbordet.
 level: A
+slug: ingen-tangentbordsfalla
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "tangentbord",
+    "tangentbordsfälla",
+    "keyboard trap",
+    "fokus",
+    "navigation",
+    "modal",
+    "widget",
+    "operabel",
+  ]
+canonical: https://t12t.dev/wcag/2/1/2/ingen-tangentbordsfalla
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 1
-guidelineName: Tillgängligt via tangentbord
+guidelineName: Tangentbordsstyrning
 criterionNumber: 2
 
+og:
+  title: 2.1.2 Ingen tangentbordsfälla – WCAG
+  description: Säkerställ att tangentbordsfokus inte fastnar i en del av innehållet.
+  url: https://t12t.dev/wcag/2/1/2/ingen-tangentbordsfalla
+  type: article
+
+datePublished: 2025-05-02
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.9 # Nivå A, fundamental
 ---
 
-# Framgångskriterium 2.1.2 Ingen tangentbordsfälla
+# Ingen tangentbordsfälla
 
 ## Beskrivning
 
-Om tangentbordsfokus kan flyttas till en komponent med hjälp av ett tangentbordsgränssnitt, kan fokus flyttas bort från komponenten med enbart tangentbordsgränssnitt, och om det kräver mer än overskrivna pilar eller tabbtangenter eller andra standardmetoder för att avsluta, informeras användaren om metoden för att flytta fokus.
+Om tangentbordsfokus kan flyttas till en komponent på sidan med hjälp av tangentbordet, då ska fokus också kunna flyttas **från** komponenten med enbart tangentbordet. Om det krävs mer än standardtangenter (som [Tab]{.inline-code}, [Shift+Tab]{.inline-code}, piltangenter) för att flytta fokus, måste användaren informeras om hur man gör.
+
+Enkelt uttryckt: Användaren får inte fastna i en del av sidan när de navigerar med tangentbordet. Det måste alltid gå att "tabba" vidare eller använda andra standardtangenter för att lämna en komponent eller en sektion.
 
 ## Varför detta behövs
 
-Personer som enbart använder tangentbord för att navigera behöver kunna komma till och från alla interaktiva delar på en webbsida. När en användare fastnar i en "tangentbordsfälla" kan de inte fortsätta navigera på sidan.
+- **Användare som endast använder tangentbord:** Om fokus fastnar i en komponent (t.ex. en inbäddad mediaspelare, en komplex widget, eller en felaktigt implementerad modal dialogruta) kan användaren inte nå resten av sidan. De blir helt blockerade och kan behöva ladda om sidan för att komma loss.
+- **Skärmläsaranvändare:** Är beroende av att kunna navigera sekventiellt genom sidan med tangentbordet. En tangentbordsfälla gör att de inte kan fortsätta läsa eller interagera med efterföljande innehåll.
 
-Exempel på tangentbordsfällor inkluderar:
+Att undvika tangentbordsfällor är avgörande för grundläggande tangentbordsnavigation och tillgänglighet.
 
-- Modala dialogrutor utan tydliga instruktioner om hur man stänger dem med tangentbordet
-- Inbäddade applikationer eller medieuppspelare som fångar upp tangentbordsfokus
-- Formulär som inte går att lämna med tangentbord
-
-Att säkerställa att alla användare kan navigera på hela webbplatsen med tangentbord är grundläggande för tillgänglighet och det här kriteriet förhindrar en av de allvarligaste hindren för tangentbordsnavigation.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Korrekt implementerad modal dialogruta (Rätt) ✅
 
-#### Modal dialog med tydlig escape-mekanism
+En modal dialogruta (pop-up) ska hantera fokus korrekt. När den öppnas ska fokus flyttas in i dialogen. Användaren ska kunna navigera mellan elementen inuti (t.ex. med [Tab]{.inline-code}). När dialogen stängs (t.ex. med [Esc]{.inline-code}-tangenten eller genom att aktivera en stängningsknapp) ska fokus återställas till det element som hade fokus innan dialogen öppnades. Fokus ska inte kunna lämna dialogrutan och hamna på sidan bakom så länge dialogen är öppen.
 
-```html
-<button id="openModal">Öppna dialog</button>
+::code-group{:labels='["Konceptuell JavaScript (Rätt) ✅"]'}
 
-<div
-  id="modal"
-  role="dialog"
-  aria-labelledby="modalTitle"
-  aria-modal="true"
-  hidden
->
-  <div class="modal-content">
-    <h2 id="modalTitle">Viktig information</h2>
-    <p>Innehåll i dialogrutan...</p>
-    <button id="closeModal">Stäng</button>
-  </div>
-</div>
+```javascript showLineNumbers
+const modal = document.getElementById("myModal");
+const openButton = document.getElementById("openModalBtn");
+const closeButton = modal.querySelector(".closeBtn");
+let previousActiveElement;
 
-<script>
-  const modal = document.getElementById("modal");
-  const openButton = document.getElementById("openModal");
-  const closeButton = document.getElementById("closeModal");
+function openModal() {
+  previousActiveElement = document.activeElement; // Spara föregående fokus
+  modal.style.display = "block";
+  // Flytta fokus till första fokuserbara elementet i modalen, t.ex. stäng-knappen
+  closeButton.focus();
+  // Lägg till event listener för att fånga Tab/Shift+Tab inom modalen
+  modal.addEventListener("keydown", trapFocus);
+}
 
-  openButton.addEventListener("click", () => {
-    modal.hidden = false;
-    closeButton.focus(); // Flytta fokus in i dialogen
-  });
-
-  closeButton.addEventListener("click", () => {
-    modal.hidden = true;
-    openButton.focus(); // Återställ fokus till öppningsknappen
-  });
-
-  // Stäng med Escape-tangenten
-  modal.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      modal.hidden = true;
-      openButton.focus();
-    }
-  });
-</script>
-```
-
-#### Inbäddad mediaspelare med instruktioner
-
-```html
-<div
-  class="video-player"
-  tabindex="0"
-  role="application"
-  aria-label="Videospelare"
->
-  <p class="keyboard-instructions">
-    Tryck på Tab för att navigera mellan kontroller. Tryck på Escape för att
-    lämna spelaren.
-  </p>
-  <div class="player-controls">
-    <button aria-label="Spela">▶</button>
-    <button aria-label="Pausa">⏸</button>
-    <button aria-label="Stoppa">⏹</button>
-  </div>
-  <video src="video.mp4"></video>
-</div>
-
-<script>
-  const player = document.querySelector(".video-player");
-
-  player.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      // Släpp fokus och gå till nästa fokuserbara element
-      const nextFocusable = findNextFocusableElement(player);
-      if (nextFocusable) {
-        nextFocusable.focus();
-      }
-    }
-  });
-
-  function findNextFocusableElement(currentElement) {
-    // Kod för att hitta nästa fokuserbara element
+function closeModal() {
+  modal.style.display = "none";
+  modal.removeEventListener("keydown", trapFocus);
+  // Återställ fokus till elementet som öppnade modalen
+  if (previousActiveElement) {
+    previousActiveElement.focus();
   }
-</script>
+}
+
+function trapFocus(event) {
+  if (event.key !== "Tab") return;
+
+  const focusableElements = modal.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  if (event.shiftKey) {
+    // Shift + Tab
+    if (document.activeElement === firstElement) {
+      lastElement.focus(); // Flytta till sista
+      event.preventDefault();
+    }
+  } else {
+    // Tab
+    if (document.activeElement === lastElement) {
+      firstElement.focus(); // Flytta till första
+      event.preventDefault();
+    }
+  }
+  // Lyssna också på Esc för att stänga
+  if (event.key === "Escape") {
+    closeModal();
+  }
+}
+
+openButton.addEventListener("click", openModal);
+closeButton.addEventListener("click", closeModal);
+
+// Lägg till Esc-hantering globalt eller på modalen när den är öppen
+// document.addEventListener('keydown', function(event) {
+//   if (event.key === 'Escape' && modal.style.display === 'block') {
+//     closeModal();
+//   }
+// });
 ```
 
-### Exempel på bristande implementering
+::
+**Resultat:** Fokus hanteras korrekt. Användaren kan navigera inom modalen, och när den stängs återgår fokus till rätt plats. Fokus fastnar inte.
 
-#### Dialog utan tangentbordsstängning
+### Inbäddat innehåll som skapar en fälla (Fel) ❌
 
-```html
-<!-- Dåligt exempel - en dialogruta som inte kan stängas med tangentbord -->
-<div class="modal">
-  <div class="modal-content">
-    <h2>Viktig information</h2>
-    <p>Innehåll i dialogrutan...</p>
-    <!-- Ingen stängknapp, ingen Escape-hantering -->
-  </div>
-</div>
+Ett vanligt problem är inbäddat innehåll från tredje part (t.ex. en video, karta, eller en annons) som inte är korrekt byggt. När användaren tabbar in i det inbäddade innehållet, kanske [Tab]{.inline-code} och [Shift+Tab]{.inline-code} bara cirkulerar inom det inbäddade innehållet och aldrig återvänder till huvudsidan.
+
+::code-group{:labels='["HTML (Potentiell Fälla) ❌"]'}
+
+```html showLineNumbers
+<header>...</header>
+<nav>...</nav>
+<main>
+  <p>Lite text här...</p>
+
+  <!-- Tredjeparts widget eller iframe som kan vara en fälla -->
+  <iframe
+    src="https://example.com/widget"
+    title="Exempel Widget"
+    width="400"
+    height="300"
+  ></iframe>
+  <!-- Om widgeten inuti iframen inte tillåter att man
+       tabbar UT ur den, fastnar användaren här. -->
+
+  <p>Mer text efter widgeten...</p>
+</main>
+<footer>...</footer>
 ```
 
-#### Inbäddad applikation som fångar fokus
+::
+**Resultat:** Om [iframe]{.inline-code}-innehållet inte hanterar fokus korrekt kan en tangentbordsanvändare tabba in i den, men sedan inte komma ut igen för att nå texten efteråt eller sidfoten. Detta är en tangentbordsfälla. Lösningen ligger oftast hos den som skapat det inbäddade innehållet, men man bör vara medveten om risken och testa detta. Ibland kan [tabindex="-1"]{.inline-code} på [iframe]{.inline-code} användas för att initialt hoppa över den i tabbordningen, men då måste det finnas ett annat sätt att nå funktionaliteten inuti.
 
-```html
-<!-- Dåligt exempel - en inbäddad applikation som fångar tangentbordsfokus -->
-<iframe src="external-app.html" title="Extern applikation">
-  <!-- Ingen mekanism för att lämna iframe med tangentbordet -->
-</iframe>
-```
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.1.2 No Keyboard Trap](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html)
-- [WebAIM - Keyboard Accessibility](https://webaim.org/techniques/keyboard/)
-- [Webbriktlinjer - Se till att användaren kan styra webb-TV, ljud och andra medier](https://www.digg.se/kunskap-och-stod/digital-tillganglighet/webbriktlinjer-for-tillganglighet/riktlinjer/se-till-att-anvandaren-kan-styra-webb-tv-ljud-och-andra-medier)
-- [MDN Web Docs - Keyboard-navigable JavaScript widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets)
+- [WCAG 2.2: Success Criterion 2.1.2 No Keyboard Trap (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html)
+- [Webbriktlinjer: R117 Lås inte fast användaren med tangentbordet](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/las-inte-fast-anvandaren-med-tangentbordet)
+- [MDN Web Docs: Using the dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) (Det moderna [\<dialog\>]{.inline-code}-elementet hanterar ofta fokus bättre än egna lösningar).
+- [WAI-ARIA Authoring Practices: Modal Dialog Example](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/) (Visar korrekt implementering av en modal)

@@ -1,230 +1,183 @@
 ---
-title: Tangentbordsgenvagar
-description: Om en snabbtangent implementeras i innehåll med endast bokstäver, skiljetecken, siffror eller symboler finns det ett sätt att stänga av eller ändra snabbtangenten.
+title: 2.1.4 Kortkommandon med enskilda tecken
+description: Om kortkommandon som bara använder ett tecken finns, erbjud ett sätt att stänga av dem, ändra dem, eller se till att de bara är aktiva när en specifik komponent har fokus.
 level: A
+slug: kortkommandon-enskilda-tecken
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "tangentbord",
+    "kortkommando",
+    "character key shortcut",
+    "genväg",
+    "tangentbordsstyrning",
+    "talinmatning",
+    "operabel",
+  ]
+canonical: https://t12t.dev/wcag/2/1/4/kortkommandon-enskilda-tecken
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 1
-guidelineName: Tillgängligt via tangentbord
+guidelineName: Tangentbordsstyrning
 criterionNumber: 4
 
+og:
+  title: 2.1.4 Kortkommandon med enskilda tecken – WCAG
+  description: Hantera kortkommandon som bara använder ett tecken på ett tillgängligt sätt.
+  url: https://t12t.dev/wcag/2/1/4/kortkommandon-enskilda-tecken
+  type: article
+
+datePublished: 2025-05-10
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.9 # Nivå A, fundamental
 ---
 
-# Framgångskriterium 2.1.4 Tangentbordsgenvagar
+# Kortkommandon med enskilda tecken
 
 ## Beskrivning
 
-Om en snabbtangent i innehåll implementeras med endast bokstäver (inklusive stora och små bokstäver), skiljetecken, siffror eller symboler, gäller åtminstone ett av följande:
+Om ett kortkommando (genväg) implementeras i innehållet med endast bokstäver (stora och små), skiljetecken, siffror eller symboler, måste minst ett av följande gälla:
 
-- **Avstängning:** Det finns en mekanism för att stänga av snabbtangenten;
-- **Ändra:** Det finns en mekanism för att ändra snabbtangenten till att inkludera minst en icke-utskrivbar tangent (t.ex. Ctrl, Alt, osv.);
-- **Aktiv endast vid fokus:** Snabbtangenten för en komponent i användargränssnittet är endast aktiv när komponenten har fokus.
+1.  **Avstängning:** Det finns ett sätt att stänga av kortkommandot.
+2.  **Ommappning:** Det finns ett sätt att ändra kortkommandot så att det inkluderar en eller flera modifieringstangenter ([Ctrl]{.inline-code}, [Alt]{.inline-code}, [Shift]{.inline-code}, [Cmd]{.inline-code}).
+3.  **Endast vid fokus:** Kortkommandot för en användargränssnittskomponent är endast aktivt när den komponenten har fokus.
+
+Detta krav gäller alltså kortkommandon som aktiveras av ett _enda_ tecken (som [R]{.inline-code} för att svara, [M]{.inline-code} för att tysta ljud, [.]{.inline-code} för att gå till nästa). Kortkommandon som redan från början kräver en modifieringstangent (som [Ctrl+S]{.inline-code} för att spara) omfattas inte.
 
 ## Varför detta behövs
 
-Personer som använder röstigenkänningsprogram eller de som har motoriska nedsättningar kan av misstag aktivera snabbtangenter när de dikterar text eller när de upplever ofrivilliga rörelser. Detta kan leda till oavsiktliga handlingar.
+Kortkommandon som bara använder ett enda tecken kan oavsiktligt aktiveras, vilket skapar problem för:
 
-Till exempel kan en person som dikterar en text säga "a, b, c" och om "c" är en snabbtangent på webbplatsen kan detta oavsiktligt utlösa en funktion.
+- **Användare med talinmatning:** När de dikterar text kan enskilda bokstäver eller ord oavsiktligt trigga ett kortkommando. Om användaren säger "Tryck M" kan det både skriva bokstaven M och samtidigt tysta ljudet om M är ett globalt kortkommando.
+- **Tangentbordsanvändare som gör misstag:** Det är lätt att råka trycka på fel tangent. Om ett enda felaktigt tangenttryck utför en oönskad åtgärd (som att skicka ett halvfärdigt meddelande) kan det vara frustrerande och problematiskt.
+- **Användare med motoriska svårigheter:** Kan ha svårt att trycka exakt på rätt tangent och kan oftare råka aktivera kortkommandon av misstag.
 
-Personer med tremor eller spasticitet kan också oavsiktligt trycka på tangenter, vilket kan aktivera snabbtangenter som inte var avsedda.
+Genom att erbjuda ett sätt att stänga av, ändra, eller begränsa dessa kortkommandon till när en specifik del av sidan har fokus, minskar man risken för oavsiktlig aktivering.
 
-Genom att tillåta användare att stänga av eller anpassa snabbtangenter, eller genom att säkerställa att de endast aktiveras med modifierartangenter (som Ctrl eller Alt) eller när ett element har fokus, minimeras risken för oavsiktlig aktivering.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Kortkommando endast aktivt vid fokus (Rätt) ✅
 
-#### Snabbtangenter med modifierartangent
+I en webbmejlklient används bokstaven [R]{.inline-code} för att svara på ett mejl. Detta kortkommando fungerar bara när mejllistan eller ett öppet mejl har tangentbordsfokus. Om användaren skriver i texteditorn för ett nytt mejl, kommer tryck på [R]{.inline-code} bara att skriva bokstaven R.
 
-```html
-<div class="video-player" tabindex="0">
-  <video src="video.mp4" controls></video>
-  <div class="keyboard-shortcuts">
-    <h3>Tangentbordsgenvägar</h3>
-    <ul>
-      <li><kbd>Ctrl</kbd> + <kbd>P</kbd>: Spela/Pausa</li>
-      <li><kbd>Ctrl</kbd> + <kbd>M</kbd>: Ljud av/på</li>
-      <li><kbd>Ctrl</kbd> + <kbd>F</kbd>: Fullskärm</li>
-    </ul>
-  </div>
-</div>
+::code-group{:labels='["Konceptuell JavaScript (Rätt) ✅"]'}
 
-<script>
-  const player = document.querySelector(".video-player");
-  const video = player.querySelector("video");
+```javascript showLineNumbers
+const emailList = document.getElementById("emailList");
+const messageView = document.getElementById("messageView");
 
-  document.addEventListener("keydown", (e) => {
-    // Snabbtangenter använder alla Ctrl-modifierare
-    if (e.ctrlKey) {
-      switch (e.key) {
-        case "p":
-          if (video.paused) video.play();
-          else video.pause();
-          e.preventDefault();
-          break;
-        case "m":
-          video.muted = !video.muted;
-          e.preventDefault();
-          break;
-        case "f":
-          if (document.fullscreenElement) document.exitFullscreen();
-          else video.requestFullscreen();
-          e.preventDefault();
-          break;
-      }
+document.addEventListener("keydown", function (event) {
+  // Kolla om fokus är INOM relevant komponent
+  const isFocusInsideList = emailList.contains(document.activeElement);
+  const isFocusInsideMessage = messageView.contains(document.activeElement);
+
+  if (event.key === "r" || event.key === "R") {
+    if (isFocusInsideList || isFocusInsideMessage) {
+      // Endast om fokus är på listan eller ett meddelande...
+      event.preventDefault(); // Förhindra att 'r' skrivs om fokus är i textfält
+      replyToEmail();
     }
-  });
-</script>
+    // Om fokus är någon annanstans (t.ex. i en textruta), gör ingenting
+  }
+});
+
+function replyToEmail() {
+  console.log("Svarar på mejl...");
+  // ... logik för att svara ...
+}
 ```
 
-#### Snabbtangenter som endast är aktiva vid fokus
+::
+**Resultat:** Kortkommandot [R]{.inline-code} aktiveras inte oavsiktligt när användaren skriver text eller interagerar med andra delar av sidan.
 
-```html
-<div class="image-gallery" tabindex="0">
-  <div class="gallery-info">
-    <p>
-      Använd vänster/höger piltangenter för att navigera när galleriet har
-      fokus.
-    </p>
-  </div>
-  <div class="gallery-container">
-    <img src="image1.jpg" alt="Bild 1" id="current-image" />
-  </div>
-  <div class="gallery-controls">
-    <button id="prev">Föregående</button>
-    <button id="next">Nästa</button>
-  </div>
+### Inställning för att stänga av/ändra kortkommandon (Rätt) ✅
+
+En webbapplikation har flera kortkommandon med enskilda tecken (t.ex. [N]{.inline-code} för Nytt objekt, [F]{.inline-code} för Favorit). I applikationens inställningar finns en sektion där användaren kan:
+
+1.  Bocka ur en kryssruta "Aktivera kortkommandon med enskilda tecken".
+2.  Klicka på varje kortkommando och definiera en ny tangentkombination (t.ex. ändra [N]{.inline-code} till [Ctrl+Alt+N]{.inline-code}).
+
+::code-group{:labels='["Konceptuell inställningssida (Rätt) ✅"]'}
+
+```html showLineNumbers
+<h2>Inställningar för Kortkommandon</h2>
+<div>
+  <input
+    type="checkbox"
+    id="enableShortcuts"
+    checked
+    onchange="toggleShortcuts()"
+  />
+  <label for="enableShortcuts"
+    >Aktivera kortkommandon med enskilda tecken</label
+  >
+</div>
+
+<div id="shortcutList">
+  <p>
+    Nytt objekt:
+    <button onclick="remapShortcut('new')">N</button>
+    <!-- Logik för att låta användaren definiera om -->
+  </p>
+  <p>
+    Markera som favorit:
+    <button onclick="remapShortcut('fav')">F</button>
+  </p>
+  <!-- Fler kortkommandon -->
 </div>
 
 <script>
-  const gallery = document.querySelector(".image-gallery");
-
-  // Snabbtangenter fungerar endast när galleriet har fokus
-  gallery.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-      showPreviousImage();
-      e.preventDefault();
-    } else if (e.key === "ArrowRight") {
-      showNextImage();
-      e.preventDefault();
-    }
-  });
-
-  function showPreviousImage() {
-    // Kod för att visa föregående bild
+  function toggleShortcuts() {
+    /* ... aktivera/deaktivera alla ... */
   }
-
-  function showNextImage() {
-    // Kod för att visa nästa bild
+  function remapShortcut(action) {
+    /* ... visa gränssnitt för ommappning ... */
   }
 </script>
 ```
 
-#### Inställningar för att anpassa eller inaktivera snabbtangenter
+::
+**Resultat:** Användaren har full kontroll och kan anpassa eller stänga av kortkommandona för att undvika konflikter eller oavsiktlig aktivering.
 
-```html
-<div class="editor-container">
-  <div class="editor-settings">
-    <h3>Inställningar</h3>
-    <div class="settings-group">
-      <h4>Tangentbordsgenvägar</h4>
-      <label>
-        <input type="checkbox" id="enable-shortcuts" checked />
-        Aktivera tangentbordsgenvägar
-      </label>
-      <button id="customize-shortcuts">Anpassa genvägar</button>
-    </div>
-  </div>
+### Globala kortkommandon utan anpassning (Fel) ❌
 
-  <div class="editor" tabindex="0" contenteditable="true">
-    Textredigerare med genvägar
-  </div>
-</div>
+En webbsida använder bokstaven [M]{.inline-code} som ett globalt kortkommando för att tysta/sätta på ljudet för en video på sidan. Kortkommandot är aktivt oavsett var fokus ligger, och det finns ingen inställning för att stänga av eller ändra det.
 
-<script>
-  const editor = document.querySelector(".editor");
-  const enableShortcutsCheckbox = document.getElementById("enable-shortcuts");
-  let shortcutsEnabled = true;
+::code-group{:labels='["Konceptuell JavaScript (Fel) ❌"]'}
 
-  enableShortcutsCheckbox.addEventListener("change", (e) => {
-    shortcutsEnabled = e.target.checked;
-  });
+```javascript showLineNumbers
+// Fel: Denna listener är global och okänslig för fokus.
+document.addEventListener("keydown", function (event) {
+  if (event.key === "m" || event.key === "M") {
+    // Ingen koll på var fokus är!
+    // Ingen möjlighet att stänga av!
+    toggleMute();
+  }
+});
 
-  editor.addEventListener("keydown", (e) => {
-    if (!shortcutsEnabled) return;
-
-    // Implementera genvägar här
-    if (e.key === "b" && e.ctrlKey) {
-      // Fet text
-      document.execCommand("bold", false);
-      e.preventDefault();
-    }
-  });
-</script>
+function toggleMute() {
+  const video = document.querySelector("video");
+  if (video) {
+    video.muted = !video.muted;
+    console.log("Ljud status ändrad via globalt M-kommando.");
+  }
+}
 ```
 
-### Exempel på bristande implementering
+::
+**Resultat:** En användare som använder talinmatning och säger ett ord som innehåller "m", eller en tangentbordsanvändare som råkar trycka [M]{.inline-code} när de ska skriva i ett formulärfält, kommer oavsiktligt att tysta eller sätta på ljudet.
 
-#### Snabbtangenter utan modifierartangent som inte kan inaktiveras
-
-```html
-<!-- Dåligt exempel - enkelttangenter utan möjlighet att inaktivera -->
-<div class="player">
-  <video src="video.mp4"></video>
-  <p>Genvägar: P: spela/pausa, M: ljud av/på, F: fullskärm</p>
-</div>
-
-<script>
-  document.addEventListener("keydown", (e) => {
-    switch (e.key) {
-      case "p":
-        // Spela/pausa
-        break;
-      case "m":
-        // Ljud av/på
-        break;
-      case "f":
-        // Fullskärm
-        break;
-    }
-  });
-</script>
-```
-
-#### Globala snabbtangenter utan inställningar
-
-```html
-<!-- Dåligt exempel - globala snabbtangenter som alltid är aktiva -->
-<header>
-  <nav>
-    <p>Navigera snabbt: tryck H för hem, S för sök, C för kontakt</p>
-  </nav>
-</header>
-
-<script>
-  document.addEventListener("keydown", (e) => {
-    switch (e.key) {
-      case "h":
-        window.location.href = "/";
-        break;
-      case "s":
-        window.location.href = "/search";
-        break;
-      case "c":
-        window.location.href = "/contact";
-        break;
-    }
-  });
-</script>
-```
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.1.4 Character Key Shortcuts](https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html)
-- [ARIA Authoring Practices - Keyboard Shortcuts](https://www.w3.org/TR/wai-aria-practices/#keyboard)
-- [MDN Web Docs - KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
-- [W3C WAI - How to Meet Character Key Shortcuts](https://www.w3.org/WAI/WCAG21/quickref/#character-key-shortcuts)
+- [WCAG 2.2: Success Criterion 2.1.4 Character Key Shortcuts (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html)
+- [Webbriktlinjer: R118 Gör det möjligt att omtilldela eller stänga av kortkommandon som aktiveras med ett tecken](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-omtilldela-eller-stanga-av-kortkommandon-som-aktiveras-med-ett-tecken)

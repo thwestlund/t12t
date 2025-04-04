@@ -1,207 +1,121 @@
 ---
-title: Ingen tidsbegränsning
-description: Timing är inte en väsentlig del av händelsen eller aktiviteten som presenteras av innehållet.
+title: 2.2.3 Ingen tidsbegränsning
+description: Säkerställ att tidtagning inte är en nödvändig del av aktiviteten som presenteras, förutom för synkroniserad media och realtidshändelser.
 level: AAA
+slug: ingen-tidsbegransning
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "tidsgräns",
+    "timeout",
+    "tid",
+    "ingen tidtagning",
+    "tillräckligt med tid",
+    "operabel",
+  ]
+canonical: https://t12t.dev/wcag/2/2/3/ingen-tidsbegransning
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 2
 guidelineName: Tillräckligt med tid
 criterionNumber: 3
 
+og:
+  title: 2.2.3 Ingen tidsbegränsning – WCAG
+  description: Säkerställ att tidtagning inte är en nödvändig del av aktiviteten som presenteras.
+  url: https://t12t.dev/wcag/2/2/3/ingen-tidsbegransning
+  type: article
+
+datePublished: 2025-05-12
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.4 # AAA-kriterier lägre prio
 ---
 
-# Framgångskriterium 2.2.3 Ingen tidsbegränsning
+# Ingen tidsbegränsning
 
 ## Beskrivning
 
-Timing är inte en väsentlig del av händelsen eller aktiviteten som presenteras av innehållet, förutom för icke-interaktiva synkroniserade media och realtidshändelser.
+Tidtagning är inte en nödvändig del av händelsen eller aktiviteten som presenteras av innehållet. Detta gäller inte för:
+
+- Icke-interaktiv synkroniserad media (t.ex. en vanlig film eller video).
+- Realtidshändelser (t.ex. en live-auktion eller ett direktsänt evenemang).
+
+Detta kriterium (Nivå AAA) går ett steg längre än 2.2.1 Justerbar tidsgräns (Nivå A). Istället för att bara kräva att tidsgränser är justerbara eller kan förlängas, kräver detta kriterium att **inga tidsgränser alls** används, om inte tiden i sig är absolut nödvändig för aktiviteten.
 
 ## Varför detta behövs
 
-Personer med olika funktionsnedsättningar, inklusive kognitiva begränsningar, inlärningssvårigheter eller motoriska nedsättningar, behöver ofta mer tid för att läsa innehåll, orientera sig på en sida eller slutföra uppgifter.
+Att helt ta bort onödiga tidsgränser ger maximal flexibilitet och minskar stress för användare som behöver extra tid. Detta är särskilt viktigt för:
 
-När innehåll har tidsbegränsningar kan dessa användare hindras från att slutföra uppgifter eller tillgodogöra sig informationen på webbplatsen. Detta kan särskilt drabba:
+- **Personer som behöver mycket tid:** Användare med grava funktionsnedsättningar (motoriska, kognitiva, synmässiga) kan behöva avsevärt längre tid än vad även en förlängd tidsgräns medger.
+- **Minska kognitiv belastning:** Att ständigt behöva hålla koll på en tidsgräns och hantera varningar/förlängningar kan vara kognitivt krävande. Att ta bort tidsgränsen helt eliminerar denna stressfaktor.
+- **Förhindra dataförlust:** Eliminerar risken att användare förlorar ifyllda data eller framsteg på grund av en tidsgräns som löper ut, även om de erbjudits förlängning.
 
-- Personer som behöver längre tid att läsa på grund av kognitiva funktionsnedsättningar
-- Personer som använder skärmläsare och behöver mer tid för att navigera och förstå innehållet
-- Personer med motoriska nedsättningar som rör sig långsammare på tangentbordet eller använder andra inmatningsmetoder
-- Äldre personer som kan behöva mer tid för att slutföra webbaserade uppgifter
+Att uppfylla detta AAA-kriterium innebär att utforma aktiviteter så att användaren kan genomföra dem helt i sin egen takt, närhelst det är möjligt.
 
-Genom att eliminera tidsbegränsningar säkerställs att alla användare kan ta den tid de behöver för att interagera med innehållet.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Kunskapstest utan tidsgräns (Rätt) ✅
 
-#### Formulär utan tidsgräns
+Ett webbaserat kunskapstest eller en utbildningsmodul låter användaren svara på frågorna i sin egen takt. Det finns ingen klocka som räknar ner och inga konsekvenser om användaren tar lång tid på sig.
 
-```html
-<form action="/submit" method="post">
-  <h2>Ansökan</h2>
-  <p>
-    Ta den tid du behöver för att fylla i formuläret. Dina uppgifter sparas
-    automatiskt.
-  </p>
+::code-group{:labels='["Koncept (Rätt) ✅"]'}
 
-  <div class="form-section">
-    <label for="name">Namn:</label>
-    <input type="text" id="name" name="name" required />
-  </div>
-
-  <div class="form-section">
-    <label for="address">Adress:</label>
-    <textarea id="address" name="address" rows="3" required></textarea>
-  </div>
-
-  <!-- Fler formulärfält... -->
-
-  <div class="form-controls">
-    <button type="submit">Skicka in</button>
-    <button type="button" id="save-draft">Spara utkast</button>
-  </div>
-</form>
-
-<script>
-  // Autosparfunktion
-  const form = document.querySelector("form");
-  const formElements = form.elements;
-
-  // Spara utkast automatiskt när användaren skriver
-  for (let i = 0; i < formElements.length; i++) {
-    formElements[i].addEventListener("change", saveFormState);
-  }
-
-  function saveFormState() {
-    // Kod för att spara formulärtillstånd i localStorage eller på servern
-    console.log("Formulärtillstånd sparat");
-  }
-</script>
+```text [Beskrivning]
+Ett online-prov för att testa förståelse av ett kapitel. Användaren kan läsa frågorna, tänka, och svara utan någon tidspress. Testet avslutas när användaren själv väljer att skicka in det.
 ```
 
-#### Quiz eller utbildningsmaterial utan tidsgräns
+::
+**Resultat:** Alla användare, oavsett hur lång tid de behöver, kan slutföra testet. Tid är inte en faktor.
 
-```html
-<div class="quiz-container">
-  <h2>Kunskapstest</h2>
-  <p>
-    Detta test har ingen tidsgräns. Ta den tid du behöver för att besvara
-    frågorna.
-  </p>
+### Steg-för-steg-guide utan timeout (Rätt) ✅
 
-  <div class="question">
-    <h3>Fråga 1:</h3>
-    <p>Vilket år infördes allmän rösträtt i Sverige?</p>
-    <div class="options">
-      <label> <input type="radio" name="q1" value="1909" /> 1909 </label>
-      <label> <input type="radio" name="q1" value="1921" /> 1921 </label>
-      <label> <input type="radio" name="q1" value="1945" /> 1945 </label>
-    </div>
-  </div>
+En guide som leder användaren genom en konfigurationsprocess eller en handledning. Användaren kan stanna på varje steg hur länge som helst utan att sessionen avbryts eller att de tvingas börja om.
 
-  <!-- Fler frågor... -->
+::code-group{:labels='["Koncept (Rätt) ✅"]'}
 
-  <div class="quiz-controls">
-    <button type="button" id="check-answers">Kontrollera svar</button>
-    <button type="button" id="reset">Börja om</button>
-  </div>
-</div>
+```text [Beskrivning]
+En guide för att installera programvara. Varje steg presenteras på en egen sida eller i en egen sektion. Användaren klickar "Nästa" när de är redo. Det finns ingen automatisk utloggning eller timeout som avbryter processen.
 ```
 
-### Exempel på bristande implementering
+::
+**Resultat:** Användaren kan följa guiden i sin egen takt utan risk att bli avbruten på grund av tid.
 
-#### Tidsbegränsat formulär
+### Formulär som tidsbegränsas i onödan (Fel) ❌
 
-```html
-<!-- Dåligt exempel - ett formulär med tidsgräns -->
-<form action="/submit" method="post">
-  <h2>Biljettbokning</h2>
-  <div class="timer">
-    Du har <span id="countdown">10:00</span> minuter på dig att slutföra
-    bokningen
-  </div>
+Ett kontaktformulär eller en ansökan online som har en inbyggd tidsgräns (t.ex. 10 minuter) för att fylla i och skicka, trots att det inte finns någon teknisk eller verksamhetsmässig anledning till detta (t.ex. ingen resursbokning i realtid).
 
-  <div class="form-section">
-    <label for="tickets">Antal biljetter:</label>
-    <select id="tickets" name="tickets">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select>
-  </div>
+::code-group{:labels='["Koncept (Fel - AAA) ❌"]'}
 
-  <!-- Fler formulärfält... -->
-
-  <button type="submit">Boka nu</button>
-</form>
-
-<script>
-  // Räknare som kör ut användaren när tiden är slut
-  let timeLeft = 600; // 10 minuter i sekunder
-
-  const intervalId = setInterval(() => {
-    timeLeft--;
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-    document.getElementById("countdown").textContent = `${minutes}:${
-      seconds < 10 ? "0" : ""
-    }${seconds}`;
-
-    if (timeLeft <= 0) {
-      clearInterval(intervalId);
-      alert("Tiden är ute! Din bokning avbröts.");
-      window.location.href = "/timeout";
-    }
-  }, 1000);
-</script>
+```text [Beskrivning]
+Ett formulär för att anmäla sig till ett nyhetsbrev. Efter 5 minuter visas ett meddelande "Du har 1 minut kvar!" och sedan rensas formuläret om det inte skickas. Tidsgränsen är inte nödvändig för funktionen.
 ```
 
-#### Quiz med tidsbegränsning
+::
+**Resultat:** Användare som behöver längre tid för att skriva eller förstå fälten kan misslyckas med att skicka formuläret, trots att tidsgränsen var onödig. Detta uppfyller inte AAA.
 
-```html
-<!-- Dåligt exempel - ett quiz med tidsgräns som inte kan förlängas -->
-<div class="quiz-container">
-  <h2>Snabbtest</h2>
-  <div class="timer">Tid kvar: <span id="timer">60</span> sekunder</div>
+### Undantag: Förinspelad video (Tillåtet) ✅
 
-  <div class="question">
-    <p>Vilken är Sveriges huvudstad?</p>
-    <div class="options">
-      <button>Stockholm</button>
-      <button>Göteborg</button>
-      <button>Malmö</button>
-    </div>
-  </div>
+En webbsida visar en förinspelad föreläsning som är 45 minuter lång.
 
-  <!-- Fler frågor... -->
-</div>
+**Resultat:** Detta är synkroniserad media. Tiden är en inneboende del av mediet och kan inte tas bort eller justeras utan att ändra innehållet. Detta är tillåtet.
 
-<script>
-  let seconds = 60;
+### Undantag: Live-chatt med support (Tillåtet) ✅
 
-  const timer = setInterval(() => {
-    seconds--;
-    document.getElementById("timer").textContent = seconds;
+En live-chatt med kundtjänst där supportagenten väntar på svar från användaren. Om användaren inte svarar inom en rimlig tid (t.ex. 5 minuter) kan agenten behöva avsluta chatten för att hjälpa andra kunder.
 
-    if (seconds <= 0) {
-      clearInterval(timer);
-      endQuiz();
-    }
-  }, 1000);
+**Resultat:** Detta kan ses som en realtidshändelse där tid spelar roll för interaktionen och resursanvändningen. Även om en varning är bra (se 2.2.1), är en viss tidsgräns ofta nödvändig här.
 
-  function endQuiz() {
-    alert("Tiden är ute! Testet avslutas.");
-    // Kod för att avsluta quizet och visa resultat
-  }
-</script>
-```
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.2.3 No Timing](https://www.w3.org/WAI/WCAG22/Understanding/no-timing.html)
-- [Webbriktlinjer - Ge användarna möjlighet att styra tidsbestämda händelser](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/ge-anvandarna-mojlighet-att-styra-tidsbestamda-handelser)
-- [Web Accessibility Perspective: Accommodating Low Vision and Cognitive Issues](https://www.w3.org/WAI/perspective-videos/)
-- [Web Usability - Time Limits](https://www.nngroup.com/articles/time-limits/)
+- [WCAG 2.2: Success Criterion 2.2.3 No Timing (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/no-timing.html)
+- [Förstå WCAG SC 2.2.1 (Nivå A)](https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html) (För jämförelse och grundläggande krav på justerbar tid).
