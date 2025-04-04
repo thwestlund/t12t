@@ -97,11 +97,15 @@
   }
 
   .prose ul, ol {
-    @apply flex gap-4 flex-col
+    @apply flex gap-2 flex-col mb-4
   }
 
   .prose ul {
     @apply list-disc pl-6;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6;
   }
   
   .prose code {
