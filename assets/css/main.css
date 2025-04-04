@@ -120,7 +120,7 @@
   .prose h4 a,
   .prose h5 a,
   .prose h6 a {
-    @apply text-secondary 
+    @apply text-secondary mt-12
   }
 
   .prose h1 a::after,
@@ -169,6 +169,6 @@
   }
 
   .prose hr {
-    @apply py-4
+    @apply my-12
   }
 }
