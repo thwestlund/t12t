@@ -34,7 +34,7 @@ const { data } = await useAsyncData(`wcag-criterion-${route.path}`, () => {
 });
 
 useWcagSeoMeta({
-  title: data.value?.title,
+  title: "WCAG: " + data.value?.title + " - T12T",
   description: data.value?.description,
   keywords: data.value?.keywords,
   og: {
