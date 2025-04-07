@@ -114,27 +114,34 @@
     text-wrap: auto;
   }
 
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply text-secondary mt-10
+  }
+
   .prose h1 a,
   .prose h2 a,
   .prose h3 a,
   .prose h4 a,
   .prose h5 a,
   .prose h6 a {
-    @apply text-secondary mt-12
+    @apply text-secondary
   }
-
   .prose h1 a::after,
   .prose h2 a::after,
   .prose h3 a::after,
   .prose h4 a::after,
   .prose h5 a::after,
   .prose h6 a::after {
-      content: "🔗"; /* Link icon */
+      content: ""; /* Link icon */
       font-size: 0.8em;
-      transition: opacity 0.1s ease-in-out;
       /*position: absolute;*/
       right: -1.5em; /* Adjust spacing */
-      @apply inline-block opacity-0 ml-1 cursor-pointer;
+      @apply inline-block opacity-0 ml-1 cursor-pointer h-0 w-0;
   }
 
   .prose h1:hover a::after,
@@ -143,6 +150,7 @@
   .prose h4:hover a::after,
   .prose h5:hover a::after,
   .prose h6:hover a::after {
+      content: "🔗";
       opacity: 1;
       @apply no-underline
   }
@@ -160,7 +168,7 @@
     @apply text-red-500
   }
   
-  .highlight {
+  .prose .highlight {
     @apply bg-yellow-50 leading-tight !important
   }
 
