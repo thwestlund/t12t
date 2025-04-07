@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-lg shadow-sm border border-neutral-200 overflow-auto max-h-svh lg:min-w-96 flex-1 top-8">
+  <div class="bg-white rounded-lg shadow-sm border border-neutral-200 overflow-auto lg:min-w-96 flex-1 top-8">
     <div class="bg-primary-light px-4 py-1 border-b border-neutral-200">
       <h2 class="text-lg font-semibold text-primary">WCAG 2.2</h2>
     </div>
@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import WcagLevelBadge from '~/components/WcagLevelBadge.vue'
 
 const route = useRoute();
@@ -85,12 +85,7 @@ const fetchWcagStructure = async () => {
     // Parse the content into the structure we need
     wcagData.value = processWcagContent(wcagCollection);
 
-    // Nu när data har laddats, kontrollera om vi ska öppna alla riktlinjer
-    if (route.path === '/wcag' || route.path === '/wcag/') {
-      openAllGuidelines();
-    } else {
-      autoOpenGuideline();
-    }
+    autoOpenGuideline();
   } catch (err) {
     console.error('Error fetching WCAG structure:', err);
     error.value = 'Det gick inte att ladda WCAG-strukturen.';
@@ -237,60 +232,10 @@ const autoOpenGuideline = () => {
       openGuidelines.value.push(key);
     }
   }
-  // If we're on the main WCAG page or a principle page, open all guidelines
-  else if (pathParts.length >= 2 && pathParts[1] === 'wcag') {
-    openAllGuidelines();
-  }
-};
-
-// Helper function to open all guidelines
-const openAllGuidelines = () => {
-  if (wcagData.value.length === 0) return;
-
-  wcagData.value.forEach(principle => {
-    principle.guidelines.forEach(guideline => {
-      const key = `${principle.number}-${guideline.number}`;
-      if (!openGuidelines.value.includes(key)) {
-        openGuidelines.value.push(key);
-      }
-    });
-  });
 };
 
 // Fetch data on mount
 onMounted(async () => {
   await fetchWcagStructure();
-  //autoOpenGuideline();
-  //openAllGuidelines();
-  // Nu när data är laddad, öppna alla riktlinjer om vi är på WCAG-översiktssidan
-  /*if (route.path === '/wcag' || route.path === '/wcag/') {
-    
-  } else {
-    autoOpenGuideline();
-  }*/
 });
-
-// Watch for when wcagData changes
-watch(
-  () => wcagData.value,
-  (newValue) => {
-    if (newValue.length > 0) {
-      // Om vi är på WCAG-huvudsidan, öppna alla riktlinjer
-      if (route.path === '/wcag' || route.path === '/wcag/') {
-        openAllGuidelines();
-      } else {
-        autoOpenGuideline();
-      }
-    }
-  },
-  { immediate: true } // Detta gör att watcher körs direkt vid montering
-);
-
-// Watch for route changes to update open guidelines
-watch(
-  () => route.path,
-  () => {
-    autoOpenGuideline();
-  }
-);
 </script>
