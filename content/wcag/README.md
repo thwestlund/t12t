@@ -22,11 +22,8 @@ content/
     ├── index.md                                   # WCAG översikt
     ├── checklista.md                              # WCAG-checklista
     ├── 1/                                         # Princip 1: Möjlig att uppfatta
-    │   ├── index.md                               # Översikt över Princip 1
     │   ├── 1/                                     # Riktlinje 1.1: Textalternativ
-    │   │   ├── index.md                           # Översikt över Riktlinje 1.1
     │   │   └── 1/                                 # Kriterium 1.1.1
-    │   │       ├── index.md                       # Metadata och kort beskrivning
     │   │       └── icke-textuellt-innehall.md     # Fullständig guide för kriterium 1.1.1
     │   ├── 2/                                     # Riktlinje 1.2: Tidsbaserade media
     │   └── ...
@@ -42,42 +39,44 @@ content/
 
 Varje innehållsfil innehåller frontmatter med metadata som används för att bygga navigeringen och presentera innehållet korrekt.
 
-### För principer (t.ex. 1/index.md):
-
-```yaml
----
-title: Princip 1 - Möjlig att uppfatta
-description: Information och komponenter i användargränssnittet måste presenteras för användare på sätt som de kan uppfatta.
-principleNumber: 1
-principleName: Möjlig att uppfatta
----
-```
-
-### För riktlinjer (t.ex. 1/1/index.md):
-
-```yaml
----
-title: Riktlinje 1.1 - Textalternativ
-description: Tillhandahåll textalternativ för allt icke-textuellt innehåll så att det kan ändras till andra format som personer behöver.
-principleNumber: 1
-principleName: Möjlig att uppfatta
-guidelineNumber: 1
-guidelineName: Textalternativ
----
-```
-
 ### För kriterier (t.ex. 1/1/1/icke-textuellt-innehall.md):
 
 ```yaml
 ---
-title: Icke-textuellt innehåll
+title: 1.1.1 Icke-textuellt innehåll
 description: All innehåll som inte är text ska ha ett textalternativ som presenterar motsvarande syfte eller information.
 level: A
+slug: icke-textuellt-innehall
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "icke-textuellt innehåll",
+    "alt-text",
+    "webbtillgänglighet",
+    "non-text content",
+  ]
+canonical: https://www.t12t.dev/wcag/1/1/1/icke-textuellt-innehall
+
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 1
 guidelineName: Textalternativ
 criterionNumber: 1
+
+og:
+  title: 1.1.1 Icke-textuellt innehåll – WCAG
+  description: Allt icke-textuellt innehåll ska ha ett textalternativ som presenterar samma information.
+  url: https://www.t12t.dev/wcag/1/1/1/icke-textuellt-innehall
+  type: article
+
+datePublished: 2025-03-19
+dateModified: 2025-03-26
+
+sitemap:
+  lastmod: 2025-03-26
+  changefreq: monthly
+  priority: 0.8
 ---
 ```
 
