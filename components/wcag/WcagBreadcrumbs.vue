@@ -13,19 +13,18 @@
         <NuxtLink to="/wcag" class="text-neutral-600 hover:text-primary px-2 py-3">
           WCAG
         </NuxtLink>
-        <svg v-if="breadcrumbs.length > 0" class="h-4 w-4 text-neutral-400 mx-2" fill="none" viewBox="0 0 24 24"
+        <svg 
+          v-if="breadcrumbs.length > 0" class="h-4 w-4 text-neutral-400 mx-2" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </li>
       <template v-for="(crumb, index) in breadcrumbs" :key="index">
         <li class="flex items-center">
-          <NuxtLink v-if="index < breadcrumbs.length - 1" :to="crumb.path"
-            class="text-neutral-600 hover:text-primary px-2 py-3">
-            {{ crumb.title }}
-          </NuxtLink>
-          <span v-else class="text-primary font-medium">{{ crumb.title }}</span>
-          <svg v-if="index < breadcrumbs.length - 1" class="h-4 w-4 text-neutral-400 mx-2" fill="none"
+
+          <span :class="index < breadcrumbs.length - 1 ? text-primary : text-secondary" class=" font-medium">{{ crumb.title }}</span>
+          <svg 
+            v-if="index < breadcrumbs.length - 1" class="h-4 w-4 text-neutral-400 mx-2" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
