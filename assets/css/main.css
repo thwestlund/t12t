@@ -120,7 +120,7 @@
   .prose h4,
   .prose h5,
   .prose h6 {
-    @apply text-secondary mt-10
+    @apply text-secondary
   }
 
   .prose h1 a,
