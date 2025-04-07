@@ -1,10 +1,10 @@
 <template>
-  <div class="rounded-lg border border-gray-200 overflow-hidden mb-8">
+  <div class="rounded-lg border border-gray-200 overflow-hidden mb-6">
     <!-- Tabs navigation with copy button -->
-    <div class="flex justify-between items-center border-b border-gray-200 p-2">
+    <div class="flex justify-between items-center border-b border-gray-200 p-3">
       <!-- Tab buttons on the left -->
       <div class="flex gap-2">
-        <button v-for="(label, index) in labels" :key="index"
+        <button v-for="(label, index) in labels" :key="index" :aria-checked="activeTab === index" role="radio"
           class="px-3 py-2 text-sm border-b-2 border-transparent rounded-md hover:bg-gray-100 focus:outline-none flex items-center gap-1"
           :class="activeTab === index ? 'border-b-2 border-blue-600 bg-gray-100' : ''" @click="setActiveTab(index)">
           <Icon :name="getLanguageIcon(label)" class="h-3 w-3" />
@@ -14,7 +14,7 @@
 
       <!-- Copy button on the right -->
       <button
-        class="px-3 py-1 text-xs border border-gray-300 rounded hover:border-green-400 hover:text-green-500 transition-colors focus:outline-none"
+        class="px-3 py-2 text-sm border border-gray-300 rounded hover:border-green-400 hover:text-green-500 transition-colors focus:outline-none"
         @click="copyActiveCode">
         {{ copyBtnText }}
       </button>
@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from '#imports';
 
 const props = defineProps({
   labels: {
@@ -49,13 +49,14 @@ const codeContainer = ref<HTMLElement | null>(null);
 // Store extracted code blocks
 const codeBlocks = ref<HTMLElement[]>([]);
 // Track the copy button text
-const copyBtnText = ref('Copy');
+const copyBtnText = ref('Kopiera');
 
 // Extract and store all code blocks when mounted
 onMounted(() => {
   setTimeout(() => {
-    // Find all pre elements in the slot content
-    const preElements = document.querySelectorAll('.code-container + div pre');
+    // Find all pre elements in THIS component's slot content only
+    const hiddenSlot = codeContainer.value?.parentElement?.querySelector('.hidden');
+    const preElements = hiddenSlot?.querySelectorAll('pre') || [];
 
     // Store references to all pre elements
     codeBlocks.value = Array.from(preElements) as HTMLElement[];
@@ -167,15 +168,15 @@ const copyActiveCode = () => {
   navigator.clipboard.writeText(codeText)
     .then(() => {
       // Show copied message
-      copyBtnText.value = 'Copied!';
+      copyBtnText.value = 'Kopierad!';
 
       // Reset after 2 seconds
       setTimeout(() => {
-        copyBtnText.value = 'Copy';
+        copyBtnText.value = 'Kopiera';
       }, 2000);
     })
     .catch(err => {
-      console.error('Failed to copy:', err);
+      console.error('Kunde inte kopiera:', err);
     });
 };
 </script>
@@ -190,6 +191,8 @@ const copyActiveCode = () => {
 
 /* Ensure code is properly displayed */
 .code-container pre code {
-  @apply font-mono text-sm;
+  font-family: monospace;
+  font-size: 0.875rem;
+  /* text-sm */
 }
 </style>

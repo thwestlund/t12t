@@ -4,12 +4,12 @@ const props = defineProps({
 })
 
 // SEO for error page
-useSeoMeta({
+/*useSeoMeta({
   title: () => props.error?.statusCode === 404
     ? 'Sidan hittades inte - T12T'
     : 'Ett fel har inträffat - T12T',
   robots: 'noindex, nofollow',
-})
+})*/
 
 const handleError = () => {
   clearError({ redirect: '/' })

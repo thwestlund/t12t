@@ -1,121 +1,210 @@
 ---
-title: Fokusordning
-description: Om en webbsida kan navigeras sekventiellt och navigeringssekvenserna påverkar betydelse eller funktion, får fokuserbara komponenter fokus i en ordning som bevarar betydelse och användbarhet.
+title: 2.4.3 Fokusordning
+description: Säkerställ att ordningen som element får fokus i när man navigerar med tangentbord är logisk och meningsfull.
 level: A
+slug: fokusordning
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "fokusordning",
+    "focus order",
+    "tangentbord",
+    "navigation",
+    "DOM-ordning",
+    "tabbordning",
+    "operabel",
+    "navigerbar",
+  ]
+canonical: https://t12t.dev/wcag/2/4/3/fokusordning
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 4
-guidelineName: Navigerbart
+guidelineName: Navigerbar
 criterionNumber: 3
 
+og:
+  title: 2.4.3 Fokusordning – WCAG
+  description: Säkerställ att ordningen som element får fokus i är logisk.
+  url: https://t12t.dev/wcag/2/4/3/fokusordning
+  type: article
+
+datePublished: 2025-05-27
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.9 # Nivå A, fundamental
 ---
 
-# Framgångskriterium 2.4.3 Fokusordning
+# Fokusordning
 
 ## Beskrivning
 
-Om en webbsida kan navigeras sekventiellt och navigeringssekvenserna påverkar betydelse eller funktion, får fokuserbara komponenter fokus i en ordning som bevarar betydelse och användbarhet.
+Om en webbsida kan navigeras sekventiellt (t.ex. med tangentbord) och navigeringsordningen påverkar betydelse eller användning, ska fokuserbara komponenter få fokus i en ordning som **bevarar mening och funktion**.
+
+Detta innebär att när en användare trycker på [Tab]{.inline-code} (eller [Shift+Tab]{.inline-code}) för att flytta mellan länkar, knappar, formulärfält och andra interaktiva element, ska ordningen vara logisk och förutsägbar. Den ska vanligtvis följa den visuella läsordningen (t.ex. från vänster till höger, uppifrån och ner i västerländska språk).
+
+Fokusordningen bestäms normalt av elementens ordning i HTML-koden (DOM-ordningen). Problem uppstår oftast när CSS används för att visuellt flytta om element på ett sätt som skapar en stor skillnad mellan den visuella layouten och kodordningen.
 
 ## Varför detta behövs
 
-En logisk fokusordning är avgörande för användare som navigerar med tangentbord eller tangentbordsliknande hjälpmedel. När fokusordningen inte följer en logisk sekvens blir det förvirrande och svårt att förstå sidans struktur och funktion. Detta påverkar särskilt personer med kognitiva eller visuella funktionsnedsättningar som förlitar sig på en logisk ordningsföljd för att förstå och interagera med innehållet.
+En ologisk fokusordning gör det svårt och förvirrande att använda en webbsida med tangentbord:
+
+- **Tangentbordsanvändare:** Om fokus hoppar oväntat mellan olika delar av sidan (t.ex. från huvudmenyn till sidfoten och sedan tillbaka till huvudinnehållet) blir det svårt att förstå var man är och hur man interagerar med sidan effektivt.
+- **Skärmläsaranvändare:** Är helt beroende av en logisk fokusordning för att förstå sidans struktur och flöde. Hoppig fokusordning gör det mycket svårt att bygga en mental modell av sidan.
+- **Personer med kognitiva funktionsnedsättningar:** En oförutsägbar fokusordning ökar den kognitiva belastningen och kan leda till fel och frustration.
+
+En konsekvent och logisk fokusordning är grundläggande för effektiv tangentbordsnavigation.
+
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Logisk fokusordning (Rätt) ✅
 
-#### Formulärfält i logisk ordning
+HTML-strukturen följer den visuella layouten. Även om CSS Grid eller Flexbox används för layout, är källkoden ordnad på ett logiskt sätt.
 
-```html
-<form>
-  <div>
-    <label for="name">Namn:</label>
-    <input type="text" id="name" name="name" />
-  </div>
-  <div>
-    <label for="email">E-post:</label>
-    <input type="email" id="email" name="email" />
-  </div>
-  <div>
-    <label for="message">Meddelande:</label>
-    <textarea id="message" name="message"></textarea>
-  </div>
-  <div>
-    <button type="submit">Skicka</button>
-  </div>
-</form>
+::code-group{:labels='["HTML (Logisk ordning) ✅", "CSS (Exempel) ✅"]'}
+
+```html showLineNumbers
+<body>
+  <header>
+    <a href="/">Logotyp</a>
+    <nav>
+      <a href="/sida1">Sida 1</a>
+      <a href="/sida2">Sida 2</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Huvudinnehåll</h1>
+    <p>Text...</p>
+    <form>
+      <label for="fname">Förnamn:</label>
+      <input type="text" id="fname" />
+      <button type="submit">Skicka</button>
+    </form>
+  </main>
+  <footer>
+    <a href="/kontakt">Kontakt</a>
+  </footer>
+</body>
 ```
 
-#### Modal dialog med korrekt fokusspärr
+```css showLineNumbers
+/* Även med komplex CSS-layout, så länge DOM-ordningen är logisk
+   och inga tabindex med positiva värden används felaktigt,
+   blir fokusordningen oftast korrekt. */
+body {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main   main"
+    "footer footer";
+  /* ... andra grid- eller flexbox-egenskaper ... */
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+```
 
-```html
-<div id="modal" role="dialog" aria-labelledby="modal-title">
-  <h2 id="modal-title">Bekräfta åtgärd</h2>
-  <p>Är du säker på att du vill fortsätta?</p>
-  <button id="confirm-btn">Ja, fortsätt</button>
-  <button id="cancel-btn">Avbryt</button>
+::
+**Resultat:** När användaren tabbar går fokus i en förutsägbar ordning: Logotyp -> Sida 1 -> Sida 2 -> Förnamn fält -> Skicka knapp -> Kontakt länk.
+
+### Ologisk fokusordning p.g.a. CSS (Fel) ❌
+
+CSS används för att visuellt placera element i en annan ordning än i koden, vilket leder till att fokus hoppar ologiskt.
+
+::code-group{:labels='["HTML (Ologisk pga CSS) ❌", "CSS (som skapar problemet) ❌"]'}
+
+```html {1-3, 5-7, 9-11} showLineNumbers
+<div class="wrapper">
+  <!-- Kommer först i DOM -->
+  <div class="sidebar">
+    <a href="/hjalp">Hjälp</a>
+  </div>
+
+  <!-- Kommer sist i DOM -->
+  <div class="main-content">
+    <a href="/artikel">Artikel</a>
+    <button>Spara</button>
+  </div>
+
+  <!-- Kommer i mitten i DOM -->
+  <div class="secondary-nav">
+    <a href="/profil">Profil</a>
+  </div>
 </div>
-
-<script>
-  const modal = document.getElementById("modal");
-  const firstFocusable = document.getElementById("confirm-btn");
-  const lastFocusable = document.getElementById("cancel-btn");
-
-  // Sätt fokus på första elementet när modalen öppnas
-  firstFocusable.focus();
-
-  // Hantera tab-navigering inom modalen
-  lastFocusable.addEventListener("keydown", function (e) {
-    if (e.key === "Tab" && !e.shiftKey) {
-      e.preventDefault();
-      firstFocusable.focus();
-    }
-  });
-
-  firstFocusable.addEventListener("keydown", function (e) {
-    if (e.key === "Tab" && e.shiftKey) {
-      e.preventDefault();
-      lastFocusable.focus();
-    }
-  });
-</script>
 ```
 
-### Exempel på bristande implementering
+```css showLineNumbers
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  /* Visuell ordning: sidebar, main-content, secondary-nav */
+  grid-template-areas:
+    "sidebar main"
+    "sidebar secondary";
+}
 
-#### Ologisk tabuleringsordning via tabindex
+.sidebar {
+  grid-area: sidebar;
+} /* Visas först (vänster) */
 
-```html
-<div>
-  <a href="page1.html" tabindex="3">Länk 1</a>
-  <a href="page2.html" tabindex="1">Länk 2</a>
-  <a href="page3.html" tabindex="2">Länk 3</a>
-</div>
+.main-content {
+  grid-area: main;
+} /* Visas i mitten (höger, uppe) */
+
+.secondary-nav {
+  grid-area: secondary;
+} /* Visas sist (höger, nere) */
+
+/*
+   DOM-ordning: sidebar, secondary-nav, main-content
+   Visuell ordning: sidebar, main-content, secondary-nav
+   Fokusordning (följer DOM): Hjälp -> Profil -> Artikel -> Spara
+   Detta är ologiskt jämfört med den visuella layouten!
+   Fokus hoppar från vänster kolumn (Hjälp) till höger kolumn nere (Profil)
+   och sedan upp i höger kolumn (Artikel, Spara).
+*/
 ```
 
-#### Formulär där knappen kommer före fälten i HTML
+::
+**Resultat:** Fokusordningen ("Hjälp" -> "Profil" -> "Artikel" -> "Spara") följer DOM-strukturen men stämmer inte alls med den visuella layouten där "Artikel" och "Spara" visas före "Profil". Detta är förvirrande. Lösningen är att ändra DOM-ordningen så att den bättre matchar den logiska/visuella ordningen: Sidebar, Main Content, Secondary Nav.
 
-```html
-<form>
-  <button type="submit">Skicka</button>
+### Felaktig användning av [tabindex]{.inline-code} (Fel) ❌
 
-  <div>
-    <label for="name">Namn:</label>
-    <input type="text" id="name" name="name" />
-  </div>
+Att använda [tabindex]{.inline-code} med positiva värden (t.ex. [tabindex="1"]{.inline-code}, [tabindex="2"]{.inline-code}) bör undvikas eftersom det åsidosätter den naturliga DOM-ordningen och är mycket svårt att underhålla. Det leder nästan alltid till en bruten fokusordning.
 
-  <div>
-    <label for="email">E-post:</label>
-    <input type="email" id="email" name="email" />
-  </div>
-</form>
+::code-group{:labels='["HTML (Fel tabindex) ❌"]'}
+
+```html showLineNumbers
+<a href="/hem">Hem</a>
+<!-- Får fokus sist (standard tabindex=0) -->
+<input type="text" tabindex="2" />
+<!-- Får fokus näst först -->
+<button tabindex="1">Sök</button>
+<!-- Får fokus först -->
+<a href="/om">Om</a>
+<!-- Får fokus sist (standard tabindex=0) -->
 ```
+
+::
+**Resultat:** Fokusordningen blir: Sök-knapp -> Textfält -> Hem-länk -> Om-länk. Detta är helt ologiskt och skapat av felaktig användning av [tabindex]{.inline-code}. Använd [tabindex="0"]{.inline-code} för att inkludera anpassade element i den naturliga ordningen och [tabindex="-1"]{.inline-code} för att göra något fokuserbart endast via script, men undvik positiva värden.
+
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.4.3 Focus Order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html)
-- [Webbriktlinjer - R136: Skapa en logisk tabbordning](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/placera-element-i-en-logisk-tabbordning)
+- [WCAG 2.2: Success Criterion 2.4.3 Focus Order (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html)
+- [MDN Web Docs: tabindex attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
+- [WebAIM: Keyboard Accessibility - Tabindex](https://webaim.org/techniques/keyboard/tabindex)
+- [Understanding SC 1.3.2 Meaningful Sequence](https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html) (Relaterat kriterium om logisk läsordning som ofta sammanfaller med fokusordning).

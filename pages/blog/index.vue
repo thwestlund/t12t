@@ -28,7 +28,8 @@
                 </span>
               </div>
               <div v-if="post.tags && post.tags.length" class="mt-4 flex flex-wrap gap-2">
-                <span v-for="tag in post.tags.slice(0, 3)" :key="tag"
+                <span 
+                  v-for="tag in post.tags.slice(0, 3)" :key="tag"
                   class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-100 text-neutral-800">
                   {{ tag }}
                 </span>
@@ -48,20 +49,7 @@ definePageMeta({
   layout: 'default'
 })
 
-useSeoMeta({
-  title: 'Blogg - T12T - Digital Tillgänglighet',
-  description: 'Senaste nyheter, artiklar och insikter om digital tillgänglighet, WCAG-standarder och tillgänglig webbutveckling.'
-})
-
 const { data: posts } = await useAsyncData('blog-posts', () =>
   queryCollection('blog').order('date', 'DESC').all()
 )
-
-// Format date to Swedish locale
-const formatDate = (date: string) => {
-  if (!date) return '';
-
-  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(date).toLocaleDateString('sv-SE', options);
-}
 </script>

@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "nuxt-time",
     "dayjs-nuxt",
+    "@nuxt/eslint",
   ],
   css: ["~/assets/css/main.css"],
   postcss: {
@@ -67,7 +68,10 @@ export default defineNuxtConfig({
           "remark-gfm": {},
           "remark-rehype": {},
         },
-        rehypePlugins: {},
+        rehypePlugins: {
+          "rehype-highlight": {},
+          "rehype-highlight-code-lines": {},
+        },
       },
     },
     renderer: {

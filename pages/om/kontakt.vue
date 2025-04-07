@@ -78,10 +78,10 @@
 
 <script setup>
 // SEO metadata
-useSeoMeta({
+/*useSeoMeta({
   title: 'Kontakta oss - T12T',
   description: 'Kontakta T12T för frågor, feedback eller samarbeten kring digital tillgänglighet.'
-})
+})*/
 
 // Form data and state
 const formData = ref({

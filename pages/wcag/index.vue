@@ -26,7 +26,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
           <div class="bg-primary-light p-4 rounded-lg">
             <h3 class="font-bold text-primary mb-2">1. Möjlig att uppfatta</h3>
-            <p class="text-sm">
+            <p class="">
               Information och komponenter i användargränssnittet måste presenteras för användare på sätt som de kan
               uppfatta. Detta innebär att information måste vara tillgänglig för alla sinnen och inte bara beroende
               av exempelvis syn.
@@ -35,7 +35,7 @@
 
           <div class="bg-primary-light p-4 rounded-lg">
             <h3 class="font-bold text-primary mb-2">2. Hanterbar</h3>
-            <p class="text-sm">
+            <p class="">
               Komponenter i användargränssnittet och navigering måste vara hanterbara. Detta innebär att användare
               måste kunna interagera med gränssnittet på olika sätt, inte bara genom mus.
             </p>
@@ -43,7 +43,7 @@
 
           <div class="bg-primary-light p-4 rounded-lg">
             <h3 class="font-bold text-primary mb-2">3. Begriplig</h3>
-            <p class="text-sm">
+            <p class="">
               Information och hantering av användargränssnittet måste vara begriplig. Detta innebär att innehåll ska
               vara läsbart och förutsägbart och att användaren får hjälp att undvika och korrigera misstag.
             </p>
@@ -51,7 +51,7 @@
 
           <div class="bg-primary-light p-4 rounded-lg">
             <h3 class="font-bold text-primary mb-2">4. Robust</h3>
-            <p class="text-sm">
+            <p class="">
               Innehållet måste vara robust nog för att kunna tolkas på ett pålitligt sätt av olika användaragenter,
               inklusive hjälpmedel. Det innebär att webbinnehållet ska vara kompatibelt med nuvarande och framtida
               tekniker.
@@ -101,19 +101,6 @@
           </li>
         </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Nyheter i WCAG 2.2</h2>
-
-        <p>
-          WCAG 2.2, som publicerades i oktober 2023, innehåller nya framgångskriterier som fokuserar på:
-        </p>
-
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li>Förbättrad tillgänglighet för personer med kognitiva funktionsnedsättningar</li>
-          <li>Bättre stöd för mobilanvändning</li>
-          <li>Starkare riktlinjer för tangentbordsnavigering</li>
-          <li>Förenklad interaktion för personer med motoriska funktionsnedsättningar</li>
-        </ul>
-
         <h2 class="text-2xl font-bold mt-8 mb-4">Så använder du T12T:s WCAG-guide</h2>
 
         <p>
@@ -123,10 +110,7 @@
 
         <ol class="list-decimal pl-6 space-y-2 my-4">
           <li>Använd sidomenyn till vänster för att navigera genom WCAG:s principer, riktlinjer och kriterier.</li>
-          <li>Varje framgångskriterium har en egen sida med beskrivning, förklaring av varför det behövs, praktiska
-            exempel och testmetoder.</li>
-          <li>För de flesta kriterier finns även sidor med mer detaljerade exempel och testmetoder som du når via
-            länkar längst ner på kriteriesidan.</li>
+          <li>Varje framgångskriterium har en egen sida med beskrivning, förklaring av innebörden, varför det behövs och praktiska.</li>
         </ol>
 
         <div class="bg-blue-50 p-4 rounded-lg my-6 border border-blue-200">
@@ -185,8 +169,8 @@ definePageMeta({
 })
 
 // Set page metadata for SEO
-useSeoMeta({
+/*useSeoMeta({
   title: 'WCAG 2.2 - Riktlinjer för tillgängligt webbinnehåll | T12T',
   description: 'Lär dig om WCAG 2.2-standarden, hur den är strukturerad och hur du kan använda den för att göra ditt webbinnehåll mer tillgängligt.'
-})
+})*/
 </script>

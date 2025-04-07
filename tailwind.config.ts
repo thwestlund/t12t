@@ -47,6 +47,9 @@ export default {
       spacing: {
         container: "1280px",
       },
+      maxWidth: {
+        "80ch": "90ch",
+      },
     },
   },
   plugins: [],

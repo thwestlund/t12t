@@ -1,232 +1,196 @@
 ---
-title: Flera sätt
-description: Det finns mer än ett sätt att hitta en webbsida i en uppsättning webbsidor.
+title: 2.4.5 Flera sätt
+description: Erbjud mer än ett sätt att hitta en specifik webbsida inom en uppsättning webbsidor, förutom när sidan är ett steg i en process.
 level: AA
+slug: flera-satt
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "flera sätt",
+    "multiple ways",
+    "navigation",
+    "sökfunktion",
+    "webbplatskarta",
+    "site map",
+    "länklista",
+    "orientering",
+    "operabel",
+    "navigerbar",
+  ]
+canonical: https://t12t.dev/wcag/2/4/5/flera-satt
+
 principleNumber: 2
-principleName: Hanterbar
+principleName: Operabel
 guidelineNumber: 4
-guidelineName: Navigerbart
+guidelineName: Navigerbar
 criterionNumber: 5
 
+og:
+  title: 2.4.5 Flera sätt – WCAG
+  description: Erbjud mer än ett sätt att hitta webbsidor inom en webbplats.
+  url: https://t12t.dev/wcag/2/4/5/flera-satt
+  type: article
+
+datePublished: 2025-05-29
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.6 # AA-kriterier
 ---
 
-# Framgångskriterium 2.4.5 Flera sätt
+# Flera sätt
 
 ## Beskrivning
 
-Det finns mer än ett sätt att hitta en webbsida i en uppsättning webbsidor, förutom när webbsidan är resultatet av, eller ett steg i, en process.
+Det finns mer än ett sätt att hitta en specifik webbsida inom en uppsättning webbsidor (en webbplats), förutom när webbsidan är resultatet av, eller ett steg i, en process.
+
+Detta innebär att användare ska kunna nå en sida på webbplatsen via minst två olika metoder. Vanliga metoder inkluderar:
+
+1.  **Huvudnavigation:** Menyer och länkar som finns konsekvent på (nästan) alla sidor.
+2.  **Sökfunktion:** En möjlighet att söka efter innehåll på webbplatsen.
+3.  **Webbplatskarta (Site map):** En sida som listar alla (eller de viktigaste) sidorna på webbplatsen i en hierarkisk struktur.
+4.  **Länklista:** En lista över alla sidor (kan likna en webbplatskarta).
+5.  **Relaterade länkar:** Länkar inom innehållet som pekar till andra relevanta sidor på webbplatsen.
+6.  **Innehållsförteckning:** För längre dokument eller sektioner.
+
+Undantaget gäller sidor som är en del av en sekventiell process, till exempel de olika stegen i en beställning eller ett flerstegsformulär. Det är inte rimligt att kräva en direktlänk till "Steg 3 i kassan" från en webbplatskarta.
 
 ## Varför detta behövs
 
-Olika användare har olika förmågor, preferenser och behov när det gäller att navigera på en webbplats. Genom att erbjuda flera sätt att hitta innehåll kan användare välja den navigationsmetod som fungerar bäst för deras specifika situation.
+Olika användare föredrar eller behöver olika sätt att navigera och hitta information:
 
-Att erbjuda olika navigationsmetoder är särskilt fördelaktigt för:
+- **Användare som föredrar överblick:** En webbplatskarta eller tydlig navigation ger en bra överblick över webbplatsens struktur.
+- **Användare som vet vad de letar efter:** En sökfunktion är ofta det snabbaste sättet att hitta specifik information.
+- **Användare som utforskar:** Navigationsmenyer och relaterade länkar hjälper användare att upptäcka innehåll.
+- **Personer med kognitiva funktionsnedsättningar:** Kan ha lättare att använda ett visst navigeringssätt (t.ex. sök istället för komplexa menyer). Om ett sätt är svårt, finns ett annat alternativ.
+- **Skärmläsaranvändare:** Kan effektivt använda webbplatskartor eller sökfunktioner för att snabbt hitta sidor utan att behöva navigera genom hela menystrukturen.
 
-- Personer med kognitiva funktionsnedsättningar som kan föredra konsekvent hierarkisk navigation
-- Personer med synnedsättningar som kan föredra sökfunktionalitet
-- Personer med motoriska funktionsnedsättningar som kan ha svårt med vissa typer av navigationsmekanismer
-- Personer med inlärningssvårigheter som kan föredra en innehållsförteckning eller webbkarta
+Att erbjuda flera sätt att navigera gör webbplatsen mer flexibel och lättare att använda för alla.
 
-Genom att erbjuda flera navigationsalternativ ökar du användbarheten för alla användare och säkerställer att ingen utesluts på grund av sin föredragna navigationsmetod.
+---
 
 ## Exempel
 
-### Exempel på bra implementering
+### Webbplats med Navigation, Sök och Webbplatskarta (Rätt) ✅
 
-#### Webbplats med flera navigationsmekanismer
+Webbplatsen erbjuder en huvudmeny (synlig på alla sidor), en sökfunktion (i sidhuvudet) och en länk till en webbplatskarta (i sidfoten).
 
-```html
+::code-group{:labels='["Konceptuell HTML (Rätt) ✅"]'}
+
+```html showLineNumbers
 <body>
   <header>
-    <h1>Företagsnamn</h1>
-
-    <!-- Navigationsmetod 1: Huvudmeny -->
-    <nav aria-label="Huvudmeny">
+    <nav aria-label="Huvudnavigation">
       <ul>
         <li><a href="/">Hem</a></li>
-        <li><a href="/produkter">Produkter</a></li>
         <li><a href="/tjanster">Tjänster</a></li>
         <li><a href="/om-oss">Om oss</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
       </ul>
     </nav>
-
-    <!-- Navigationsmetod 2: Sökfunktion -->
-    <form role="search" aria-label="Webbplatssökning">
-      <label for="search">Sök:</label>
-      <input type="search" id="search" name="q" />
+    <form action="/sok" method="get" role="search">
+      <label for="search-input">Sök på webbplatsen:</label>
+      <input type="search" id="search-input" name="q" />
       <button type="submit">Sök</button>
     </form>
   </header>
 
   <main>
-    <h2>Välkommen till vår webbplats</h2>
-    <!-- Innehåll -->
+    <!-- Sidans huvudinnehåll -->
   </main>
-
-  <aside>
-    <!-- Navigationsmetod 3: Relaterade länkar -->
-    <nav aria-label="Relaterade sidor">
-      <h3>Relaterade sidor</h3>
-      <ul>
-        <li><a href="/blogg">Vår blogg</a></li>
-        <li><a href="/nyheter">Senaste nytt</a></li>
-        <li><a href="/kundcase">Kundcase</a></li>
-      </ul>
-    </nav>
-  </aside>
 
   <footer>
-    <!-- Navigationsmetod 4: Fotnavigation -->
-    <nav aria-label="Fotmeny">
+    <nav aria-label="Sidfotsnavigation">
       <ul>
-        <li><a href="/sitemap">Webbkarta</a></li>
-        <li><a href="/a-o">A till Ö</a></li>
-        <li><a href="/vanliga-fragor">Vanliga frågor</a></li>
-        <li><a href="/cookies">Cookies</a></li>
-        <li><a href="/integritetspolicy">Integritetspolicy</a></li>
-      </ul>
-    </nav>
-  </footer>
-</body>
-```
-
-#### Produktsida med flera navigationsalternativ
-
-```html
-<div class="product-page">
-  <!-- Navigationsmetod 1: Brödsmulor -->
-  <nav aria-label="Brödsmulor" class="breadcrumbs">
-    <ol>
-      <li><a href="/">Hem</a></li>
-      <li><a href="/produkter">Produkter</a></li>
-      <li><a href="/produkter/mobiler">Mobiltelefoner</a></li>
-      <li aria-current="page">MobilX Pro</li>
-    </ol>
-  </nav>
-
-  <!-- Produktinformation -->
-  <main>
-    <h1>MobilX Pro</h1>
-    <!-- Produktinnehåll -->
-  </main>
-
-  <!-- Navigationsmetod 2: Kategorinavigation -->
-  <aside>
-    <nav aria-label="Produktkategorier">
-      <h2>Produktkategorier</h2>
-      <ul>
-        <li><a href="/produkter/mobiler">Mobiltelefoner</a></li>
-        <li><a href="/produkter/surfplattor">Surfplattor</a></li>
-        <li><a href="/produkter/laptops">Laptops</a></li>
-        <li><a href="/produkter/tillbehor">Tillbehör</a></li>
-      </ul>
-    </nav>
-  </aside>
-
-  <!-- Navigationsmetod 3: Relaterade produkter -->
-  <section aria-labelledby="related-title">
-    <h2 id="related-title">Relaterade produkter</h2>
-    <ul class="product-grid">
-      <li>
-        <a href="/produkt/mobilx-lite">
-          <img src="mobilx-lite.jpg" alt="MobilX Lite" />
-          <div>MobilX Lite</div>
-        </a>
-      </li>
-      <li>
-        <a href="/produkt/mobilx-tillbehor">
-          <img src="tillbehor.jpg" alt="MobilX Tillbehör" />
-          <div>MobilX Tillbehör</div>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- Navigationsmetod 4: Taggar -->
-  <section aria-labelledby="tags-title">
-    <h2 id="tags-title">Relaterade taggar</h2>
-    <ul class="tag-list">
-      <li><a href="/tag/smartphone">smartphone</a></li>
-      <li><a href="/tag/android">android</a></li>
-      <li><a href="/tag/5g">5G</a></li>
-      <li><a href="/tag/mobilx">mobilx</a></li>
-    </ul>
-  </section>
-</div>
-```
-
-### Exempel på bristande implementering
-
-#### Webbplats med endast en navigationsväg
-
-```html
-<!-- Dåligt exempel - endast en navigationsmetod -->
-<body>
-  <header>
-    <h1>Företagsnamn</h1>
-
-    <!-- Endast en navigationsmetod: Huvudmeny -->
-    <nav>
-      <ul>
-        <li><a href="/">Hem</a></li>
-        <li><a href="/avdelning1">Avdelning 1</a></li>
-        <li><a href="/avdelning2">Avdelning 2</a></li>
         <li><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/webbplatskarta">Webbplatskarta</a></li>
       </ul>
     </nav>
-  </header>
-
-  <main>
-    <h2>Välkommen</h2>
-    <p>Innehåll här...</p>
-    <!-- Inga alternativa navigationsvägar som sök, webbkarta, eller tagglistor -->
-  </main>
-
-  <footer>
-    <p>&copy; 2023 Företagsnamn</p>
-    <!-- Ingen ytterligare navigation i sidfoten -->
   </footer>
 </body>
 ```
 
-#### Djupt nästlad innehållssida utan alternativa vägar
+::
+**Resultat:** En användare kan hitta sidan "Om oss" via huvudnavigationen, genom att söka på "Om oss", eller genom att gå till webbplatskartan och hitta länken där. Detta uppfyller kravet med råge (tre sätt erbjuds). Minst två krävs.
 
-```html
-<!-- Dåligt exempel - djupt nästlad sida utan alternativa navigationsvägar -->
+### Webbplats med Navigation och Relaterade Länkar (Rätt) ✅
+
+En blogg har en huvudmeny med kategorier. Inom varje blogginlägg finns länkar till andra relaterade inlägg.
+
+::code-group{:labels='["Konceptuell HTML (Rätt) ✅"]'}
+
+```html showLineNumbers
 <body>
   <header>
-    <h1>Teknisk dokumentation</h1>
-    <nav>
+    <nav aria-label="Bloggkategorier">
       <ul>
-        <li><a href="/">Dokumentationsportal</a></li>
-        <li><a href="/manualer">Manualer</a></li>
+        <li><a href="/kategori/teknik">Teknik</a></li>
+        <li><a href="/kategori/design">Design</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Installation av komponent B i system X</h2>
-    <p>Detaljerade instruktioner här...</p>
+    <article>
+      <h1>Blogginlägg om Designprinciper</h1>
+      <p>Text om principer...</p>
+      <p>Läs även om <a href="/inlagg/fallstudie-design">vår fallstudie</a>.</p>
 
-    <!-- Endast en väg hit och ingen tydlig väg tillbaka -->
-    <div class="pagination">
-      <a href="tidigare-steg.html">Föregående</a>
-      <a href="nasta-steg.html">Nästa</a>
-    </div>
+      <aside>
+        <h2>Relaterade inlägg</h2>
+        <ul>
+          <li><a href="/inlagg/typografi-tips">Tips om typografi</a></li>
+          <li><a href="/inlagg/fallstudie-design">Fallstudie i design</a></li>
+        </ul>
+      </aside>
+    </article>
   </main>
-
-  <!-- Inga brödsmulor, sökfunktion, relaterade länkar, eller webbkarta -->
 </body>
 ```
+
+::
+**Resultat:** Användaren kan hitta inlägget "Fallstudie i design" via kategorin "Design" i menyn (om den finns där) och via länken "vår fallstudie" i texten samt länken i "Relaterade inlägg". Detta ger flera sätt.
+
+### Webbplats med endast en navigeringsväg (Fel) ❌
+
+En enkel webbplats där alla undersidor endast kan nås genom att klicka sig framåt från startsidan via en serie länkar. Det finns ingen sökfunktion, ingen webbplatskarta och inga alternativa navigeringsmenyer.
+
+::code-group{:labels='["Koncept (Fel) ❌"]'}
+
+```text [Beskrivning]
+En webbplats för ett litet projekt. Från startsidan länkar man till "Projektinfo". Från "Projektinfo" länkar man till "Teamet". Från "Teamet" länkar man till "Kontakt". Det finns inga andra sätt att nå sidan "Teamet" än att gå via Startsida -> Projektinfo.
+```
+
+::
+**Resultat:** Om en användare vill gå direkt till "Teamet" måste de alltid klicka sig igenom de föregående sidorna. Det finns bara ett sätt att nå sidan, vilket inte uppfyller kravet.
+
+### Undantag: Steg i en process (Tillåtet) ✅
+
+En användare genomför ett köp i en webbutik. Sidorna för "Varukorg", "Leveransadress", "Betalning" och "Bekräftelse" visas i en specifik ordning. Det finns inga direktlänkar till t.ex. "Betalning" från webbplatskartan.
+
+::code-group{:labels='["Koncept (Tillåtet) ✅"]'}
+
+```text [Beskrivning]
+Kassaflöde:
+1. Varukorg (/cart)
+2. Leveransadress (/checkout/shipping)
+3. Betalningsmetod (/checkout/payment)
+4. Granska och bekräfta (/checkout/confirm)
+5. Tack för din beställning (/order/success)
+
+Sidorna 2, 3 och 4 är steg i en process och behöver inte kunna nås på flera sätt.
+```
+
+::
+**Resultat:** Dessa sidor är undantagna från kravet eftersom de är del av en definierad process.
+
+---
 
 ## Länk till mer information
 
-- [WCAG 2.2 - Understanding 2.4.5 Multiple Ways](https://www.w3.org/WAI/WCAG22/Understanding/multiple-ways.html)
-- [Webbriktlinjer - Erbjud användarna flera olika sätt att navigera](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/erbjud-anvandarna-flera-olika-satt-att-navigera)
-- [Nielsen Norman Group - Site Maps](https://www.nngroup.com/articles/site-map-usability/)
-- [UX Planet - Navigation Design: How to Create a User-Friendly Website](https://uxplanet.org/navigation-design-how-to-create-a-user-friendly-website-2e891b0c05af)
+- [WCAG 2.2: Success Criterion 2.4.5 Multiple Ways (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/multiple-ways.html)
+- [W3C Technique G125: Providing links to navigate to related Web pages](https://www.w3.org/WAI/WCAG22/Techniques/general/G125)
+- [W3C Technique G64: Providing a site map](https://www.w3.org/WAI/WCAG22/Techniques/general/G64)
+- [W3C Technique G161: Providing a search function to find content](https://www.w3.org/WAI/WCAG22/Techniques/general/G161)

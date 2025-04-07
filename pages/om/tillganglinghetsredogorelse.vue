@@ -173,10 +173,10 @@
 
 <script setup>
 // SEO metadata
-useSeoMeta({
+/*useSeoMeta({
   title: 'Tillgänglighetsredogörelse - T12T',
   description: 'Information om T12T webbplatsens tillgänglighet, kända begränsningar och förbättringsplan i enlighet med WCAG 2.2.',
-})
+})*/
 
 // Sample data for known accessibility issues
 const accessibilityIssues = [

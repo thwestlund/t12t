@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col light">
     <BaseTopBar />
 
-    <div class="py-4 px-4 lg:py-8 lg:px-8">
+    <div class="py-4 px-4 lg:py-8 lg:px-8 mx-auto">
       <WcagBreadcrumbs />
 
       <div class="flex flex-col xl:flex-row gap-8">
@@ -16,9 +16,3 @@
     <Footer />
   </div>
 </template>
-
-<script setup lang="ts">
-import BaseTopBar from '~/components/base/TopBar.vue'
-import WcagBreadcrumbs from '~/components/wcag/WcagBreadcrumbs.vue';
-import WcagSidebarDynamic from '~/components/WcagSidebarDynamic.vue';
-</script>
