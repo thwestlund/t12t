@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-container" aria-label="Kriterium" id="main-content">
+  <main id="main-content" class="max-w-80ch" aria-label="Kriterium">
     <div class=" bg-white rounded-lg shadow-sm border border-neutral-200 p-6 mb-8">
       <div class="flex flex-wrap items-center justify-between mb-6">
         <span class="text-sm">

@@ -17,7 +17,7 @@
 
     <main id="main-content" class="flex-grow">
       <div class="container-main py-8">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-80ch">
           <slot />
 
           <!-- Blog post footer with related posts and tags could go here -->
