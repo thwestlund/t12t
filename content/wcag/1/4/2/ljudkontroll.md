@@ -127,5 +127,4 @@ Om ljud spelas automatiskt i mer än 3 sekunder och det inte finns någon synlig
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.2 Audio Control (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html)
-- [Webbriktlinjer: R110 Gör det möjligt att stänga av ljud som spelas upp automatiskt](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-stanga-av-ljud-som-spelas-upp-automatiskt)
 - [MDN Web Docs: The Audio element (\<audio\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)

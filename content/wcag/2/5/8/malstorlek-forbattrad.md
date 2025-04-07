@@ -195,6 +195,5 @@ Små ikoner (t.ex. 30x30 px) ligger precis bredvid varandra utan tillräckligt m
 
 - [WCAG 2.2: Success Criterion 2.5.8 Target Size (Enhanced) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html)
 - [Förstå WCAG SC 2.5.5 (Nivå AA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) (För jämförelse med minimikravet).
-- [Webbriktlinjer: R139 Se till att klickytorna är tillräckligt stora](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-klickytorna-ar-tillrackligt-stora) (Nämns i relation till 2.5.5, men principen gäller även AAA).
 - [Material Design - Touch targets](https://m2.material.io/design/usability/accessibility.html#layout-and-typography) (Googles rekommendation är minst 48x48 dp).
 - [Human Interface Guidelines - Controls](https://developer.apple.com/design/human-interface-guidelines/controls#Buttons) (Apples rekommendation är minst 44x44 pt för iOS).

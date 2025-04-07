@@ -227,4 +227,3 @@ En animerad progress bar (laddningsindikator) som visar hur långt en filuppladd
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)
-- [Webbriktlinjer: R120 Gör det möjligt att pausa, stoppa och dölja innehåll som rör sig, blinkar eller uppdateras automatiskt](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-pausa-stoppa-och-dolja-innehall-som-ror-sig-blinkar-eller-uppdateras-automatiskt)

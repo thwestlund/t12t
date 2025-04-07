@@ -199,4 +199,3 @@ En webbplats håller en live-auktion online. Varje budgivningsrunda har en fast 
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.2.1 Timing Adjustable (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html)
-- [Webbriktlinjer: R119 Ge användaren möjlighet att förlänga tidsbegränsningar](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/ge-anvandaren-mojlighet-att-forlanga-tidsbegransningar)

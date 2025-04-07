@@ -159,4 +159,3 @@ Mer information finns i rutan till höger.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.3.3 Sensory Characteristics (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html)
-- [Webbriktlinjer: R105 Ge inte instruktioner som förutsätter att användaren kan uppfatta form och läge](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/ge-inte-instruktioner-som-forutsatter-att-anvandaren-kan-uppfatta-form-och-lage)

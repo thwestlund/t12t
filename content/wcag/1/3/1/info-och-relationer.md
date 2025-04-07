@@ -202,6 +202,5 @@ Meddelande:
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)
-- [Webbriktlinjer: R101 Använd element och attribut på ett sätt som överensstämmer med specifikationerna](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-element-och-attribut-pa-ett-satt-som-overensstammer-med-specifikationerna) och relaterade riktlinjer för rubriker, listor, tabeller etc.
 - [MDN Web Docs: HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) (Se specifika element som [\<h1\>-\<h6\>]{.inline-code}, [\<ul\>]{.inline-code}, [\<ol\>]{.inline-code}, [\<li\>]{.inline-code}, [\<strong\>]{.inline-code}, [\<em\>]{.inline-code}, [\<table\>]{.inline-code}, [\<label\>]{.inline-code})
 - [W3C WAI Tutorials: Semantic Structure](https://www.w3.org/WAI/tutorials/page-structure/semantic-structure/)

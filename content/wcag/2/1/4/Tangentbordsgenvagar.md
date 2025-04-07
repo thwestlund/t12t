@@ -180,4 +180,3 @@ function toggleMute() {
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.1.4 Character Key Shortcuts (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html)
-- [Webbriktlinjer: R118 Gör det möjligt att omtilldela eller stänga av kortkommandon som aktiveras med ett tecken](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-omtilldela-eller-stanga-av-kortkommandon-som-aktiveras-med-ett-tecken)

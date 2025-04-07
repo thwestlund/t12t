@@ -198,7 +198,6 @@ function drop(ev) {
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.1.1 Keyboard (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html)
-- [Webbriktlinjer: R116 Se till att allt innehåll kan nås och användas med enbart tangentbordet](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-allt-innehall-kan-nas-och-anvandas-med-enbart-tangentbordet)
 - [MDN Web Docs: Accessibility - Keyboard-navigable JavaScript widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets)
 - [MDN Web Docs: tabindex attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 - [WAI-ARIA Authoring Practices - Developing a Keyboard Interface](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)

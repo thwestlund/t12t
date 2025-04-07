@@ -125,6 +125,5 @@ Titeln är för generell, identisk på flera sidor, eller saknas helt.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.2 Page Titled (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html)
-- [Webbriktlinjer: R123 Skriv beskrivande sidtitlar](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/skriv-beskrivande-sidtitlar)
 - [MDN Web Docs: The Title element (\<title\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 - [WebAIM: Accessible Page Titles](https://webaim.org/techniques/pagetitle/)

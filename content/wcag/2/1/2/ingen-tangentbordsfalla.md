@@ -165,6 +165,5 @@ Ett vanligt problem är inbäddat innehåll från tredje part (t.ex. en video, k
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.1.2 No Keyboard Trap (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html)
-- [Webbriktlinjer: R117 Lås inte fast användaren med tangentbordet](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/las-inte-fast-anvandaren-med-tangentbordet)
 - [MDN Web Docs: Using the dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) (Det moderna [\<dialog\>]{.inline-code}-elementet hanterar ofta fokus bättre än egna lösningar).
 - [WAI-ARIA Authoring Practices: Modal Dialog Example](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/) (Visar korrekt implementering av en modal)

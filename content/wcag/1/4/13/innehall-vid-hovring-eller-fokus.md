@@ -203,5 +203,4 @@ En navigeringsmeny där undermenyer visas vid hovring, men de försvinner omedel
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.13 Content on Hover or Focus (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html)
-- [Webbriktlinjer: R118 Gör det möjligt att uppfatta och hantera innehåll som visas när användaren hovrar eller fokuserar](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-uppfatta-och-hantera-innehall-som-visas-nar-anvandaren-hovrar-eller-fokuserar)
 - [Designing Accessible Menus - Smashing Magazine](https://www.smashingmagazine.com/2017/11/designing-accessible-menus/) (Diskuterar relaterade utmaningar)

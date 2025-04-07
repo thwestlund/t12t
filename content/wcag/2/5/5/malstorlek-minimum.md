@@ -178,6 +178,5 @@ En karta visar hundratals små prickar som representerar butiker. Användaren ka
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.5.5 Target Size (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
-- [Webbriktlinjer: R139 Se till att klickytorna är tillräckligt stora](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-klickytorna-ar-tillrackligt-stora)
 - [Understanding Success Criterion 2.5.5: Target Size (Minimum) (W3C Understanding Document)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) (Innehåller detaljerade förklaringar och exempel på undantagen).
 - [Target Size and Pointer Gestures (Inclusive Mobile Experience)](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html) (Äldre förståelsedokument från 2.1, men relevant).

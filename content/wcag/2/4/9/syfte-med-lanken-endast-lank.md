@@ -154,7 +154,6 @@ Att använda generisk länktext utan någon kompletterande information som blir 
 
 - [WCAG 2.2: Success Criterion 2.4.9 Link Purpose (Link Only) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only.html)
 - [Förstå WCAG SC 2.4.4 (Nivå A)](https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html) (För jämförelse med det mindre strikta AA-kravet).
-- [Webbriktlinjer: R125 Skriv tydliga länkar](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/skriv-tydliga-lankar) (Beskriver även vikten av tydlighet för AAA).
 - [W3C Technique G91: Providing link text that describes the purpose of a link](https://www.w3.org/WAI/WCAG22/Techniques/general/G91)
 - [W3C Technique ARIA1: Using the aria-describedby property to provide a descriptive label for user interface controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA1) (Kan användas, men [aria-label]{.inline-code} eller [aria-labelledby]{.inline-code} är oftare lämpligt för att ge länken ett _namn_).
 - [MDN Web Docs: ARIA aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)

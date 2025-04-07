@@ -204,4 +204,3 @@ _(Inget kodexempel här, då det handlar om visuell design av diagram)._
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.1 Use of Color (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
-- [Webbriktlinjer: R109 Använd inte enbart färg för att förmedla information eller särskilja innehåll](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-inte-enbart-farg-for-att-formedla-information-eller-sarskilja-innehall)

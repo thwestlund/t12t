@@ -144,6 +144,5 @@ body {
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.4 Resize text (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html)
-- [Webbriktlinjer: R112 Gör det möjligt att förstora text](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-forstora-text)
 - [MDN Web Docs: CSS values and units (rem, em, %)](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [WebAIM: Fonts - Relative Sizing](https://webaim.org/techniques/fonts/#relative)

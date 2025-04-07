@@ -191,7 +191,6 @@ Sidorna 2, 3 och 4 är steg i en process och behöver inte kunna nås på flera 
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.5 Multiple Ways (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/multiple-ways.html)
-- [Webbriktlinjer: R126 Gör det möjligt att hitta sidor på olika sätt](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-hitta-sidor-pa-olika-satt)
 - [W3C Technique G125: Providing links to navigate to related Web pages](https://www.w3.org/WAI/WCAG22/Techniques/general/G125)
 - [W3C Technique G64: Providing a site map](https://www.w3.org/WAI/WCAG22/Techniques/general/G64)
 - [W3C Technique G161: Providing a search function to find content](https://www.w3.org/WAI/WCAG22/Techniques/general/G161)

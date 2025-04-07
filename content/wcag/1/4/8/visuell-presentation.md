@@ -148,6 +148,5 @@ body {
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.8 Visual Presentation (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html)
-- [Webbriktlinjer: R115 Gör det möjligt att anpassa textens utseende](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-anpassa-textens-utseende)
 - [CSS basic user interface module Level 4 - text-align](https://www.w3.org/TR/css-ui-4/#propdef-text-align) (Specifikt [text-align: justify]{.inline-code})
 - [CSS ch unit - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/length#ch) (För att sätta maxbredd baserat på tecken)

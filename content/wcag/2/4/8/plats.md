@@ -175,7 +175,6 @@ En användare har klickat sig fram till en specifik supportartikel via flera lä
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.8 Location (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/location.html)
-- [Webbriktlinjer: R129 Visa var användaren befinner sig på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/visa-var-anvandaren-befinner-sig-pa-webbplatsen)
 - [W3C Technique G65: Providing breadcrumb trails](https://www.w3.org/WAI/WCAG22/Techniques/general/G65)
 - [W3C Technique G128: Indicating current location within navigation bars](https://www.w3.org/WAI/WCAG22/Techniques/general/G128)
 - [MDN Web Docs: ARIA `aria-current` attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current)

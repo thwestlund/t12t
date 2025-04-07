@@ -134,5 +134,4 @@ Detta formulär har vanliga fält, men webbläsaren eller hjälpmedlet kan inte 
 
 - [WCAG 2.2: Success Criterion 1.3.5 Identify Input Purpose (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html)
 - [WCAG 2.1: Input Purposes for User Interface Components](https://www.w3.org/TR/WCAG21/#input-purposes) (Lista över standardiserade värden)
-- [Webbriktlinjer: R107 Märk upp formulärfält för autofyll](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/mark-upp-formularfalt-for-autofyll)
 - [MDN Web Docs: The HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)

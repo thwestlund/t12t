@@ -228,7 +228,6 @@ focusableElements.forEach((el) => {
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.11 Focus Not Obscured (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html)
-- [Webbriktlinjer: R133 Markering av fokus ska inte döljas](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/markering-av-fokus-ska-inte-doljas) (Täcker både minimum och enhanced)
 - [CSS position: sticky](https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky)
 - [CSS z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 - [JavaScript scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)

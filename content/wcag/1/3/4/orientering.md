@@ -138,4 +138,3 @@ I dessa fall är låsningen acceptabel eftersom funktionaliteten i sig är beroe
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.3.4 Orientation (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/orientation.html)
-- [Webbriktlinjer: R106 Lås inte gränssnittet i stående eller liggande läge](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/las-inte-granssnittet-i-staende-eller-liggande-lage)

@@ -1,60 +1,170 @@
 ---
-title: Riktlinje 3.2.3 - Konsekvent navigering
-description: Navigeringsmekanismer som upprepas på flera webbsidor inom en uppsättning webbsidor förekommer i samma relativa ordning varje gång de upprepas, såvida inte användaren initierar en ändring.
+title: 3.2.3 Konsekvent navigering
+description: Säkerställ att navigeringsmekanismer som upprepas på flera sidor inom en webbplats förekommer i samma relativa ordning varje gång de upprepas.
 level: AA
+slug: konsekvent-navigering
+keywords:
+  [
+    "WCAG",
+    "tillgänglighet",
+    "konsekvent navigering",
+    "consistent navigation",
+    "navigation",
+    "menyer",
+    "länkar",
+    "ordning",
+    "struktur",
+    "förutsägbar",
+    "operabel",
+    "kognitiv",
+  ]
+canonical: https://t12t.dev/wcag/3/2/3/konsekvent-navigering
+
 principleNumber: 3
 principleName: Begriplig
 guidelineNumber: 2
 guidelineName: Förutsägbar
 criterionNumber: 3
 
+og:
+  title: 3.2.3 Konsekvent navigering – WCAG
+  description: Säkerställ att upprepad navigering har samma ordning på olika sidor.
+  url: https://t12t.dev/wcag/3/2/3/konsekvent-navigering
+  type: article
+
+datePublished: 2025-07-12
+dateModified: 2024-05-17
+
 sitemap:
-  lastmod: 2025-03-19
+  lastmod: 2024-05-17
   changefreq: monthly
-  priority: 0.8
+  priority: 0.6 # AA-kriterier
 ---
 
-# 3.2.3 Konsekvent navigering
-
-## Syfte
-
-Att hjälpa användare att förutse var de kan hitta navigeringselement och funktioner genom att tillhandahålla en konsekvent ordning av dessa element på alla sidor.
+# Konsekvent navigering
 
 ## Beskrivning
 
-Navigeringsmekanismer som upprepas på flera webbsidor inom en uppsättning webbsidor förekommer i samma relativa ordning varje gång de upprepas, såvida inte användaren initierar en ändring.
+Navigationsmekanismer som upprepas på flera webbsidor inom en uppsättning webbsidor (en webbplats) förekommer i **samma relativa ordning** varje gång de upprepas, såvida inte en ändring initieras av användaren.
 
-## Uppfyllnadskriterier
+Detta innebär att om en webbplats har en huvudmeny, en sökfunktion, eller en sidfotsmeny som visas på flera sidor, ska länkarna och kontrollerna inom dessa navigeringsblock alltid presenteras i samma ordning i förhållande till varandra.
 
-För att uppfylla denna riktlinje måste webbplatsen eller applikationen:
+Till exempel, om huvudmenyn innehåller "Hem", "Tjänster", "Om oss", "Kontakt" i den ordningen på startsidan, ska den innehålla samma länkar i samma ordning på sidan "Om oss". Man får lägga till eller ta bort länkar (t.ex. lägga till undermenyalternativ när man är i en viss sektion), men den _inbördes ordningen_ för de länkar som upprepas ska vara densamma.
 
-- Placera navigeringselement i samma relativa ordning på alla sidor där de förekommer
-- Behålla konsekvent ordning på navigationslänkar, menyer, sökfunktioner och andra återkommande element
-- Endast ändra ordningen på navigeringselement om användaren själv initierar en sådan ändring
-- Säkerställa att samma position används för element som har samma funktion på olika sidor
+## Varför detta behövs
+
+Konsekvent navigering gör det lättare för användare att lära sig hur webbplatsen fungerar och att hitta det de letar efter:
+
+- **Förutsägbarhet:** Användare lär sig var olika navigeringsalternativ finns och kan snabbt hitta dem igen på andra sidor.
+- **Minskad kognitiv belastning:** Användare behöver inte lära om sig navigationsstrukturen på varje ny sida. Detta är särskilt viktigt för personer med kognitiva funktionsnedsättningar eller minnesproblem.
+- **Effektivare navigering:** Särskilt för tangentbordsanvändare och skärmläsaranvändare som förlitar sig på en konsekvent struktur för att snabbt kunna hoppa till rätt sektion eller länk.
+
+En inkonsekvent ordning på navigeringselement kan vara förvirrande och frustrerande.
+
+---
 
 ## Exempel
 
-- En huvudmeny som har samma ordning på menyalternativen på alla sidor
-- Sidfot med länkar som är konsekvent placerade på alla sidor
-- Sökfunktioner som alltid finns på samma plats i en header
-- "Tillbaka till toppen"-länkar som är konsekvent placerade
+### Konsekvent huvudmeny (Rätt) ✅
 
-## Vanliga problem
+Huvudmenyn har samma länkar i samma ordning på alla sidor där den visas.
 
-- Navigationsmenyer som ändrar ordning mellan olika sidor
-- Inkonsekvent placering av vanliga funktioner som inloggning eller sök
-- Skiftande positioner för viktiga länkar som kontaktinformation eller hjälp
-- Väsentliga funktioner som byter plats beroende på vilken sida användaren befinner sig på
+::code-group{:labels='["HTML (Sida 1 - Rätt) ✅", "HTML (Sida 2 - Rätt) ✅"]'}
 
-## Testmetoder
+```html [index.html]
+<nav aria-label="Huvudnavigation">
+  <ul>
+    <li><a href="/">Hem</a></li>
+    <li><a href="/produkter">Produkter</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+```
 
-- Jämföra navigeringselement på flera sidor för att verifiera konsekvent ordning
-- Kartlägga placeringen av återkommande element för att säkerställa konsekvens
-- Testa med användare som är beroende av förutsägbar navigering, t.ex. personer med kognitiva nedsättningar
+```html [kontakt.html]
+<nav aria-label="Huvudnavigation">
+  <ul>
+    <li><a href="/">Hem</a></li>
+    <li><a href="/produkter">Produkter</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/kontakt" aria-current="page">Kontakt</a></li>
+    <!-- Samma ordning -->
+  </ul>
+</nav>
+```
 
-## Relaterade riktlinjer
+::
+**Resultat:** Oavsett vilken sida användaren är på, finns "Hem" alltid först, "Produkter" som nummer två, osv. Detta gör menyn förutsägbar. Att den aktiva sidan markeras ([aria-current="page"]{.inline-code}) är också bra (se 2.4.8 Plats), men påverkar inte ordningen.
 
-- [2.4.1 Hoppa över återkommande innehåll](/wcag/2/4/1/hoppa-over-aterkommande-innehall)
-- [3.2.4 Konsekvent identifiering](/wcag/3/2/4/konsekvent-identifiering)
-- [2.4.5 Flera sätt](/wcag/2/4/5/flera-satt)
+### Konsekvent sidfotsnavigering (Rätt) ✅
+
+Länkarna i sidfoten ("Om cookies", "Tillgänglighet", "Webbplatskarta") visas i samma ordning på alla sidor.
+
+::code-group{:labels='["HTML (Sidfot - Rätt) ✅"]'}
+
+```html showLineNumbers
+<footer>
+  <nav aria-label="Sidfotslänkar">
+    <a href="/cookies">Om cookies</a> |
+    <a href="/tillganglighet">Tillgänglighet</a> |
+    <a href="/webbplatskarta">Webbplatskarta</a>
+  </nav>
+  <p>© 2024</p>
+</footer>
+```
+
+::
+**Resultat:** Användaren kan alltid förvänta sig att hitta dessa länkar i samma relativa ordning längst ner på sidan.
+
+### Inkonsekvent ordning i menyn (Fel) ❌
+
+Ordningen på länkarna i huvudmenyn ändras på olika sidor utan att användaren har initierat ändringen.
+
+::code-group{:labels='["HTML (Sida 1 - Fel) ❌", "HTML (Sida 2 - Fel) ❌"]'}
+
+```html [index.html]
+<nav aria-label="Huvudnavigation">
+  <ul>
+    <li><a href="/">Hem</a></li>
+    <li><a href="/tjanster">Tjänster</a></li>
+    <li><a href="/priser">Priser</a></li>
+    <li><a href="/blogg">Blogg</a></li>
+  </ul>
+</nav>
+```
+
+```html [tjanster.html]
+<nav aria-label="Huvudnavigation">
+  <ul>
+    <!-- Fel: Ordningen är ändrad! -->
+    <li><a href="/tjanster" aria-current="page">Tjänster</a></li>
+    <li><a href="/priser">Priser</a></li>
+    <li><a href="/">Hem</a></li>
+    <li><a href="/blogg">Blogg</a></li>
+  </ul>
+</nav>
+```
+
+::
+**Resultat:** Användaren som lärde sig att "Hem" var först på startsidan blir förvirrad när den plötsligt är tredje länken på tjänstesidan. Detta bryter mot kravet på konsekvent relativ ordning.
+
+### Ändring initierad av användaren (Tillåtet) ✅
+
+En webbplats erbjuder användaren möjlighet att anpassa vilka länkar som visas i en personlig snabbmeny. När användaren själv lägger till, tar bort eller ändrar ordning på dessa länkar är det en tillåten ändring.
+
+::code-group{:labels='["Koncept (Tillåtet) ✅"]'}
+
+```text [Beskrivning]
+En användare går till sina profilinställningar och drar "Mina fakturor"-länken till första platsen i sin personliga meny. På nästa sida visas "Mina fakturor" först i den menyn.
+```
+
+::
+**Resultat:** Eftersom ändringen initierades av användaren själv, är detta undantaget från kravet på konsekvens.
+
+---
+
+## Länk till mer information
+
+- [WCAG 2.2: Success Criterion 3.2.3 Consistent Navigation (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html)
+- [W3C Technique G61: Presenting repeated components in the same relative order each time they appear](https://www.w3.org/WAI/WCAG22/Techniques/general/G61)

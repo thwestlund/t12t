@@ -111,6 +111,6 @@ Personen i bild, en äldre man med grått skägg, gestikulerar mot kameran.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.5 Audio Description (Prerecorded) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html)
-- [Webbriktlinjer: R5 Syntolka video som publiceras på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/syntolka-video-som-publiceras-pa-webbplatsen)
+- [Webbriktlinjer: Syntolka videoinspelningar](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/syntolka-videoinspelningar)
 - [MDN Web Docs: The Track element ([\<track\>]{.inline-code})](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
 - [W3C WAI: Audio Description](https://www.w3.org/WAI/media/av/description/)

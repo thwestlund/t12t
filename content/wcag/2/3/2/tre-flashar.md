@@ -133,4 +133,3 @@ Det bästa är att designa för att undvika snabba blinkningar helt och hållet.
 
 - [WCAG 2.2: Success Criterion 2.3.2 Three Flashes (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes.html)
 - [Förstå WCAG SC 2.3.1 (Nivå A)](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html) (För jämförelse och definition av flash).
-- [Webbriktlinjer: R121 Undvik innehåll som kan orsaka epileptiska anfall](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/undvik-innehall-som-kan-orsaka-epileptiska-anfall) (Beskriver även AAA-nivån).

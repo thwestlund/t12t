@@ -131,5 +131,4 @@ Manuell granskning är dock viktig – om något _ser ut_ att blinka snabbt, bö
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.3.1 Three Flashes or Below Threshold (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html)
-- [Webbriktlinjer: R121 Undvik innehåll som kan orsaka epileptiska anfall](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/undvik-innehall-som-kan-orsaka-epileptiska-anfall)
 - [Understanding WCAG 2.2: General Flash and Red Flash Thresholds](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html#dfn-general-flash-and-red-flash-thresholds) (Detaljerad definition av gränsvärdena om man behöver gå djupare än 3 Hz-regeln).

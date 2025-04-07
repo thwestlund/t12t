@@ -134,4 +134,3 @@ Krisinformation.se visar en röd varningsruta högst upp på alla sidor, eller e
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.2.4 Interruptions (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/interruptions.html)
-- (Digg har ingen specifik riktlinje för 2.2.4, men principen om att undvika störningar täcks generellt i deras material om kognitiv tillgänglighet).

@@ -168,6 +168,5 @@ Inkludera den synliga texten i början av [aria-label]{.inline-code}.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.5.3 Label in Name (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html)
-- [Webbriktlinjer: R137 Se till att knappars och andra komponenters namn motsvarar deras synliga etiketter](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-knappars-och-andra-komponenters-namn-motsvarar-deras-synliga-etiketter)
 - [Accessible Name and Description Computation 1.1 (W3C Recommendation)](https://www.w3.org/TR/accname-1.1/)
 - [Understanding WCAG SC 2.5.3: Label in Name (W3C Understanding Document)](https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html#intent)

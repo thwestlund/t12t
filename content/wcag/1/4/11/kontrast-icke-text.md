@@ -193,5 +193,4 @@ Samma verktyg som för textkontrast kan användas. Mät kontrasten mellan det gr
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.11 Non-text Contrast (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
-- [Webbriktlinjer: R111 Se till att text och grafik har tillräcklig kontrast mot bakgrunden](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-text-och-grafik-har-tillracklig-kontrast-mot-bakgrunden) (Täcker både 1.4.3 och 1.4.11)
 - [Understanding Non-text Contrast - Knowbility](https://knowbility.org/blog/2018/understanding-non-text-contrast/) (Bra blogginlägg med exempel)

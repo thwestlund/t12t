@@ -93,5 +93,4 @@ Vissa plattformar eller specialanpassade spelare kan tekniskt stödja separata v
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.6 Sign Language (Prerecorded) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/sign-language-prerecorded.html)
-- [Webbriktlinjer: R6 Använd teckenspråk för att tolka video och ljud](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-teckensprak-for-att-tolka-video-och-ljud)
 - [W3C WAI: Sign Language Interpretation](https://www.w3.org/WAI/media/av/sign-languages/)

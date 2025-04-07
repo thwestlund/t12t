@@ -127,4 +127,3 @@ En webbplats sänder ett direktsänt radioprogram eller en ljudkonferens. Intill
 
 - [WCAG 2.2: Success Criterion 1.2.9 Audio-only (Live) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/audio-only-live.html)
 - [W3C WAI: Making Audio and Video Media Accessible](https://www.w3.org/WAI/media/av/) (Övergripande guide)
-- [Webbriktlinjer: R3 Erbjud alternativ till video och ljud](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/erbjud-alternativ-till-video-och-ljud) och [R4 Texta video och ljud som publiceras på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/texta-video-och-ljud-som-publiceras-pa-webbplatsen) (Relaterade principer)

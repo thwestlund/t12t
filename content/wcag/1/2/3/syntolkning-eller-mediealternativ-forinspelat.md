@@ -140,6 +140,5 @@ Istället för syntolkning kan ett fullständigt textalternativ erbjudas. Detta 
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.3 Audio Description or Media Alternative (Prerecorded) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html)
-- [Webbriktlinjer: R3 Erbjud alternativ till video och ljud](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/erbjud-alternativ-till-video-och-ljud) (Täcker även 1.2.1) och [R5 Syntolka video som publiceras på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/syntolka-video-som-publiceras-pa-webbplatsen)
 - [MDN Web Docs: The Track element ([\<track\>]{.inline-code})](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
 - [W3C WAI: Audio Description](https://www.w3.org/WAI/media/av/description/)

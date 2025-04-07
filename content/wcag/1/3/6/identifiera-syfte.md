@@ -155,7 +155,6 @@ En grupp fält och knappar som tillsammans utgör en sökfunktion kan märkas up
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.3.6 Identify Purpose (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/identify-purpose.html)
-- [Webbriktlinjer: R108 Märk upp komponenter, ikoner och regioner så att deras syfte framgår](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/mark-upp-komponenter-ikoner-och-regioner-sa-att-deras-syfte-framgar)
 - [WAI-ARIA Authoring Practices: Landmark Regions](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/)
 - [MDN Web Docs: ARIA Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
 - [MDN Web Docs: Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)

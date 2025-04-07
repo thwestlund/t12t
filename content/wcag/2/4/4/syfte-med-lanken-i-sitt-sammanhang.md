@@ -167,7 +167,6 @@ Generisk eller oklar länktext där syftet inte framgår, varken av texten själ
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.4 Link Purpose (In Context) (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html)
-- [Webbriktlinjer: R125 Skriv tydliga länkar](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/skriv-tydliga-lankar)
 - [WebAIM: Links and Hypertext - Link Text](https://webaim.org/techniques/hypertext/link_text)
 - [MDN Web Docs: Accessibility - ARIA aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 - [MDN Web Docs: Accessibility - ARIA aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)

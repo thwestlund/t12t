@@ -138,5 +138,4 @@ Här används absolut positionering för att skapa en layout med två kolumner, 
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.3.2 Meaningful Sequence (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html)
-- [Webbriktlinjer: R104 Gör en webbsida vars betydelse är beroende av läsordningen läsbar även om formateringen tas bort](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-en-webbsida-vars-betydelse-ar-beroende-av-lasordningen-lasbar-aven-om-formateringen-tas-bort)
 - [MDN Web Docs: Source Order Matters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items#source_order_matters) (Exempel med Flexbox, men principen gäller generellt)

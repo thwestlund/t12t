@@ -142,5 +142,4 @@ Det enklaste sättet att testa detta är att använda ett verktyg, som en [bookm
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.12 Text Spacing (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html)
-- [Webbriktlinjer: R117 Undvik att låsa textavstånd](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/undvik-att-lasa-textavstand)
 - [TPGi: Text Spacing Bookmarklet](https://www.tpgi.com/text-spacing-bookmarklet/) (Verktyg för testning)

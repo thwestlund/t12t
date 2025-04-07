@@ -159,5 +159,4 @@ En virtuell pianoklaviatur. När användaren trycker ner en tangent (down-event)
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.5.2 Pointer Cancellation (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/pointer-cancellation.html)
-- [Webbriktlinjer: R136 Ge användaren möjlighet att avbryta eller ångra klick och tryck](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/ge-anvandaren-mojlighet-att-avbryta-eller-angra-klick-och-tryck)
 - [Understanding Success Criterion 2.5.2: Pointer Cancellation (W3C Understanding Document)](https://www.w3.org/WAI/WCAG22/Understanding/pointer-cancellation.html#intent) (Förklarar avsikten och vanliga tekniker).

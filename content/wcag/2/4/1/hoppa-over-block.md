@@ -190,6 +190,5 @@ En webbsida har ett sidhuvud med 50 navigeringslänkar. Direkt efter sidhuvudet 
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.1 Bypass Blocks (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html)
-- [Webbriktlinjer: R122 Gör det möjligt att hoppa förbi återkommande innehåll](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-hoppa-forbi-aterkommande-innehall)
 - [WebAIM: "Skip Navigation" Links](https://webaim.org/techniques/skipnav/)
 - [MDN Web Docs: HTML landmark elements](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role#html5_sectioning_elements)

@@ -141,6 +141,6 @@ För en video med endast visuellt innehåll kan man också erbjuda en syntolknin
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.1 Audio-only and Video-only (Prerecorded) (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html)
-- [Webbriktlinjer: R3 Erbjud alternativ till video och ljud](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/erbjud-alternativ-till-video-och-ljud) (Delvis relevant)
+- [Webbriktlinjer: Erbjud alternativ till inspelningar som består av enbart ljud eller enbart video](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/erbjud-alternativ-till-inspelningar-som-bestar-av-enbart-ljud-eller-enbart-video) (Delvis relevant)
 - [MDN Web Docs: The Track element (\<track\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
 - [W3C WAI: Making Audio and Video Media Accessible](https://www.w3.org/WAI/media/av/)

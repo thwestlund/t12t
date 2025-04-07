@@ -166,5 +166,4 @@ Text används för att se ut som rubriker (t.ex. genom större, fet stil), men d
 
 - [WCAG 2.2: Success Criterion 2.4.10 Section Headings (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/section-headings.html)
 - [Förstå WCAG SC 2.4.6 (Nivå AA)](https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html) (Kravet att rubriker ska vara beskrivande).
-- [Webbriktlinjer: R127 Använd beskrivande rubriker och etiketter](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-beskrivande-rubriker-och-etiketter) (Beskriver även vikten av att _använda_ rubriker för struktur).
 - [WebAIM: Semantic Structure - Headings](https://webaim.org/techniques/semanticstructure/#headings)

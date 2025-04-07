@@ -166,4 +166,3 @@ En bild som innehåller text men som inte förmedlar någon information och enba
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.9 Images of Text (No Exception) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text-no-exception.html)
-- [Webbriktlinjer: R113 Använd text istället för bilder för att visa text](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-text-istallet-for-bilder-for-att-visa-text) (Beskriver även AAA-nivån)

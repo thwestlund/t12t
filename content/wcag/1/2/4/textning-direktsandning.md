@@ -98,5 +98,4 @@ Plattformen eller videospelaren tar emot textningsdata parallellt med video- och
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.4 Captions (Live) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html)
-- [Webbriktlinjer: R4 Texta video och ljud som publiceras på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/texta-video-och-ljud-som-publiceras-pa-webbplatsen) (Berör även direktsändning)
 - [W3C WAI: Captions/Subtitles](https://www.w3.org/WAI/media/av/captions/) (Innehåller information om både live och förinspelat)

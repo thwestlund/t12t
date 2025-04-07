@@ -151,5 +151,4 @@ Det finns många verktyg online och som webbläsartillägg för att mäta kontra
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.3 Contrast (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
-- [Webbriktlinjer: R111 Se till att text och grafik har tillräcklig kontrast mot bakgrunden](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-text-och-grafik-har-tillracklig-kontrast-mot-bakgrunden) (Täcker både 1.4.3 och 1.4.11)
 - [Understanding SC 1.4.11: Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) (Relaterat kriterium för grafik och UI)

@@ -145,5 +145,4 @@ En hälsoapp använder enhetens rörelsesensorer för att räkna steg.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.5.4 Motion Actuation (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/motion-actuation.html)
-- [Webbriktlinjer: R138 Gör det möjligt att använda funktioner utan att behöva röra på enheten eller göra gester framför den](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-anvanda-funktioner-utan-att-behöva-rora-pa-enheten-eller-gora-gester-framfor-den)
 - [DeviceMotionEvent (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) (API för att läsa av enhetsrörelse)

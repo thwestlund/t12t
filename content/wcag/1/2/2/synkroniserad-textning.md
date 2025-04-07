@@ -106,7 +106,7 @@ Textning gör innehållet tillgängligt för fler.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.2 Captions (Prerecorded) (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html)
-- [Webbriktlinjer: R4 Texta video och ljud som publiceras på webbplatsen](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/texta-video-och-ljud-som-publiceras-pa-webbplatsen)
+- [Webbriktlinjer: Texta ljudet i inspelade filmer](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/texta-ljudet-i-inspelade-filmer)
 - [MDN Web Docs: WebVTT (Web Video Text Tracks)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
 - [MDN Web Docs: The Track element (\<track\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
 - [W3C WAI: Captions/Subtitles](https://www.w3.org/WAI/media/av/captions/)

@@ -163,6 +163,5 @@ _(Kodexempel för tabell utelämnas då det är ett tillåtet undantag)_
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.10 Reflow (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
-- [Webbriktlinjer: R116 Undvik horisontell scrollning](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/undvik-horisontell-scrollning)
 - [CSS Techniques for WCAG 2.0: C32 - Using media queries and grid CSS to reflow columns](https://www.w3.org/WAI/WCAG22/Techniques/css/C32)
 - [CSS Techniques for WCAG 2.0: C38 - Using CSS width, max-width and flexbox to fit labels and inputs](https://www.w3.org/WAI/WCAG22/Techniques/css/C38)

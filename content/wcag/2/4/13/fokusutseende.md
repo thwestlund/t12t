@@ -167,6 +167,5 @@ Verktyg för att mäta färgkontrast (som nämnts för 1.4.3 och 1.4.6) är nöd
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.13 Focus Appearance (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html)
-- [Webbriktlinjer: R134 Fokus ska synas tydligt](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/fokus-ska-synas-tydligt) (Nyare riktlinje som täcker detta).
 - [Förstå WCAG SC 2.4.7 (Nivå AA)](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html) (Det grundläggande kravet på att fokus ska vara synligt).
 - [Evaluating WCAG 2.2 SC 2.4.13 Focus Appearance (by Adrian Roselli)](https://adrianroselli.com/2023/09/evaluating-wcag-2-2-sc-2-4-13-focus-appearance.html) (Detaljerad genomgång av kraven).

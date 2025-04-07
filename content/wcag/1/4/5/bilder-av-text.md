@@ -150,4 +150,3 @@ Text som är en del av en logotyp eller ett varumärke är undantagen från krav
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.5 Images of Text (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html)
-- [Webbriktlinjer: R113 Använd text istället för bilder för att visa text](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-text-istallet-for-bilder-for-att-visa-text)-

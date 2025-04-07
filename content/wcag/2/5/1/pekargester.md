@@ -170,5 +170,4 @@ Ett formulär kräver att användaren skriver sin signatur genom att rita med fi
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.5.1 Pointer Gestures (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/pointer-gestures.html)
-- [Webbriktlinjer: R135 Gör det möjligt att använda funktioner utan att använda komplexa fingerrörelser](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-anvanda-funktioner-utan-att-anvanda-komplexa-fingerrörelser)
 - [Supporting WCAG 2.5.1 with Touchscreen and Device Sensor Inputs (W3C Working Group Note)](https://www.w3.org/TR/pointer-gestures-with-sensor-inputs/)

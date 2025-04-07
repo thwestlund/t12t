@@ -205,7 +205,6 @@ Att använda [tabindex]{.inline-code} med positiva värden (t.ex. [tabindex="1"]
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.3 Focus Order (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html)
-- [Webbriktlinjer: R124 Se till att fokusordningen är logisk](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-fokusordningen-ar-logisk)
 - [MDN Web Docs: tabindex attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 - [WebAIM: Keyboard Accessibility - Tabindex](https://webaim.org/techniques/keyboard/tabindex)
 - [Understanding SC 1.3.2 Meaningful Sequence](https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html) (Relaterat kriterium om logisk läsordning som ofta sammanfaller med fokusordning).

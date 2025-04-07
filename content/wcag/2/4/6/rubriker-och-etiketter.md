@@ -196,7 +196,6 @@ Formulärfält saknar etiketter, har otydliga etiketter, eller etiketterna är i
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.6 Headings and Labels (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html)
-- [Webbriktlinjer: R127 Använd beskrivande rubriker och etiketter](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/anvand-beskrivande-rubriker-och-etiketter)
 - [MDN Web Docs: Heading elements (\<h1\>-\<h6\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
 - [MDN Web Docs: The Label element (\<label\>)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
 - [WebAIM: Semantic Structure - Headings](https://webaim.org/techniques/semanticstructure/#headings)

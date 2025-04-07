@@ -138,5 +138,4 @@ En inspelning av en orkester som spelar klassisk musik.
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.7 Low or No Background Audio (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/low-or-no-background-audio.html)
-- [Webbriktlinjer: R114 Se till att tal går att urskilja från bakgrundsljud](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-tal-gar-att-urskilja-fran-bakgrundsljud)
 - [W3C Techniques: G174: Providing a control with a sufficient contrast ratio that allows users to turn off background audio that plays automatically](https://www.w3.org/WAI/WCAG22/Techniques/general/G174) (Även om G174 nämner automatisk uppspelning, är principen att ge kontroll relevant för detta kriterium också).

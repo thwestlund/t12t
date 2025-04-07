@@ -171,5 +171,4 @@ Ett pussel. För att placera en bit måste användaren klicka, hålla kvar, dra 
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.5.7 Dragging Movements (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html)
-- [Webbriktlinjer: R140 Gör det möjligt att dra och släppa med ett enklare alternativ](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/gor-det-mojligt-att-dra-och-slappa-med-ett-enklare-alternativ)
 - [Understanding Success Criterion 2.5.7: Dragging Movements (W3C Understanding Document)](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html) (Innehåller fler exempel och tekniker).

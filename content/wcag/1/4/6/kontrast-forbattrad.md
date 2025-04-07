@@ -139,4 +139,3 @@ Samma verktyg som för 1.4.3 kan användas, men du behöver jämföra resultaten
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.4.6 Contrast (Enhanced) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html)
-- [Webbriktlinjer: R111 Se till att text och grafik har tillräcklig kontrast mot bakgrunden](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/se-till-att-text-och-grafik-har-tillracklig-kontrast-mot-bakgrunden) (Beskriver även AAA-nivån)

@@ -159,7 +159,6 @@ a:focus {
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 2.4.7 Focus Visible (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)
-- [Webbriktlinjer: R128 Markera tydligt vilket fält eller element som är i fokus](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/markera-tydligt-vilket-falt-eller-element-som-ar-i-fokus)
 - [MDN Web Docs: \:focus pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus)
 - [MDN Web Docs: \:focus-visible pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 - [WebAIM: Keyboard Accessibility - Visible Focus Indicator](https://webaim.org/techniques/keyboard/focus)

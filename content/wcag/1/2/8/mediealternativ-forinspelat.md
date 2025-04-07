@@ -140,5 +140,4 @@ Implementationen liknar den som visades för Kriterium 1.2.3, men här är det e
 ## Länk till mer information
 
 - [WCAG 2.2: Success Criterion 1.2.8 Media Alternative (Prerecorded) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded.html)
-- [Webbriktlinjer: R3 Erbjud alternativ till video och ljud](https://www.digg.se/webbriktlinjer/alla-webbriktlinjer/erbjud-alternativ-till-video-och-ljud) (Berör konceptet med textalternativ)
 - [W3C WAI: Making Audio and Video Media Accessible](https://www.w3.org/WAI/media/av/) (Övergripande guide)
