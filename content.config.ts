@@ -16,10 +16,18 @@ export default defineContentConfig({
         source: { include: "blog/**/**/*.md", exclude: ["blog/index.md"] },
 
         schema: z.object({
+          title: z.string(),
+          description: z.string().optional(),
           tags: z.array(z.string()).optional(),
+          keywords: z.array(z.string()).optional(),
           image: z.string().optional(),
           date: z.date().optional(),
           author: z.string().optional(),
+          og: z.object({
+            title: z.string().optional(),
+            description: z.string().optional(),
+            image: z.string().optional(),
+            url: z.string().optional(), })
         }),
       })
     ),
