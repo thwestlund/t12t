@@ -7,14 +7,16 @@
           T12T är ett gemenskapsdrivet projekt. Saknar du information eller har du förslag
           på förbättringar? Dina bidrag hjälper oss att göra T12T bättre för alla.
         </p>
-        <NuxtLink to="/om/bidra"
+        <NuxtLink 
+          to="/om/kontakt"
           class="inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
           Bidra till T12T
         </NuxtLink>
       </div>
       <div class="md:flex-1">
-        <img src="assets/img/undraw_collab_h1mq.svg" alt="Illustration av personer som samarbetar"
-          class="max-w-md mx-auto" />
+        <img 
+          src="assets/img/undraw_collab_h1mq.svg" alt="Illustration av personer som samarbetar"
+          class="max-w-md mx-auto" >
       </div>
     </div>
   </div>
