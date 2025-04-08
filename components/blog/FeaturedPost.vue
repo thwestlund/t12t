@@ -10,7 +10,8 @@
       <p class="text-neutral-600 mb-4">{{ featuredPost.description }}</p>
       <div class="flex items-center">
         <span class="text-sm text-neutral-500">
-          <NuxtTime v-if="featuredPost.date" :datetime="featuredPost.date" time-zone="Europe/Stockholm"
+          <NuxtTime 
+            v-if="featuredPost.date" :datetime="featuredPost.date" time-zone="Europe/Stockholm"
             format="YYYY-MM-DD" />
         </span>
         <span class="mx-2 text-neutral-300">•</span>

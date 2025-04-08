@@ -2,13 +2,13 @@
   <div class="min-h-screen flex flex-col">
     <BaseTopBar />
 
-    <main class="flex-grow" id="main-content">
+    <main id="main-content" class="flex-grow">
       <div>
         <slot />
       </div>
     </main>
 
-    <Footer />
+    <DefaultFooter />
   </div>
 </template>
 

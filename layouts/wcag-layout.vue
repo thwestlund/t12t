@@ -13,6 +13,6 @@
       </div>
     </div>
 
-    <Footer />
+    <DefaultFooter />
   </div>
 </template>

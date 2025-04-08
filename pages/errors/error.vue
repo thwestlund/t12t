@@ -1,27 +1,9 @@
-<script setup lang="ts">
-const props = defineProps({
-  error: Object
-})
-
-// SEO for error page
-/*useSeoMeta({
-  title: () => props.error?.statusCode === 404
-    ? 'Sidan hittades inte - T12T'
-    : 'Ett fel har inträffat - T12T',
-  robots: 'noindex, nofollow',
-})*/
-
-const handleError = () => {
-  clearError({ redirect: '/' })
-}
-</script>
-
 <template>
   <NuxtLayout>
     <div
       class="min-h-[70vh] flex items-center justify-center px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
       <div class="max-w-max mx-auto">
-        <main class="sm:flex" id="main-content">
+        <main id="main-content" class="sm:flex">
           <p class="text-4xl font-extrabold text-primary sm:text-5xl">
             {{ error?.statusCode || 'Fel' }}
           </p>
@@ -46,11 +28,13 @@ const handleError = () => {
               </p>
             </div>
             <div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-              <button @click="handleError"
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+              <button
+                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                @click="handleError">
                 Gå till startsidan
               </button>
-              <NuxtLink to="/kontakt"
+              <NuxtLink
+                to="/kontakt"
                 class="inline-flex items-center px-4 py-2 border border-neutral-300 text-sm font-medium rounded-md bg-white text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                 Kontakta oss
               </NuxtLink>
@@ -86,3 +70,16 @@ const handleError = () => {
     </div>
   </NuxtLayout>
 </template>
+
+<script setup lang="ts">
+const props = defineProps({
+  error: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+const handleError = () => {
+  clearError({ redirect: '/' })
+}
+</script>

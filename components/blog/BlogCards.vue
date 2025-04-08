@@ -1,6 +1,7 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" v-if="posts">
-    <div v-for="post in posts" :key="post.path"
+  <div v-if="posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div
+      v-for="post in posts" :key="post.path"
       class="card relative bg-white rounded-lg shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow p-2">
       <div class="p-6">
         <h3 class="text-lg font-semibold text-secondary line-clamp-3">

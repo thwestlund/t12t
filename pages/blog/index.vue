@@ -10,7 +10,8 @@
     <!-- All blog posts -->
     <div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div v-for="post in posts" :key="post.id"
+        <div 
+          v-for="post in posts" :key="post.id"
           class="border border-neutral-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
           <NuxtLink :to="post.path" class="block h-full hover:no-underline">
             <div class="p-6">
@@ -43,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import FeaturedPost from '~/components/blog/FeaturedPost.vue'
+import FeaturedPost from '~/components/blog/FeaturedPost.vue';
 
 definePageMeta({
   layout: 'default'
