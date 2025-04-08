@@ -1,34 +1,30 @@
 ---
 title: 1.1.1 Icke-textuellt innehåll
-description: All innehåll som inte är text ska ha ett textalternativ som presenterar motsvarande syfte eller information.
+description: All innehåll som inte är text ska ha ett textalternativ som
+  presenterar motsvarande syfte eller information.
 level: A
 slug: icke-textuellt-innehall
 keywords:
-  [
-    "WCAG",
-    "tillgänglighet",
-    "icke-textuellt innehåll",
-    "alt-text",
-    "webbtillgänglighet",
-    "non-text content",
-  ]
+  - WCAG
+  - tillgänglighet
+  - icke-textuellt innehåll
+  - alt-text
+  - webbtillgänglighet
+  - non-text content
 canonical: https://www.t12t.dev/wcag/1/1/1/icke-textuellt-innehall
-
 principleNumber: 1
 principleName: Möjlig att uppfatta
 guidelineNumber: 1
 guidelineName: Textalternativ
 criterionNumber: 1
-
 og:
   title: 1.1.1 Icke-textuellt innehåll – WCAG
-  description: Allt icke-textuellt innehåll ska ha ett textalternativ som presenterar samma information.
+  description: Allt icke-textuellt innehåll ska ha ett textalternativ som
+    presenterar samma information.
   url: https://www.t12t.dev/wcag/1/1/1/icke-textuellt-innehall
   type: article
-
 datePublished: 2025-03-19
 dateModified: 2025-03-26
-
 sitemap:
   lastmod: 2025-03-26
   changefreq: monthly
@@ -65,8 +61,7 @@ Genom att tillhandahålla meningsfulla textalternativ för icke-textuellt inneh�
 Om en bild förmeddelar viktig information, som ett diagram eller en illustration, ska den ha en beskrivande alt-text som förklarar vad bilden visar.
 
 ::code-group{:labels='["index.html"]'}
-
-```html {3-5} showLineNumbers
+```html
 <img
   src="diagram-energiforbrukning.png"
   alt="Diagram som visar energiförbrukning per månad under 2023. 
@@ -74,21 +69,18 @@ Om en bild förmeddelar viktig information, som ett diagram eller en illustratio
     lägst förbrukning i juli (120 kWh)."
 />
 ```
-
 ::
 
 ### Dekorativ bild
 
-Om en bild inte tillför något värde eller information, som en dekorativ linje eller bakgrundsbild, kan den ha ett tomt alt-attribut [alt=""]{.inline-code}. Detta gör att skärmläsare ignorerar bilden.
+Om en bild inte tillför något värde eller information, som en dekorativ linje eller bakgrundsbild, kan den ha ett tomt alt-attribut [alt=""]{.inline-code} . Detta gör att skärmläsare ignorerar bilden.
 
 [role="presentation]{.inline-code} gör att skärmläsare ignorerar bilden.
 
 ::code-group{:labels='["index.html"]'}
-
 ```html
 <img src="dekorativ-linje.png" alt="" role="presentation" />
 ```
-
 ::
 
 ### Bildlänk
@@ -96,13 +88,11 @@ Om en bild inte tillför något värde eller information, som en dekorativ linje
 Om en bild fungerar som en länk, ska den ha ett alt-attribut som beskriver syftet med länken. Om bilden är en ikon eller symbol kan alt-texten vara kortare.
 
 ::code-group{:labels='["index.html"]'}
-
 ```html
 <a href="kontakt.html">
   <img src="kontakt-ikon.png" alt="Kontakta oss" />
 </a>
 ```
-
 ::
 
 ### Logotyp med länk till startsida
@@ -110,13 +100,11 @@ Om en bild fungerar som en länk, ska den ha ett alt-attribut som beskriver syft
 Om en logotyp fungerar som en länk till startsidan, ska alt-texten vara kort och beskriva syftet med länken. Om logotypen är en bild utan text kan alt-texten vara tom.
 
 ::code-group{:labels='["index.html"]'}
-
 ```html
 <a href="/" aria-label="Företagsnamn - Till startsidan">
   <img src="logo.png" alt="" />
 </a>
 ```
-
 ::
 
 ### Komplex bild med långt textalternativ
@@ -125,8 +113,7 @@ Om en bild är komplex och innehåller mycket information, som ett organisations
 I det här exemplet har vi en bild av ett organisationsschema. Alt-texten ger en kort sammanfattning av vad bilden visar, och en längre beskrivning finns i figcaption-elementet.
 
 ::code-group{:labels='["index.html"]'}
-
-```html {1, 5, 7-14}
+```html
 <figure>
   <img
     src="komplext-diagram.png"
@@ -141,7 +128,6 @@ I det här exemplet har vi en bild av ett organisationsschema. Alt-texten ger en
   </figcaption>
 </figure>
 ```
-
 ::
 
 ---

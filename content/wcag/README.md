@@ -4,7 +4,7 @@ Detta dokument beskriver strukturen och implementationen av WCAG-sektionen på T
 
 ## Översikt
 
-WCAG-sektionen tillhandahåller en komplett guide till Web Content Accessibility Guidelines (WCAG) 2.2 på svenska. Innehållet är strukturerat enligt WCAG:s principer, riktlinjer och kriterier, och inkluderar:
+WCAG-sektionen tillhandahåller en komplett guide till Web Content Accessibility Guidelines (WCAG) 2.2 på svenska. Innehållet är strukturerat enligt WCAG\:s principer, riktlinjer och kriterier, och inkluderar:
 
 - Beskrivningar av kriterier
 - Förklaringar till varför de är viktiga
@@ -14,9 +14,9 @@ WCAG-sektionen tillhandahåller en komplett guide till Web Content Accessibility
 
 ## Innehållsstruktur
 
-WCAG-innehållet är organiserat i en hierarkisk struktur som motsvarar WCAG:s egen struktur:
+WCAG-innehållet är organiserat i en hierarkisk struktur som motsvarar WCAG\:s egen struktur:
 
-```
+```text
 content/
 └── wcag/
     ├── index.md                                   # WCAG översikt
@@ -92,9 +92,9 @@ En enkel komponent som visar WCAG-nivåer (A, AA, AAA) med lämplig färgkodning
 
 ## Sidor
 
-### pages/wcag/[...slug].vue
+### pages/wcag/ [...slug] .vue
 
-Denna sida hanterar alla WCAG-relaterade URL:er och bestämmer dynamiskt vilken typ av innehåll som ska visas baserat på URL-strukturen. Den kan visa:
+Denna sida hanterar alla WCAG-relaterade URL\:er och bestämmer dynamiskt vilken typ av innehåll som ska visas baserat på URL-strukturen. Den kan visa:
 
 1. WCAG-översiktssidan
 2. En principsida
@@ -146,6 +146,6 @@ WCAG-sektionen är optimerad för sökmotorer med:
 1. Beskrivande titlar och meta-beskrivningar för varje sida
 2. Strukturerade data för att hjälpa sökmotorer förstå innehållet
 3. Korrekt användning av rubriker och landmärken
-4. Semantisk HTML som följer WCAG:s egna riktlinjer
+4. Semantisk HTML som följer WCAG\:s egna riktlinjer
 
 Eftersom detta är en webbplats om tillgänglighet är det viktigt att sektionen själv följer alla WCAG-kriterier på nivå AA och många på nivå AAA.
