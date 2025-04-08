@@ -25,13 +25,14 @@
           <div v-for="(guideline, guidelineIndex) in principle.guidelines" :key="`${principleIndex}-${guidelineIndex}`">
             <!-- Guideline header -->
             <button
+              :aria-expanded="isGuidelineOpen(principle.number, guideline.number)"
+              :aria-controls="`guideline-${principle.number}-${guideline.number}`"
               class="w-full text-left px-4 py-3 flex items-center justify-between text-sm font-medium hover:bg-neutral-50"
               :class="isGuidelineOpen(principle.number, guideline.number) ? 'text-primary' : 'text-secondary'"
-              @click="toggleGuideline(principle.number, guideline.number)"
-              :aria-expanded="isGuidelineOpen(principle.number, guideline.number)"
-              :aria-controls="`guideline-${principle.number}-${guideline.number}`">
+              @click="toggleGuideline(principle.number, guideline.number)">
               <span>{{ principle.number }}.{{ guideline.number }} {{ guideline.name }}</span>
-              <svg class="h-4 w-4 transition-transform"
+              <svg 
+                class="h-4 w-4 transition-transform"
                 :class="isGuidelineOpen(principle.number, guideline.number) ? 'transform rotate-180' : ''" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -39,11 +40,13 @@
             </button>
 
             <!-- Success Criteria under this guideline -->
-            <div v-if="isGuidelineOpen(principle.number, guideline.number)"
+            <div 
+              v-if="isGuidelineOpen(principle.number, guideline.number)"
               :id="`guideline-${principle.number}-${guideline.number}`" class="mt-1 pl-4 pr-4">
               <ul class="space-y-1 border-l border-neutral-200">
                 <li v-for="criterion in guideline.criteria" :key="criterion.path">
-                  <NuxtLink :to="criterion.path"
+                  <NuxtLink 
+                    :to="criterion.path"
                     class="flex items-center pl-2 py-2 lg:pl-4 lg:py-3 text-sm border-l-2 hover:bg-neutral-50"
                     :class="isActivePath(criterion.path) ? 'border-primary text-primary font-medium' : 'border-transparent text-neutral-600 hover:text-primary hover:border-neutral-300'">
                     <div class="flex items-center flex-1">
