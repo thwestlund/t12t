@@ -48,6 +48,9 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-03-12",
 
   content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    },
     build: {
       markdown: {
         highlight: {
