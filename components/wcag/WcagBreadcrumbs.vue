@@ -62,7 +62,7 @@ const generateBreadcrumbs = async () => {
       for (let i = 0; i < relevantParts.length - 1; i++) {
         // Build the correct path with proper prefix
         const currentPath = `/wcag/${relevantParts.slice(0, i + 1).join('/')}`;
-
+        const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
         // Determine what type of item this is
         let title;
 
@@ -79,11 +79,12 @@ const generateBreadcrumbs = async () => {
         }
         else if (i === 1) {
           // This is a guideline
-          title = `${relevantParts[i - 1]}.${relevantParts[i]} Riktlinje`;
+          console.log('relevantParts[i - 1]:', relevantParts[i - 1]);
+          title = `${relevantParts[i - 1]}.${relevantParts[i]} ${content?.guidelineName || 'Riktlinje'}`;
         }
         else if (i === 2) {
           // This is a criterion
-          const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
+          //const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
 
           if (content) {
             title = `${content.title}`;
@@ -93,7 +94,7 @@ const generateBreadcrumbs = async () => {
         }
         else {
           // This is a subpage or additional content
-          const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
+          //const content = await queryCollection('wcag').where('id', 'LIKE', `%${currentPath.substring(1)}%`).first();
           title = content?.title || relevantParts[i];
         }
 
