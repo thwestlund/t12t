@@ -4,25 +4,6 @@
       <h1 class="text-3xl font-bold mb-6">Om T12T</h1>
       <div class="flex flex-col gap-4">
         <section>
-          <h2 class="text-2xl font-bold mt-8 mb-4">Vår vision</h2>
-          <p class="mb-4">
-            T12T (uttalas "tillgänglighet") är Sveriges främsta resurs för digital tillgänglighet.
-            Vår mission är att göra webben mer inkluderande och tillgänglig för alla användare,
-            oavsett funktionsförmåga.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-bold mt-8 mb-4">Vem står bakom T12T?</h2>
-          <p class="mb-4">
-            T12T är skapat av Thommy Westlund med målsättningen att T12T.dev ska bli en community-driven plattform med
-            experter inom digital tillgänglighet
-            från hela Sverige. Plattformen utvecklas i öppen källkod med målet att sprida kunskap och
-            förbättra digitala upplevelser för alla.
-          </p>
-        </section>
-
-        <section>
           <h2 class="text-2xl font-bold mt-8 mb-4">Våra värderingar</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card title="Inkludering" description="Ingen ska utestängas från digitala tjänster"
