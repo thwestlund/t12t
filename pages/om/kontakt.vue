@@ -22,22 +22,6 @@
               <a href="mailto:thommy@forge-it.se" class="text-primary hover:underline">thommy@forge-it.se</a>
             </dd>
           </div>
-
-          <div>
-            <dt class="text-sm font-medium text-neutral-500">GitHub</dt>
-            <dd class="mt-1 text-base text-neutral-900">
-              <a href="https://github.com/thwestlund" target="_blank" rel="noopener noreferrer"
-                class="text-primary hover:underline">github.com/thwestlund</a>
-            </dd>
-          </div>
-
-          <div>
-            <dt class="text-sm font-medium text-neutral-500">LinkedIn</dt>
-            <dd class="mt-1 text-base text-neutral-900">
-              <a href="https://www.linkedin.com/in/thommy-westlund-02090650/" target="_blank" rel="noopener noreferrer"
-                class="text-primary hover:underline">https://www.linkedin.com/in/thommy-westlund-02090650/</a>
-            </dd>
-          </div>
         </dl>
       </div>
     </div>
