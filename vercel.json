@@ -2,13 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": ":path*",
+      "source": "/",
       "destination": "https://thommywestlund.se",
       "permanent": false
     },
-
     {
-      "source": "/",
+      "source": "/:path*",
       "destination": "https://thommywestlund.se",
       "permanent": false
     }
